@@ -6,26 +6,15 @@
 
 <title>Vinarstvo Filipčič — Okus Krasa</title>
 
-<meta
-    name="description"
-    content="Vinarstvo Filipčič — vino iz Krasa, ustvarjeno s tradicijo, časom in spoštovanjem do zemlje."
->
-
+<meta name="description" content="Vinarstvo Filipčič — vino iz Krasa, ustvarjeno s tradicijo, časom in spoštovanjem do zemlje.">
 <meta name="theme-color" content="#090707">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
-    rel="stylesheet"
->
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
-
-/* =========================================================
-   RESET
-========================================================= */
 
 * {
     margin: 0;
@@ -58,10 +47,6 @@ button {
     font: inherit;
 }
 
-/* =========================================================
-   VARIABLES
-========================================================= */
-
 :root {
     --black: #090707;
     --black-soft: #110d0d;
@@ -73,10 +58,6 @@ button {
     --muted: rgba(245, 241, 235, .68);
     --line: rgba(198, 163, 106, .25);
 }
-
-/* =========================================================
-   GLOBAL
-========================================================= */
 
 .container {
     width: min(1200px, 88%);
@@ -91,11 +72,9 @@ button {
 .eyebrow {
     display: block;
     margin-bottom: 20px;
-
     font-size: 10px;
     letter-spacing: 5px;
     text-transform: uppercase;
-
     color: var(--gold);
 }
 
@@ -112,23 +91,17 @@ button {
     line-height: 1.9;
 }
 
-/* =========================================================
-   NAVIGATION
-========================================================= */
+/* NAV */
 
 .nav {
     position: fixed;
     top: 0;
     left: 0;
-
     width: 100%;
     height: 90px;
-
     z-index: 1000;
-
     display: flex;
     align-items: center;
-
     transition:
         background .4s ease,
         height .4s ease,
@@ -145,7 +118,6 @@ button {
 .nav-inner {
     width: min(1400px, 90%);
     margin: auto;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -165,11 +137,9 @@ button {
 
 .logo-sub {
     margin-top: 5px;
-
     font-size: 8px;
     letter-spacing: 3px;
     text-transform: uppercase;
-
     color: var(--gold);
 }
 
@@ -177,34 +147,26 @@ button {
     display: flex;
     align-items: center;
     gap: 34px;
-
     list-style: none;
 }
 
 .nav-links a {
     position: relative;
-
     font-size: 10px;
     letter-spacing: 2px;
     text-transform: uppercase;
-
     color: rgba(255,255,255,.75);
-
     transition: color .3s ease;
 }
 
 .nav-links a::after {
     content: "";
-
     position: absolute;
     left: 0;
     bottom: -8px;
-
     width: 0;
     height: 1px;
-
     background: var(--gold);
-
     transition: width .3s ease;
 }
 
@@ -218,42 +180,30 @@ button {
 
 .menu-btn {
     display: none;
-
     width: 40px;
     height: 40px;
-
     border: 0;
     background: transparent;
-
     cursor: pointer;
 }
 
 .menu-btn span {
     display: block;
-
     width: 25px;
     height: 1px;
-
     margin: 6px auto;
-
     background: white;
-
     transition: .3s ease;
 }
 
-/* =========================================================
-   HERO
-========================================================= */
+/* HERO */
 
 .hero {
     position: relative;
-
     min-height: 100vh;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     overflow: hidden;
 
     background:
@@ -272,10 +222,8 @@ button {
 
 .hero::before {
     content: "";
-
     position: absolute;
     inset: 0;
-
     background:
         linear-gradient(
             90deg,
@@ -288,19 +236,15 @@ button {
 .hero-content {
     position: relative;
     z-index: 2;
-
     width: min(1000px, 90%);
-
     text-align: center;
 }
 
 .hero-kicker {
     margin-bottom: 25px;
-
     font-size: 10px;
     letter-spacing: 7px;
     text-transform: uppercase;
-
     color: var(--gold);
 }
 
@@ -309,7 +253,6 @@ button {
     font-size: clamp(70px, 12vw, 170px);
     font-weight: 300;
     line-height: .78;
-
     letter-spacing: -3px;
 }
 
@@ -319,20 +262,16 @@ button {
 
 .hero-subtitle {
     margin-top: 35px;
-
     font-size: 13px;
     letter-spacing: 4px;
     text-transform: uppercase;
-
     color: rgba(255,255,255,.68);
 }
 
 .hero-line {
     width: 1px;
     height: 90px;
-
     margin: 55px auto 0;
-
     background: linear-gradient(
         to bottom,
         var(--gold),
@@ -342,26 +281,19 @@ button {
 
 .hero-scroll {
     position: absolute;
-
     bottom: 30px;
     left: 50%;
-
     transform: translateX(-50%);
-
     font-size: 8px;
     letter-spacing: 4px;
     text-transform: uppercase;
-
     color: rgba(255,255,255,.45);
 }
 
-/* =========================================================
-   INTRO
-========================================================= */
+/* INTRO */
 
 .intro {
     min-height: 75vh;
-
     display: flex;
     align-items: center;
 
@@ -377,7 +309,6 @@ button {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 100px;
-
     align-items: center;
 }
 
@@ -393,9 +324,7 @@ button {
     margin-bottom: 25px;
 }
 
-/* =========================================================
-   KRAS
-========================================================= */
+/* KRAS */
 
 .kras {
     background: #0d0909;
@@ -403,13 +332,10 @@ button {
 
 .kras-inner {
     display: grid;
-
     grid-template-columns:
         minmax(250px, .8fr)
         minmax(300px, 1.2fr);
-
     gap: 120px;
-
     align-items: center;
 }
 
@@ -419,15 +345,11 @@ button {
 
 .kras-title::before {
     content: "KRAS";
-
     position: absolute;
-
     top: -70px;
     left: -20px;
-
     font-family: "Cormorant Garamond", serif;
     font-size: 150px;
-
     color: rgba(198,163,106,.035);
 }
 
@@ -442,19 +364,14 @@ button {
 .kras-quote {
     margin-top: 50px;
     padding-left: 25px;
-
     border-left: 1px solid var(--gold);
-
     font-family: "Cormorant Garamond", serif;
     font-size: 32px;
     line-height: 1.1;
-
     color: var(--cream);
 }
 
-/* =========================================================
-   VINA
-========================================================= */
+/* VINA */
 
 .wines {
     background:
@@ -469,9 +386,7 @@ button {
     display: flex;
     justify-content: space-between;
     align-items: end;
-
     gap: 50px;
-
     margin-bottom: 90px;
 }
 
@@ -481,13 +396,9 @@ button {
 
 .wine-card {
     position: relative;
-
     min-height: 650px;
-
     padding: 70px;
-
     overflow: hidden;
-
     border-top: 1px solid var(--line);
     border-bottom: 1px solid var(--line);
 
@@ -501,27 +412,22 @@ button {
 
 .wine-number {
     position: absolute;
-
     right: 5%;
     top: 0;
-
     font-family: "Cormorant Garamond", serif;
     font-size: 280px;
     line-height: .8;
-
     color: rgba(255,255,255,.025);
 }
 
 .wine-card-content {
     position: relative;
     z-index: 2;
-
     max-width: 700px;
 }
 
 .wine-card h3 {
     margin-bottom: 30px;
-
     font-family: "Cormorant Garamond", serif;
     font-size: clamp(65px, 9vw, 120px);
     font-weight: 400;
@@ -529,56 +435,44 @@ button {
 
 .wine-card-description {
     max-width: 650px;
-
     color: var(--muted);
-
     font-size: 16px;
     line-height: 1.9;
 }
 
 .wine-tagline {
     margin-top: 45px;
-
     font-family: "Cormorant Garamond", serif;
     font-size: 30px;
-
     color: var(--gold-light);
 }
 
-/* =========================================================
-   KLET — SCROLL VIDEO
-========================================================= */
+/* KLET */
 
 .cellar-scroll {
     position: relative;
     height: 400vh;
-
     background: #070505;
 }
 
 .cellar-sticky {
     position: sticky;
     top: 0;
-
     width: 100%;
     height: 100vh;
-
     overflow: hidden;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     background: #070505;
 }
 
 .cellar-video {
     position: absolute;
-
     top: 50%;
     left: 50%;
 
-    transform: translate(-50%, -50%);
+    transform: translate3d(-50%, -50%, 0);
 
     height: 100vh;
     width: auto;
@@ -589,12 +483,13 @@ button {
     z-index: 1;
 
     background: #070505;
+
+    backface-visibility: hidden;
 }
 
 .cellar-dark {
     position: absolute;
     inset: 0;
-
     z-index: 2;
 
     background:
@@ -610,61 +505,59 @@ button {
 
 .cellar-title {
     position: absolute;
-
     top: 50%;
     left: 50%;
 
-    transform: translate(-50%, -50%);
+    transform: translate3d(-50%, -50%, 0);
 
     width: 90%;
-
     text-align: center;
 
     z-index: 3;
 
     pointer-events: none;
+
+    will-change: transform, opacity;
+
+    backface-visibility: hidden;
 }
 
 .cellar-title span {
     display: block;
-
     margin-bottom: 20px;
-
     font-size: 10px;
     letter-spacing: 5px;
     text-transform: uppercase;
-
     color: var(--gold);
 }
 
 .cellar-title h2 {
     font-family: "Cormorant Garamond", serif;
-
     font-size: clamp(55px, 8vw, 115px);
     line-height: .85;
     font-weight: 400;
 }
 
-/* =========================================================
-   KLET CONTENT
-========================================================= */
+/* KLET CONTENT */
 
 .cellar-content {
     position: absolute;
     inset: 0;
-
     z-index: 5;
 
     opacity: 0;
 
     pointer-events: none;
 
-    transform: translateY(50px);
+    transform: translate3d(0, 50px, 0);
+
+    will-change: transform, opacity;
+
+    backface-visibility: hidden;
 }
 
 .cellar-photo {
     position: absolute;
-
     overflow: hidden;
 
     box-shadow:
@@ -674,16 +567,13 @@ button {
 .cellar-photo img {
     width: 100%;
     height: 100%;
-
     display: block;
-
     object-fit: cover;
 }
 
 .cellar-photo-one {
     width: min(30vw, 450px);
     height: min(42vw, 620px);
-
     left: 6%;
     top: 10%;
 }
@@ -691,39 +581,32 @@ button {
 .cellar-photo-two {
     width: min(30vw, 450px);
     height: min(40vw, 560px);
-
     right: 6%;
     bottom: 8%;
 }
 
 .cellar-text {
     position: absolute;
-
     top: 50%;
     left: 50%;
 
-    transform: translate(-50%, -50%);
+    transform: translate3d(-50%, -50%, 0);
 
     width: min(430px, 34vw);
-
     text-align: center;
 }
 
 .cellar-text span {
     display: block;
-
     margin-bottom: 18px;
-
     font-size: 9px;
     letter-spacing: 4px;
     text-transform: uppercase;
-
     color: var(--gold);
 }
 
 .cellar-text h3 {
     margin-bottom: 25px;
-
     font-family: "Cormorant Garamond", serif;
     font-size: clamp(45px, 5vw, 75px);
     line-height: .9;
@@ -732,14 +615,11 @@ button {
 
 .cellar-text p {
     color: var(--muted);
-
     font-size: 14px;
     line-height: 1.8;
 }
 
-/* =========================================================
-   STORY
-========================================================= */
+/* STORY */
 
 .story {
     background: #0c0808;
@@ -747,21 +627,15 @@ button {
 
 .story-grid {
     display: grid;
-
     grid-template-columns: 1fr 1fr;
-
     gap: 100px;
-
     align-items: center;
 }
 
 .story-big {
     font-family: "Cormorant Garamond", serif;
-
     font-size: clamp(50px, 6vw, 90px);
-
     line-height: .92;
-
     font-weight: 400;
 }
 
@@ -773,15 +647,11 @@ button {
     margin-bottom: 25px;
 }
 
-/* =========================================================
-   IZROČILO
-========================================================= */
+/* IZROČILO */
 
 .heritage {
     position: relative;
-
     padding: 180px 0;
-
     text-align: center;
 
     background:
@@ -799,60 +669,43 @@ button {
 
 .heritage h2 {
     margin-bottom: 35px;
-
     font-family: "Cormorant Garamond", serif;
-
     font-size: clamp(55px, 8vw, 110px);
-
     line-height: .85;
-
     font-weight: 400;
 }
 
 .heritage p {
     max-width: 620px;
-
     margin: auto;
-
     color: var(--muted);
-
     line-height: 1.9;
 }
 
 .heritage-line {
     width: 100px;
     height: 1px;
-
     margin: 55px auto;
-
     background: var(--gold);
 }
 
-/* =========================================================
-   CONTACT
-========================================================= */
+/* CONTACT */
 
 .contact {
     background: #0a0707;
-
     border-top: 1px solid rgba(198,163,106,.12);
 }
 
 .contact-grid {
     display: grid;
-
     grid-template-columns: 1fr 1fr;
-
     gap: 100px;
 }
 
 .contact-title {
     font-family: "Cormorant Garamond", serif;
-
     font-size: clamp(60px, 8vw, 110px);
-
     line-height: .85;
-
     font-weight: 400;
 }
 
@@ -862,25 +715,20 @@ button {
 
 .contact-row {
     padding: 22px 0;
-
     border-bottom: 1px solid rgba(255,255,255,.1);
 }
 
 .contact-label {
     display: block;
-
     margin-bottom: 7px;
-
     font-size: 9px;
     letter-spacing: 3px;
     text-transform: uppercase;
-
     color: var(--gold);
 }
 
 .contact-value {
     font-size: 15px;
-
     color: rgba(255,255,255,.8);
 }
 
@@ -888,68 +736,53 @@ button {
     color: white;
 }
 
-/* =========================================================
-   FOOTER
-========================================================= */
+/* FOOTER */
 
 .footer {
     padding: 35px 0;
-
     border-top: 1px solid rgba(255,255,255,.07);
-
     background: #070505;
 }
 
 .footer-inner {
     display: flex;
-
     justify-content: space-between;
     align-items: center;
-
     gap: 30px;
 }
 
 .footer p {
     font-size: 9px;
-
     letter-spacing: 2px;
-
     color: rgba(255,255,255,.35);
-
     text-transform: uppercase;
 }
 
 .footer-brand {
     font-family: "Cormorant Garamond", serif;
-
     font-size: 22px;
-
     color: rgba(255,255,255,.65);
 }
 
-/* =========================================================
-   REVEAL ANIMATION
-========================================================= */
+/* REVEAL */
 
 .reveal {
     opacity: 0;
-
-    transform: translateY(40px);
+    transform: translate3d(0, 40px, 0);
 
     transition:
         opacity 1s ease,
         transform 1s ease;
+
+    backface-visibility: hidden;
 }
 
 .reveal.visible {
     opacity: 1;
-
-    transform: translateY(0);
+    transform: translate3d(0, 0, 0);
 }
 
-/* =========================================================
-   MOBILE NAV
-========================================================= */
+/* MOBILE */
 
 @media (max-width: 800px) {
 
@@ -959,17 +792,13 @@ button {
 
     .nav-links {
         position: fixed;
-
         top: 75px;
         left: 0;
-
         width: 100%;
-
         padding: 40px 30px;
 
         flex-direction: column;
         align-items: flex-start;
-
         gap: 25px;
 
         background: rgba(9,7,7,.97);
@@ -992,7 +821,6 @@ button {
     .story-grid,
     .contact-grid {
         grid-template-columns: 1fr;
-
         gap: 60px;
     }
 
@@ -1010,15 +838,12 @@ button {
 
     .wine-card {
         min-height: 550px;
-
         padding: 50px 25px;
     }
 
     .wine-number {
         font-size: 180px;
     }
-
-    /* KLET MOBILE */
 
     .cellar-scroll {
         height: 330vh;
@@ -1027,7 +852,6 @@ button {
     .cellar-video {
         width: 100%;
         height: 100%;
-
         object-fit: cover;
     }
 
@@ -1042,7 +866,6 @@ button {
     .cellar-photo-one {
         width: 43%;
         height: 31%;
-
         left: 4%;
         top: 7%;
     }
@@ -1050,7 +873,6 @@ button {
     .cellar-photo-two {
         width: 43%;
         height: 31%;
-
         right: 4%;
         bottom: 7%;
     }
@@ -1074,14 +896,11 @@ button {
 
     .footer-inner {
         flex-direction: column;
-
         text-align: center;
     }
 }
 
-/* =========================================================
-   REDUCED MOTION
-========================================================= */
+/* REDUCED MOTION */
 
 @media (prefers-reduced-motion: reduce) {
 
@@ -1108,13 +927,7 @@ button {
 </style>
 </head>
 
-
 <body>
-
-
-<!-- =======================================================
-     NAVIGATION
-======================================================= -->
 
 <header class="nav" id="navbar">
 
@@ -1128,38 +941,17 @@ button {
         <nav>
             <ul class="nav-links" id="navLinks">
 
-                <li>
-                    <a href="#kras">Kras</a>
-                </li>
-
-                <li>
-                    <a href="#vina">Vina</a>
-                </li>
-
-                <li>
-                    <a href="#klet">Klet</a>
-                </li>
-
-                <li>
-                    <a href="#zgodba">Zgodba</a>
-                </li>
-
-                <li>
-                    <a href="#izrocilo">Izročilo</a>
-                </li>
-
-                <li>
-                    <a href="#kontakt">Kontakt</a>
-                </li>
+                <li><a href="#kras">Kras</a></li>
+                <li><a href="#vina">Vina</a></li>
+                <li><a href="#klet">Klet</a></li>
+                <li><a href="#zgodba">Zgodba</a></li>
+                <li><a href="#izrocilo">Izročilo</a></li>
+                <li><a href="#kontakt">Kontakt</a></li>
 
             </ul>
         </nav>
 
-        <button
-            class="menu-btn"
-            id="menuBtn"
-            aria-label="Odpri meni"
-        >
+        <button class="menu-btn" id="menuBtn" aria-label="Odpri meni">
             <span></span>
             <span></span>
             <span></span>
@@ -1169,13 +961,7 @@ button {
 
 </header>
 
-
 <main>
-
-
-<!-- =======================================================
-     HERO
-======================================================= -->
 
 <section class="hero" id="domov">
 
@@ -1204,11 +990,6 @@ button {
 
 </section>
 
-
-<!-- =======================================================
-     INTRO
-======================================================= -->
-
 <section class="section intro">
 
     <div class="container">
@@ -1226,7 +1007,6 @@ button {
                 </h2>
 
             </div>
-
 
             <div class="intro-copy reveal">
 
@@ -1253,11 +1033,6 @@ button {
 
 </section>
 
-
-<!-- =======================================================
-     KRAS
-======================================================= -->
-
 <section class="section kras" id="kras">
 
     <div class="container">
@@ -1276,7 +1051,6 @@ button {
                 </h2>
 
             </div>
-
 
             <div class="kras-copy reveal">
 
@@ -1309,11 +1083,6 @@ button {
 
 </section>
 
-
-<!-- =======================================================
-     VINA
-======================================================= -->
-
 <section class="section wines" id="vina">
 
     <div class="container">
@@ -1333,7 +1102,6 @@ button {
 
             </div>
 
-
             <div class="wines-header-copy reveal">
 
                 <p class="section-text">
@@ -1345,7 +1113,6 @@ button {
             </div>
 
         </div>
-
 
         <div class="wine-card reveal">
 
@@ -1392,16 +1159,9 @@ button {
 
 </section>
 
-
-<!-- =======================================================
-     KLET — SCROLL VIDEO
-======================================================= -->
-
 <section class="cellar-scroll" id="klet">
 
     <div class="cellar-sticky">
-
-        <!-- VIDEO VRAT -->
 
         <video
             id="cellarVideo"
@@ -1411,21 +1171,13 @@ button {
             preload="auto"
             aria-label="Odpiranje vrat naše kleti"
         >
-
             <source
                 src="slike/Video%20Project%2016.mp4"
                 type="video/mp4"
             >
-
         </video>
 
-
-        <!-- TEMEN OVERLAY -->
-
         <div class="cellar-dark"></div>
-
-
-        <!-- ZAČETNI NASLOV -->
 
         <div class="cellar-title">
 
@@ -1440,9 +1192,6 @@ button {
 
         </div>
 
-
-        <!-- VSEBINA PO ODPRTJIH VRATIH -->
-
         <div class="cellar-content">
 
             <div class="cellar-photo cellar-photo-one">
@@ -1454,7 +1203,6 @@ button {
                 >
 
             </div>
-
 
             <div class="cellar-text">
 
@@ -1475,7 +1223,6 @@ button {
 
             </div>
 
-
             <div class="cellar-photo cellar-photo-two">
 
                 <img
@@ -1492,11 +1239,6 @@ button {
 
 </section>
 
-
-<!-- =======================================================
-     ZGODBA
-======================================================= -->
-
 <section class="section story" id="zgodba">
 
     <div class="container">
@@ -1510,7 +1252,6 @@ button {
                 Ena zgodba.
 
             </div>
-
 
             <div class="story-copy reveal">
 
@@ -1541,11 +1282,6 @@ button {
 
 </section>
 
-
-<!-- =======================================================
-     IZROČILO
-======================================================= -->
-
 <section class="heritage" id="izrocilo">
 
     <div class="container">
@@ -1574,11 +1310,6 @@ button {
 
 </section>
 
-
-<!-- =======================================================
-     KONTAKT
-======================================================= -->
-
 <section class="section contact" id="kontakt">
 
     <div class="container">
@@ -1599,7 +1330,6 @@ button {
 
             </div>
 
-
             <div class="contact-info reveal">
 
                 <div class="contact-row">
@@ -1614,7 +1344,6 @@ button {
 
                 </div>
 
-
                 <div class="contact-row">
 
                     <span class="contact-label">
@@ -1627,7 +1356,6 @@ button {
                     </div>
 
                 </div>
-
 
                 <div class="contact-row">
 
@@ -1644,11 +1372,10 @@ button {
 
                 </div>
 
-
                 <div class="contact-row">
 
                     <span class="contact-label">
-                        Pokušina
+                        Pokušnina
                     </span>
 
                     <div class="contact-value">
@@ -1665,13 +1392,7 @@ button {
 
 </section>
 
-
 </main>
-
-
-<!-- =======================================================
-     FOOTER
-======================================================= -->
 
 <footer class="footer">
 
@@ -1696,7 +1417,6 @@ button {
     </div>
 
 </footer>
-
 
 <script>
 
@@ -1725,18 +1445,13 @@ const menuBtn = document.getElementById("menuBtn");
 const navLinks = document.getElementById("navLinks");
 
 menuBtn.addEventListener("click", () => {
-
     navLinks.classList.toggle("open");
-
 });
-
 
 document.querySelectorAll(".nav-links a").forEach(link => {
 
     link.addEventListener("click", () => {
-
         navLinks.classList.remove("open");
-
     });
 
 });
@@ -1751,7 +1466,6 @@ const revealElements =
 
 const revealObserver =
     new IntersectionObserver(
-
         entries => {
 
             entries.forEach(entry => {
@@ -1769,23 +1483,18 @@ const revealObserver =
             });
 
         },
-
         {
             threshold: 0.12
         }
-
     );
 
-
 revealElements.forEach(element => {
-
     revealObserver.observe(element);
-
 });
 
 
 /* =========================================================
-   KLET — SCROLL CONTROLLED VIDEO
+   KLET — OPTIMIZIRAN SCROLL VIDEO
 ========================================================= */
 
 const cellarSection =
@@ -1802,28 +1511,21 @@ const cellarContent =
 
 
 let videoReady = false;
-
 let targetProgress = 0;
-
 let currentProgress = 0;
 
+let lastVideoTime = -1;
+let animationRunning = false;
 
-/*
-    Preprečimo normalno predvajanje.
-*/
+
+/* ---------------------------------------------------------
+   VIDEO
+--------------------------------------------------------- */
 
 if (cellarVideo) {
 
     cellarVideo.pause();
-
-}
-
-
-/*
-    Ko brskalnik prebere dolžino videa.
-*/
-
-if (cellarVideo) {
+    cellarVideo.currentTime = 0;
 
     cellarVideo.addEventListener(
         "loadedmetadata",
@@ -1831,42 +1533,38 @@ if (cellarVideo) {
 
             videoReady = true;
 
-            updateCellar();
+            updateCellarTarget();
+
+            startCellarAnimation();
 
         }
     );
-
 }
 
 
-/*
-    Glavna scroll animacija.
-*/
+/* ---------------------------------------------------------
+   IZRAČUN SCROLL POZICIJE
+--------------------------------------------------------- */
 
-function updateCellar() {
+function updateCellarTarget() {
 
     if (!cellarSection) {
         return;
     }
 
-
     const rect =
         cellarSection.getBoundingClientRect();
-
 
     const scrollDistance =
         cellarSection.offsetHeight -
         window.innerHeight;
 
-
     if (scrollDistance <= 0) {
         return;
     }
 
-
     targetProgress =
         -rect.top / scrollDistance;
-
 
     targetProgress =
         Math.max(
@@ -1876,35 +1574,97 @@ function updateCellar() {
                 targetProgress
             )
         );
+}
 
+
+/* ---------------------------------------------------------
+   SCROLL EVENT
+--------------------------------------------------------- */
+
+window.addEventListener(
+    "scroll",
+    () => {
+
+        updateCellarTarget();
+
+        startCellarAnimation();
+
+    },
+    { passive: true }
+);
+
+
+/* ---------------------------------------------------------
+   GLAVNA ANIMACIJA
+--------------------------------------------------------- */
+
+function startCellarAnimation() {
+
+    if (animationRunning) {
+        return;
+    }
+
+    animationRunning = true;
+
+    requestAnimationFrame(
+        renderCellar
+    );
+}
+
+
+function renderCellar() {
 
     /*
-        Gladek premik.
+        Gladko približevanje trenutni
+        scroll poziciji.
     */
 
     currentProgress +=
-        (targetProgress - currentProgress) * 0.10;
+        (targetProgress - currentProgress) * 0.16;
 
 
-    /*
-        Video sledi scrollu.
-    */
+    /* -----------------------------------------------------
+       VIDEO
+    ----------------------------------------------------- */
 
     if (
         videoReady &&
-        cellarVideo.duration
+        cellarVideo &&
+        cellarVideo.duration &&
+        Number.isFinite(cellarVideo.duration)
     ) {
 
-        cellarVideo.currentTime =
+        const targetTime =
             currentProgress *
             cellarVideo.duration;
 
+
+        /*
+            Video se seeka samo, ko je sprememba
+            dovolj velika.
+
+            To močno zmanjša obremenitev brskalnika
+            in prepreči nepotrebno seekanje.
+        */
+
+        if (
+            Math.abs(
+                targetTime - lastVideoTime
+            ) >= 0.04
+        ) {
+
+            cellarVideo.currentTime =
+                targetTime;
+
+            lastVideoTime =
+                targetTime;
+        }
     }
 
 
-    /*
-        Začetni naslov počasi izgine.
-    */
+    /* -----------------------------------------------------
+       NASLOV
+    ----------------------------------------------------- */
 
     if (cellarTitle) {
 
@@ -1914,32 +1674,27 @@ function updateCellar() {
                 currentProgress * 4
             );
 
-
         const opacity =
             1 - titleProgress;
-
 
         const move =
             currentProgress * 50;
 
-
         cellarTitle.style.opacity =
             opacity;
 
-
         cellarTitle.style.transform =
-            `translate(
+            `translate3d(
                 -50%,
-                calc(-50% - ${move}px)
+                calc(-50% - ${move}px),
+                0
             )`;
-
     }
 
 
-    /*
-        Fotografije in tekst pridejo na plano
-        po tem, ko so vrata večinoma odprta.
-    */
+    /* -----------------------------------------------------
+       VSEBINA
+    ----------------------------------------------------- */
 
     if (cellarContent) {
 
@@ -1948,35 +1703,55 @@ function updateCellar() {
                 0,
                 Math.min(
                     1,
-                    (currentProgress - .68) / .32
+                    (currentProgress - 0.68) / 0.32
                 )
             );
-
 
         const opacity =
             contentProgress;
 
-
         const move =
             (1 - contentProgress) * 60;
-
 
         cellarContent.style.opacity =
             opacity;
 
-
         cellarContent.style.transform =
-            `translateY(${move}px)`;
-
+            `translate3d(
+                0,
+                ${move}px,
+                0
+            )`;
     }
 
 
-    requestAnimationFrame(updateCellar);
+    /* -----------------------------------------------------
+       NADALJUJ ANIMACIJO SAMO, ČE JE POTREBNO
+    ----------------------------------------------------- */
 
+    if (
+        Math.abs(
+            targetProgress - currentProgress
+        ) > 0.0005
+    ) {
+
+        requestAnimationFrame(
+            renderCellar
+        );
+
+    } else {
+
+        animationRunning = false;
+    }
 }
 
 
-requestAnimationFrame(updateCellar);
+/* =========================================================
+   ZAČETEK
+========================================================= */
+
+updateCellarTarget();
+startCellarAnimation();
 
 
 /* =========================================================
@@ -1991,16 +1766,21 @@ if (
 
     if (cellarVideo) {
 
-        cellarVideo.currentTime =
-            cellarVideo.duration || 0;
+        cellarVideo.addEventListener(
+            "loadedmetadata",
+            () => {
 
+                cellarVideo.currentTime =
+                    cellarVideo.duration;
+
+            }
+        );
     }
-
 }
 
 
 /* =========================================================
-   PREVENT VIDEO AUTOPLAY
+   PREPREČI NORMALNO PREDVAJANJE
 ========================================================= */
 
 if (cellarVideo) {
@@ -2013,11 +1793,9 @@ if (cellarVideo) {
 
         }
     );
-
 }
 
 </script>
-
 
 </body>
 </html>
