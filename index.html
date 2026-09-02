@@ -1,1838 +1,2023 @@
 <!DOCTYPE html>
 <html lang="sl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Vinarstvo Filipčič — Okus Krasa</title>
-  <meta name="description" content="Vinarstvo Filipčič — kraška zemlja, naša zgodba, naše vino.">
+<title>Vinarstvo Filipčič — Okus Krasa</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<meta
+    name="description"
+    content="Vinarstvo Filipčič — vino iz Krasa, ustvarjeno s tradicijo, časom in spoštovanjem do zemlje."
+>
 
-  <style>
-    :root {
-      --black: #080807;
-      --black2: #11100e;
-      --burgundy: #3a1018;
-      --gold: #c5a46d;
-      --gold-light: #e1c994;
-      --cream: #eee7da;
-      --muted: #a7a095;
-      --line: rgba(197,164,109,.25);
-    }
+<meta name="theme-color" content="#090707">
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    html {
-      scroll-behavior: smooth;
-    }
+<link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+>
 
-    body {
-      background: var(--black);
-      color: var(--cream);
-      font-family: "Inter", sans-serif;
-      overflow-x: hidden;
-    }
+<style>
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+/* =========================================================
+   RESET
+========================================================= */
 
-    button {
-      font-family: inherit;
-    }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    /* NAV */
+html {
+    scroll-behavior: smooth;
+}
 
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 1000;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 25px 5vw;
-      transition: .5s ease;
-    }
+body {
+    background: #090707;
+    color: #f5f1eb;
+    font-family: "Inter", sans-serif;
+    overflow-x: hidden;
+}
 
-    nav.scrolled {
-      background: rgba(8,8,7,.88);
-      backdrop-filter: blur(15px);
-      padding: 17px 5vw;
-      border-bottom: 1px solid var(--line);
-    }
+img,
+video {
+    max-width: 100%;
+}
 
-    .logo {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 25px;
-      letter-spacing: 4px;
-      color: var(--gold-light);
-    }
+a {
+    color: inherit;
+    text-decoration: none;
+}
 
-    .nav-right {
-      display: flex;
-      align-items: center;
-      gap: 35px;
+button {
+    font: inherit;
+}
+
+/* =========================================================
+   VARIABLES
+========================================================= */
+
+:root {
+    --black: #090707;
+    --black-soft: #110d0d;
+    --wine: #351116;
+    --wine-light: #5b1e26;
+    --gold: #c6a36a;
+    --gold-light: #dec28c;
+    --cream: #f5f1eb;
+    --muted: rgba(245, 241, 235, .68);
+    --line: rgba(198, 163, 106, .25);
+}
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+.container {
+    width: min(1200px, 88%);
+    margin: 0 auto;
+}
+
+.section {
+    position: relative;
+    padding: 140px 0;
+}
+
+.eyebrow {
+    display: block;
+    margin-bottom: 20px;
+
+    font-size: 10px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+
+    color: var(--gold);
+}
+
+.section-title {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(55px, 7vw, 105px);
+    font-weight: 400;
+    line-height: .9;
+}
+
+.section-text {
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 90px;
+
+    z-index: 1000;
+
+    display: flex;
+    align-items: center;
+
+    transition:
+        background .4s ease,
+        height .4s ease,
+        border .4s ease;
+}
+
+.nav.scrolled {
+    height: 72px;
+    background: rgba(9, 7, 7, .94);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(198, 163, 106, .15);
+}
+
+.nav-inner {
+    width: min(1400px, 90%);
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-main {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 27px;
+    line-height: 1;
+    letter-spacing: 1px;
+}
+
+.logo-sub {
+    margin-top: 5px;
+
+    font-size: 8px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+
+    color: var(--gold);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 34px;
+
+    list-style: none;
+}
+
+.nav-links a {
+    position: relative;
+
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    color: rgba(255,255,255,.75);
+
+    transition: color .3s ease;
+}
+
+.nav-links a::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+
+    width: 0;
+    height: 1px;
+
+    background: var(--gold);
+
+    transition: width .3s ease;
+}
+
+.nav-links a:hover {
+    color: white;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.menu-btn {
+    display: none;
+
+    width: 40px;
+    height: 40px;
+
+    border: 0;
+    background: transparent;
+
+    cursor: pointer;
+}
+
+.menu-btn span {
+    display: block;
+
+    width: 25px;
+    height: 1px;
+
+    margin: 6px auto;
+
+    background: white;
+
+    transition: .3s ease;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    position: relative;
+
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 45%,
+            rgba(91, 30, 38, .38),
+            transparent 40%
+        ),
+        linear-gradient(
+            135deg,
+            #090707,
+            #1c0b0e 50%,
+            #090707
+        );
+}
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.8),
+            transparent 50%,
+            rgba(0,0,0,.8)
+        );
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+
+    width: min(1000px, 90%);
+
+    text-align: center;
+}
+
+.hero-kicker {
+    margin-bottom: 25px;
+
+    font-size: 10px;
+    letter-spacing: 7px;
+    text-transform: uppercase;
+
+    color: var(--gold);
+}
+
+.hero h1 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(70px, 12vw, 170px);
+    font-weight: 300;
+    line-height: .78;
+
+    letter-spacing: -3px;
+}
+
+.hero h1 span {
+    display: block;
+}
+
+.hero-subtitle {
+    margin-top: 35px;
+
+    font-size: 13px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+
+    color: rgba(255,255,255,.68);
+}
+
+.hero-line {
+    width: 1px;
+    height: 90px;
+
+    margin: 55px auto 0;
+
+    background: linear-gradient(
+        to bottom,
+        var(--gold),
+        transparent
+    );
+}
+
+.hero-scroll {
+    position: absolute;
+
+    bottom: 30px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    font-size: 8px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+
+    color: rgba(255,255,255,.45);
+}
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.intro {
+    min-height: 75vh;
+
+    display: flex;
+    align-items: center;
+
+    background:
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(91,30,38,.18),
+            transparent 35%
+        );
+}
+
+.intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+
+    align-items: center;
+}
+
+.intro-title {
+    max-width: 600px;
+}
+
+.intro-copy {
+    max-width: 480px;
+}
+
+.intro-copy p {
+    margin-bottom: 25px;
+}
+
+/* =========================================================
+   KRAS
+========================================================= */
+
+.kras {
+    background: #0d0909;
+}
+
+.kras-inner {
+    display: grid;
+
+    grid-template-columns:
+        minmax(250px, .8fr)
+        minmax(300px, 1.2fr);
+
+    gap: 120px;
+
+    align-items: center;
+}
+
+.kras-title {
+    position: relative;
+}
+
+.kras-title::before {
+    content: "KRAS";
+
+    position: absolute;
+
+    top: -70px;
+    left: -20px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 150px;
+
+    color: rgba(198,163,106,.035);
+}
+
+.kras-copy {
+    max-width: 560px;
+}
+
+.kras-copy p {
+    margin-bottom: 25px;
+}
+
+.kras-quote {
+    margin-top: 50px;
+    padding-left: 25px;
+
+    border-left: 1px solid var(--gold);
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 32px;
+    line-height: 1.1;
+
+    color: var(--cream);
+}
+
+/* =========================================================
+   VINA
+========================================================= */
+
+.wines {
+    background:
+        linear-gradient(
+            180deg,
+            #0d0909,
+            #12090b
+        );
+}
+
+.wines-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+
+    gap: 50px;
+
+    margin-bottom: 90px;
+}
+
+.wines-header-copy {
+    max-width: 420px;
+}
+
+.wine-card {
+    position: relative;
+
+    min-height: 650px;
+
+    padding: 70px;
+
+    overflow: hidden;
+
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+
+    background:
+        radial-gradient(
+            circle at 75% 30%,
+            rgba(91,30,38,.35),
+            transparent 35%
+        );
+}
+
+.wine-number {
+    position: absolute;
+
+    right: 5%;
+    top: 0;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 280px;
+    line-height: .8;
+
+    color: rgba(255,255,255,.025);
+}
+
+.wine-card-content {
+    position: relative;
+    z-index: 2;
+
+    max-width: 700px;
+}
+
+.wine-card h3 {
+    margin-bottom: 30px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(65px, 9vw, 120px);
+    font-weight: 400;
+}
+
+.wine-card-description {
+    max-width: 650px;
+
+    color: var(--muted);
+
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+.wine-tagline {
+    margin-top: 45px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 30px;
+
+    color: var(--gold-light);
+}
+
+/* =========================================================
+   KLET — SCROLL VIDEO
+========================================================= */
+
+.cellar-scroll {
+    position: relative;
+    height: 400vh;
+
+    background: #070505;
+}
+
+.cellar-sticky {
+    position: sticky;
+    top: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #070505;
+}
+
+.cellar-video {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    height: 100vh;
+    width: auto;
+    max-width: 100vw;
+
+    object-fit: contain;
+
+    z-index: 1;
+
+    background: #070505;
+}
+
+.cellar-dark {
+    position: absolute;
+    inset: 0;
+
+    z-index: 2;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(0,0,0,.48),
+            rgba(0,0,0,.08),
+            rgba(0,0,0,.7)
+        );
+
+    pointer-events: none;
+}
+
+.cellar-title {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 90%;
+
+    text-align: center;
+
+    z-index: 3;
+
+    pointer-events: none;
+}
+
+.cellar-title span {
+    display: block;
+
+    margin-bottom: 20px;
+
+    font-size: 10px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+
+    color: var(--gold);
+}
+
+.cellar-title h2 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(55px, 8vw, 115px);
+    line-height: .85;
+    font-weight: 400;
+}
+
+/* =========================================================
+   KLET CONTENT
+========================================================= */
+
+.cellar-content {
+    position: absolute;
+    inset: 0;
+
+    z-index: 5;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transform: translateY(50px);
+}
+
+.cellar-photo {
+    position: absolute;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.55);
+}
+
+.cellar-photo img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+.cellar-photo-one {
+    width: min(30vw, 450px);
+    height: min(42vw, 620px);
+
+    left: 6%;
+    top: 10%;
+}
+
+.cellar-photo-two {
+    width: min(30vw, 450px);
+    height: min(40vw, 560px);
+
+    right: 6%;
+    bottom: 8%;
+}
+
+.cellar-text {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: min(430px, 34vw);
+
+    text-align: center;
+}
+
+.cellar-text span {
+    display: block;
+
+    margin-bottom: 18px;
+
+    font-size: 9px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+
+    color: var(--gold);
+}
+
+.cellar-text h3 {
+    margin-bottom: 25px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(45px, 5vw, 75px);
+    line-height: .9;
+    font-weight: 400;
+}
+
+.cellar-text p {
+    color: var(--muted);
+
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* =========================================================
+   STORY
+========================================================= */
+
+.story {
+    background: #0c0808;
+}
+
+.story-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 100px;
+
+    align-items: center;
+}
+
+.story-big {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(50px, 6vw, 90px);
+
+    line-height: .92;
+
+    font-weight: 400;
+}
+
+.story-copy {
+    max-width: 500px;
+}
+
+.story-copy p {
+    margin-bottom: 25px;
+}
+
+/* =========================================================
+   IZROČILO
+========================================================= */
+
+.heritage {
+    position: relative;
+
+    padding: 180px 0;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(91,30,38,.25),
+            transparent 60%
+        );
+}
+
+.heritage-content {
+    max-width: 850px;
+    margin: auto;
+}
+
+.heritage h2 {
+    margin-bottom: 35px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(55px, 8vw, 110px);
+
+    line-height: .85;
+
+    font-weight: 400;
+}
+
+.heritage p {
+    max-width: 620px;
+
+    margin: auto;
+
+    color: var(--muted);
+
+    line-height: 1.9;
+}
+
+.heritage-line {
+    width: 100px;
+    height: 1px;
+
+    margin: 55px auto;
+
+    background: var(--gold);
+}
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact {
+    background: #0a0707;
+
+    border-top: 1px solid rgba(198,163,106,.12);
+}
+
+.contact-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 100px;
+}
+
+.contact-title {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(60px, 8vw, 110px);
+
+    line-height: .85;
+
+    font-weight: 400;
+}
+
+.contact-info {
+    align-self: end;
+}
+
+.contact-row {
+    padding: 22px 0;
+
+    border-bottom: 1px solid rgba(255,255,255,.1);
+}
+
+.contact-label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+
+    color: var(--gold);
+}
+
+.contact-value {
+    font-size: 15px;
+
+    color: rgba(255,255,255,.8);
+}
+
+.contact-value:hover {
+    color: white;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer {
+    padding: 35px 0;
+
+    border-top: 1px solid rgba(255,255,255,.07);
+
+    background: #070505;
+}
+
+.footer-inner {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 30px;
+}
+
+.footer p {
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    color: rgba(255,255,255,.35);
+
+    text-transform: uppercase;
+}
+
+.footer-brand {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 22px;
+
+    color: rgba(255,255,255,.65);
+}
+
+/* =========================================================
+   REVEAL ANIMATION
+========================================================= */
+
+.reveal {
+    opacity: 0;
+
+    transform: translateY(40px);
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+/* =========================================================
+   MOBILE NAV
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .nav {
+        height: 75px;
     }
 
     .nav-links {
-      display: flex;
-      gap: 35px;
-      list-style: none;
-      font-size: 11px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
+        position: fixed;
+
+        top: 75px;
+        left: 0;
+
+        width: 100%;
+
+        padding: 40px 30px;
+
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 25px;
+
+        background: rgba(9,7,7,.97);
+
+        transform: translateY(-150%);
+
+        transition: transform .4s ease;
     }
 
-    .nav-links a {
-      opacity: .8;
-      transition: .3s;
+    .nav-links.open {
+        transform: translateY(0);
     }
 
-    .nav-links a:hover {
-      color: var(--gold-light);
-      opacity: 1;
+    .menu-btn {
+        display: block;
     }
 
-    .languages {
-      display: flex;
-      align-items: center;
-      gap: 7px;
-      font-size: 10px;
-      letter-spacing: 2px;
+    .intro-grid,
+    .kras-inner,
+    .story-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+
+        gap: 60px;
     }
 
-    .languages button {
-      background: none;
-      border: none;
-      color: rgba(238,231,218,.55);
-      font-size: 10px;
-      letter-spacing: 2px;
-      cursor: pointer;
-      padding: 3px 0;
-      transition: .3s;
+    .section {
+        padding: 100px 0;
     }
 
-    .languages button:hover,
-    .languages button.active {
-      color: var(--gold-light);
+    .wines-header {
+        display: block;
     }
 
-    .languages span {
-      color: rgba(197,164,109,.35);
-    }
-
-    .menu {
-      display: none;
-      font-size: 25px;
-      cursor: pointer;
-      user-select: none;
-    }
-
-    /* HERO */
-
-    .hero {
-      min-height: 100vh;
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      overflow: hidden;
-
-      background:
-        linear-gradient(rgba(0,0,0,.48), rgba(0,0,0,.78)),
-        url("https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?auto=format&fit=crop&w=2400&q=90")
-        center/cover;
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle, transparent 20%, rgba(0,0,0,.7) 100%);
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 950px;
-      padding: 30px;
-      animation: heroIn 1.7s ease forwards;
-    }
-
-    .eyebrow {
-      color: var(--gold-light);
-      font-size: 11px;
-      letter-spacing: 7px;
-      text-transform: uppercase;
-      margin-bottom: 25px;
-    }
-
-    h1 {
-      font-family: "Cormorant Garamond", serif;
-      font-size: clamp(70px, 11vw, 150px);
-      font-weight: 300;
-      line-height: .8;
-      letter-spacing: -4px;
-    }
-
-    .hero-motto {
-      margin: 35px auto 45px;
-      max-width: 650px;
-      font-family: "Cormorant Garamond", serif;
-      font-size: clamp(20px, 2.5vw, 30px);
-      font-style: italic;
-      color: var(--cream);
-      line-height: 1.3;
-    }
-
-    .gold-line {
-      width: 70px;
-      height: 1px;
-      background: var(--gold);
-      margin: 0 auto 30px;
-    }
-
-    .hero-btn {
-      display: inline-block;
-      border: 1px solid var(--gold);
-      padding: 16px 35px;
-      font-size: 10px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      transition: .4s;
-    }
-
-    .hero-btn:hover {
-      background: var(--gold);
-      color: var(--black);
-    }
-
-    .scroll {
-      position: absolute;
-      bottom: 35px;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 3;
-      font-size: 9px;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-
-    .scroll::after {
-      content: "";
-      display: block;
-      width: 1px;
-      height: 45px;
-      margin: 12px auto 0;
-      background: var(--gold);
-      animation: scrollLine 2s infinite;
-    }
-
-    /* SECTIONS */
-
-    section {
-      position: relative;
-      padding: 130px 7vw;
-    }
-
-    .section-label {
-      color: var(--gold);
-      font-size: 10px;
-      letter-spacing: 5px;
-      text-transform: uppercase;
-      margin-bottom: 20px;
-    }
-
-    .section-title {
-      font-family: "Cormorant Garamond", serif;
-      font-size: clamp(50px, 7vw, 100px);
-      font-weight: 300;
-      line-height: .9;
-      margin-bottom: 35px;
-    }
-
-    .section-text {
-      color: var(--muted);
-      max-width: 550px;
-      line-height: 1.9;
-      font-size: 14px;
-    }
-
-    /* KRAS */
-
-    .kras {
-      min-height: 90vh;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 7vw;
-      align-items: center;
-      background: var(--black2);
-    }
-
-    .kras-image {
-      height: 650px;
-      background:
-        linear-gradient(rgba(0,0,0,.1), rgba(0,0,0,.4)),
-        url("https://images.unsplash.com/photo-1473973266408-ed4e27abdd47?auto=format&fit=crop&w=1400&q=85")
-        center/cover;
-      filter: saturate(.75);
-    }
-
-    /* STORY */
-
-    .story {
-      text-align: center;
-      background:
-        linear-gradient(rgba(8,8,7,.82), rgba(8,8,7,.95)),
-        url("https://images.unsplash.com/photo-1516594915697-87eb3b1c14ea?auto=format&fit=crop&w=2200&q=85")
-        center/cover fixed;
-    }
-
-    .story .section-text {
-      margin: auto;
-      font-family: "Cormorant Garamond", serif;
-      font-size: 25px;
-      color: var(--cream);
-    }
-
-    /* WINES */
-
-    .wines {
-      background: #0c0b09;
-    }
-
-    .wine-layout {
-      display: grid;
-      grid-template-columns: 1fr 1.4fr;
-      gap: 7vw;
-      align-items: center;
-      margin-top: 70px;
+    .wines-header-copy {
+        margin-top: 30px;
     }
 
     .wine-card {
-      min-height: 570px;
-      position: relative;
-      overflow: hidden;
-      display: flex;
-      align-items: flex-end;
-      padding: 35px;
-      border: 1px solid rgba(197,164,109,.12);
-      transition: .6s;
+        min-height: 550px;
+
+        padding: 50px 25px;
     }
 
-    .wine-card:hover {
-      transform: translateY(-10px);
-      border-color: var(--gold);
+    .wine-number {
+        font-size: 180px;
     }
 
-    .wine-card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background-size: cover;
-      background-position: center;
-      transition: .8s;
-      z-index: 0;
+    /* KLET MOBILE */
+
+    .cellar-scroll {
+        height: 330vh;
     }
 
-    .wine-card:hover::before {
-      transform: scale(1.07);
+    .cellar-video {
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
     }
 
-    .teran::before {
-      background:
-        linear-gradient(transparent 20%, rgba(0,0,0,.9)),
-        url("https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1000&q=85")
-        center/cover;
-    }
-
-    .wine-info {
-      position: relative;
-      z-index: 2;
-    }
-
-    .wine-info small {
-      color: var(--gold-light);
-      letter-spacing: 4px;
-      font-size: 9px;
-      text-transform: uppercase;
-    }
-
-    .wine-info h3 {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 55px;
-      font-weight: 400;
-      margin: 5px 0 12px;
-    }
-
-    .wine-info p {
-      color: #c4beb4;
-      font-size: 12px;
-      line-height: 1.7;
-    }
-
-    .teran-description {
-      padding: 20px 0;
-    }
-
-    .teran-description h3 {
-      font-family: "Cormorant Garamond", serif;
-      font-size: clamp(40px, 5vw, 65px);
-      font-weight: 300;
-      line-height: .95;
-      margin-bottom: 30px;
-      color: var(--cream);
-    }
-
-    .teran-description p {
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 2;
-      max-width: 650px;
-      margin-bottom: 25px;
-    }
-
-    .gold-line-left {
-      width: 70px;
-      height: 1px;
-      background: var(--gold);
-      margin-bottom: 30px;
-    }
-
-    /* CELLAR */
-
-    .cellar {
-      padding: 0;
-      min-height: 90vh;
-      display: flex;
-      align-items: center;
-      background:
-        linear-gradient(90deg, rgba(0,0,0,.88), rgba(0,0,0,.25)),
-        url("https://images.unsplash.com/photo-1572567797557-3f6c8b5b8b28?auto=format&fit=crop&w=2200&q=90")
-        center/cover;
+    .cellar-title h2 {
+        font-size: 54px;
     }
 
     .cellar-content {
-      padding: 120px 10vw;
-      max-width: 1000px;
+        display: block;
     }
 
-    .cellar .section-title {
-      font-size: clamp(70px, 9vw, 130px);
+    .cellar-photo-one {
+        width: 43%;
+        height: 31%;
+
+        left: 4%;
+        top: 7%;
     }
 
-    .cellar-draft {
-      margin-top: 55px;
-      padding: 35px 40px;
-      border-left: 1px solid var(--gold);
-      background: rgba(0,0,0,.35);
+    .cellar-photo-two {
+        width: 43%;
+        height: 31%;
+
+        right: 4%;
+        bottom: 7%;
     }
 
-    .cellar-draft-label {
-      color: var(--gold-light);
-      font-size: 10px;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      margin-bottom: 18px;
+    .cellar-text {
+        width: 82%;
     }
 
-    .cellar-draft p {
-      color: #c8c1b8;
-      font-family: "Cormorant Garamond", serif;
-      font-size: 23px;
-      line-height: 1.65;
-      max-width: 750px;
+    .cellar-text h3 {
+        font-size: 45px;
     }
 
-    /* TRADITION */
-
-    .experience {
-      text-align: center;
-      background: var(--burgundy);
+    .cellar-text p {
+        font-size: 12px;
+        line-height: 1.7;
     }
 
-    .tradition-content {
-      max-width: 1000px;
-      margin: 70px auto 0;
-      text-align: left;
+    .heritage {
+        padding: 120px 0;
     }
 
-    .tradition-content p {
-      color: #d0c3bb;
-      font-size: 14px;
-      line-height: 2;
-      margin-bottom: 28px;
+    .footer-inner {
+        flex-direction: column;
+
+        text-align: center;
     }
+}
 
-    .tradition-content strong {
-      color: var(--cream);
-      font-family: "Cormorant Garamond", serif;
-      font-size: 28px;
-      font-weight: 500;
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
     }
-
-    .health-closing {
-      color: var(--gold-light) !important;
-      font-family: "Cormorant Garamond", serif;
-      font-size: 27px !important;
-      margin-top: 50px;
-    }
-
-    .health-final {
-      color: var(--cream) !important;
-      font-family: "Cormorant Garamond", serif;
-      font-size: 30px !important;
-      line-height: 1.5 !important;
-      margin-top: 30px;
-    }
-
-    .health-note {
-      color: var(--gold-light) !important;
-      font-size: 11px !important;
-      line-height: 1.8 !important;
-      padding-top: 25px;
-      border-top: 1px solid var(--line);
-      margin-top: 50px;
-    }
-
-    /* CONTACT */
-
-    .contact {
-      text-align: center;
-      min-height: 80vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      background: #070706;
-    }
-
-    .contact .section-title {
-      max-width: 900px;
-    }
-
-    .contact-details {
-      display: flex;
-      gap: 60px;
-      margin-top: 50px;
-      color: var(--muted);
-      font-size: 12px;
-    }
-
-    .contact-details span {
-      display: block;
-      color: var(--gold);
-      font-size: 9px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      margin-bottom: 8px;
-    }
-
-    /* FOOTER */
-
-    footer {
-      padding: 40px 7vw;
-      border-top: 1px solid var(--line);
-      display: flex;
-      justify-content: space-between;
-      color: #77736d;
-      font-size: 10px;
-      letter-spacing: 1px;
-    }
-
-    footer strong {
-      color: var(--gold);
-      font-weight: 400;
-    }
-
-    /* ANIMATION */
 
     .reveal {
-      opacity: 0;
-      transform: translateY(50px);
-      transition: opacity 1s ease, transform 1s ease;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    @keyframes heroIn {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-
-      to {
         opacity: 1;
-        transform: translateY(0);
-      }
+        transform: none;
+        transition: none;
     }
 
-    @keyframes scrollLine {
-      0%,100% {
-        opacity: .2;
-        transform: scaleY(.5);
-      }
-
-      50% {
+    .cellar-content {
         opacity: 1;
-        transform: scaleY(1);
-      }
+        transform: none;
     }
 
-    /* MOBILE */
-
-    @media (max-width: 800px) {
-
-      nav {
-        padding: 20px;
-      }
-
-      nav.scrolled {
-        padding: 15px 20px;
-      }
-
-      .nav-right {
-        gap: 15px;
-      }
-
-      .nav-links {
-        position: absolute;
-        top: 70px;
-        right: 20px;
-        width: 220px;
-        background: rgba(8,8,7,.97);
-        padding: 25px;
-        flex-direction: column;
-        gap: 20px;
-        display: none;
-        border: 1px solid var(--line);
-      }
-
-      .nav-links.active {
-        display: flex;
-      }
-
-      .menu {
-        display: block;
-      }
-
-      .languages {
-        gap: 5px;
-      }
-
-      section {
-        padding: 90px 6vw;
-      }
-
-      .hero h1 {
-        font-size: 65px;
-        letter-spacing: -2px;
-      }
-
-      .eyebrow {
-        font-size: 9px;
-        letter-spacing: 4px;
-      }
-
-      .hero-motto {
-        font-size: 21px;
-      }
-
-      .kras {
-        grid-template-columns: 1fr;
-      }
-
-      .kras-image {
-        height: 450px;
-        order: -1;
-      }
-
-      .wine-layout {
-        grid-template-columns: 1fr;
-      }
-
-      .wine-card {
-        min-height: 500px;
-      }
-
-      .cellar {
-        min-height: 900px;
-      }
-
-      .cellar-content {
-        padding: 90px 7vw;
-      }
-
-      .cellar-draft {
-        padding: 30px 25px;
-      }
-
-      .cellar-draft p {
-        font-size: 20px;
-      }
-
-      .tradition-content {
-        margin-top: 45px;
-      }
-
-      .tradition-content p {
-        font-size: 13px;
-      }
-
-      .contact-details {
-        flex-direction: column;
-        gap: 25px;
-      }
-
-      footer {
-        flex-direction: column;
-        gap: 15px;
-        text-align: center;
-      }
+    .cellar-title {
+        opacity: 1 !important;
     }
+}
 
-    @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-
-      *,
-      *::before,
-      *::after {
-        animation-duration: .01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: .01ms !important;
-      }
-    }
-  </style>
+</style>
 </head>
+
 
 <body>
 
-  <!-- NAVIGATION -->
 
-  <nav id="navbar">
+<!-- =======================================================
+     NAVIGATION
+======================================================= -->
 
-    <a href="#top" class="logo">FILIPČIČ</a>
+<header class="nav" id="navbar">
 
-    <div class="nav-right">
+    <div class="nav-inner">
 
-      <ul class="nav-links" id="navLinks">
+        <a href="#domov" class="logo">
+            <span class="logo-main">Filipčič</span>
+            <span class="logo-sub">Vinarstvo · Kras</span>
+        </a>
 
-        <li>
-          <a href="#kras" data-i18n="navKras">Kras</a>
-        </li>
+        <nav>
+            <ul class="nav-links" id="navLinks">
 
-        <li>
-          <a href="#zgodba" data-i18n="navStory">Zgodba</a>
-        </li>
+                <li>
+                    <a href="#kras">Kras</a>
+                </li>
 
-        <li>
-          <a href="#vina" data-i18n="navWine">Vina</a>
-        </li>
+                <li>
+                    <a href="#vina">Vina</a>
+                </li>
 
-        <li>
-          <a href="#klet" data-i18n="navCellar">Klet</a>
-        </li>
+                <li>
+                    <a href="#klet">Klet</a>
+                </li>
 
-        <li>
-          <a href="#izrocilo" data-i18n="navTradition">Izročilo</a>
-        </li>
+                <li>
+                    <a href="#zgodba">Zgodba</a>
+                </li>
 
-        <li>
-          <a href="#kontakt" data-i18n="navContact">Kontakt</a>
-        </li>
+                <li>
+                    <a href="#izrocilo">Izročilo</a>
+                </li>
 
-      </ul>
+                <li>
+                    <a href="#kontakt">Kontakt</a>
+                </li>
 
-      <div class="languages">
+            </ul>
+        </nav>
 
-        <button class="active" data-lang="sl">SL</button>
-
-        <span>|</span>
-
-        <button data-lang="en">EN</button>
-
-        <span>|</span>
-
-        <button data-lang="it">IT</button>
-
-      </div>
-
-      <div class="menu" id="menu">☰</div>
-
-    </div>
-
-  </nav>
-
-
-  <!-- HERO -->
-
-  <header class="hero" id="top">
-
-    <div class="hero-content">
-
-      <div class="eyebrow" data-i18n="eyebrow">
-        Vinarstvo Filipčič · Kras · Slovenija
-      </div>
-
-      <h1>FILIPČIČ</h1>
-
-      <div class="gold-line"></div>
-
-      <p class="hero-motto" data-i18n="motto">
-        »Bog živi gospodarja,<br>
-        ki da piti brez denarja.«
-      </p>
-
-      <a href="#zgodba" class="hero-btn" data-i18n="heroButton">
-        Spoznajte našo zgodbo
-      </a>
+        <button
+            class="menu-btn"
+            id="menuBtn"
+            aria-label="Odpri meni"
+        >
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
 
     </div>
 
-    <div class="scroll" data-i18n="scroll">
-      Scroll
-    </div>
-
-  </header>
+</header>
 
 
-  <!-- KRAS -->
-
-  <section class="kras" id="kras">
-
-    <div class="kras-image reveal"></div>
-
-    <div class="reveal">
-
-      <div class="section-label" data-i18n="krasLabel">
-        01 · Kraj
-      </div>
-
-      <h2 class="section-title" data-i18n="krasTitle">
-        Kjer kamen<br>
-        sreča trto.
-      </h2>
-
-      <p class="section-text" data-i18n="krasText">
-        Kras ni samo prostor. Je karakter.
-        Kamen, burja, rdeča zemlja in sonce
-        ustvarjajo okolje, ki daje vinu svojo
-        posebno identiteto.
-      </p>
-
-    </div>
-
-  </section>
+<main>
 
 
-  <!-- STORY -->
+<!-- =======================================================
+     HERO
+======================================================= -->
 
-  <section class="story" id="zgodba">
+<section class="hero" id="domov">
 
-    <div class="reveal">
+    <div class="hero-content reveal">
 
-      <div class="section-label" data-i18n="storyLabel">
-        02 · Naša zgodba
-      </div>
-
-      <h2 class="section-title" data-i18n="storyTitle">
-        Vino je<br>
-        čas.
-      </h2>
-
-      <p class="section-text" data-i18n="storyText">
-        V Vinarstvu Filipčič spoštujemo tisto,
-        kar je bilo ustvarjeno pred nami,
-        in ustvarjamo nekaj, kar bo ostalo za nami.
-      </p>
-
-    </div>
-
-  </section>
-
-
-  <!-- WINES -->
-
-  <section class="wines" id="vina">
-
-    <div class="reveal">
-
-      <div class="section-label" data-i18n="wineLabel">
-        03 · Naša vina
-      </div>
-
-      <h2 class="section-title" data-i18n="wineTitle">
-        Iz naše zemlje.<br>
-        V našo klet.
-      </h2>
-
-      <p class="section-text" data-i18n="wineIntro">
-        Vsako vino ima svoj karakter.
-        Vsako leto svojo zgodbo.
-      </p>
-
-    </div>
-
-    <div class="wine-layout">
-
-      <article class="wine-card teran reveal">
-
-        <div class="wine-info">
-
-          <small data-i18n="teranSmall">
-            Kraška klasika
-          </small>
-
-          <h3>Teran</h3>
-
-          <p data-i18n="teranText">
-            Globok. Kraški. Samosvoj.
-          </p>
-
+        <div class="hero-kicker">
+            Vinarstvo Filipčič
         </div>
 
-      </article>
+        <h1>
+            <span>Okus</span>
+            <span>Krasa.</span>
+        </h1>
 
-
-      <div class="teran-description reveal">
-
-        <div class="section-label" data-i18n="teranDescriptionLabel">
-          Teran
-        </div>
-
-        <h3 data-i18n="teranDescriptionTitle">
-          Vino, ki nosi<br>
-          karakter Krasa.
-        </h3>
-
-        <div class="gold-line-left"></div>
-
-        <p data-i18n="teranDescriptionText1">
-          Teran je vino, ki je tesno povezano s kraško zemljo.
-          Njegova globoka rubinasto rdeča barva, izrazita svežina
-          in prepoznaven karakter so del njegove identitete.
+        <p class="hero-subtitle">
+            Brestovica pri Komnu · Kras
         </p>
 
-        <p data-i18n="teranDescriptionText2">
-          V njem se prepletajo značilnosti okolja, v katerem
-          nastaja – rdeča kraška zemlja, kamen, burja in sonce.
-          Vsak letnik pa doda svojo zgodbo in svoj karakter.
-        </p>
-
-        <p data-i18n="teranDescriptionText3">
-          Naš Teran želimo predstaviti takšnega, kot ga poznamo
-          mi – kraškega, pristnega in povezanega z domačo zemljo
-          ter tradicijo.
-        </p>
-
-      </div>
+        <div class="hero-line"></div>
 
     </div>
 
-  </section>
+    <div class="hero-scroll">
+        Pomakni se navzdol
+    </div>
+
+</section>
 
 
-  <!-- CELLAR -->
+<!-- =======================================================
+     INTRO
+======================================================= -->
 
-  <section class="cellar" id="klet">
+<section class="section intro">
 
-    <div class="cellar-content reveal">
+    <div class="container">
 
-      <div class="section-label" data-i18n="cellarLabel">
-        04 · Naša klet
-      </div>
+        <div class="intro-grid">
 
-      <h2 class="section-title" data-i18n="cellarTitle">
-        Klet, kjer<br>
-        se zgodba nadaljuje.
-      </h2>
+            <div class="intro-title reveal">
 
-      <div class="cellar-draft">
+                <span class="eyebrow">
+                    Naša vina
+                </span>
 
-        <div class="cellar-draft-label" data-i18n="cellarDraftLabel">
-          OSNUTEK ZGODBE KLETI
+                <h2 class="section-title">
+                    Vina, ki nosijo značaj Krasa.
+                </h2>
+
+            </div>
+
+
+            <div class="intro-copy reveal">
+
+                <p class="section-text">
+                    Vsaka steklenica je izraz kraške zemlje,
+                    časa in dela, ki stoji za njo.
+                </p>
+
+                <p class="section-text">
+                    V naši kleti nastajajo vina, ki spoštujejo
+                    tradicijo in hkrati govorijo s svojim
+                    značajem.
+                </p>
+
+                <p class="section-text">
+                    Iz Krasa. Iz naše kleti. V vaš kozarec.
+                </p>
+
+            </div>
+
         </div>
 
-        <p data-i18n="cellarDraftText">
-          Na tem mestu bomo napisali zgodbo naše kleti –
-          od njenih začetkov, prvih vinogradov in ljudi,
-          ki so jo ustvarjali, do današnje generacije.
-          Tukaj bomo skupaj dopolnili zgodovino družine,
-          kleti, vinogradov, način dela, stare običaje
-          in vse zgodbe, ki so se skozi leta prenašale
-          iz roda v rod.
-        </p>
+    </div>
 
-      </div>
+</section>
+
+
+<!-- =======================================================
+     KRAS
+======================================================= -->
+
+<section class="section kras" id="kras">
+
+    <div class="container">
+
+        <div class="kras-inner">
+
+            <div class="kras-title reveal">
+
+                <span class="eyebrow">
+                    Kraj
+                </span>
+
+                <h2 class="section-title">
+                    Kjer kamen<br>
+                    sreča trto.
+                </h2>
+
+            </div>
+
+
+            <div class="kras-copy reveal">
+
+                <p class="section-text">
+                    Kras ni kraj, ki bi se razkril na prvi pogled.
+                    Je pokrajina kamna, rdeče zemlje in odprtega
+                    neba.
+                </p>
+
+                <p class="section-text">
+                    Kjer burja oblikuje pokrajino, sonce dozoreva
+                    grozdje, človek pa se že stoletja uči živeti
+                    z zemljo.
+                </p>
+
+                <p class="section-text">
+                    Tu nič ne pride zlahka. Prav zato ima vse
+                    svoj značaj.
+                </p>
+
+                <div class="kras-quote">
+                    Surov. Pristen. Neponovljiv.
+                </div>
+
+            </div>
+
+        </div>
 
     </div>
 
-  </section>
+</section>
 
 
-  <!-- TRADITION -->
+<!-- =======================================================
+     VINA
+======================================================= -->
 
-  <section class="experience" id="izrocilo">
+<section class="section wines" id="vina">
 
-    <div class="reveal">
+    <div class="container">
 
-      <div class="section-label" data-i18n="traditionLabel">
-        05 · Izročilo
-      </div>
+        <div class="wines-header">
 
-      <h2 class="section-title" data-i18n="traditionTitle">
-        Iz roda v rod
-      </h2>
+            <div class="reveal">
 
-    </div>
+                <span class="eyebrow">
+                    Naša vina
+                </span>
 
+                <h2 class="section-title">
+                    Izraz<br>
+                    značaja.
+                </h2>
 
-    <div class="tradition-content reveal">
-
-      <p data-i18n="traditionText1">
-        Na Krasu ima Teran posebno mesto. Ni le vino,
-        temveč del življenja, ki je skozi generacije
-        povezoval človeka, zemljo in dom.
-      </p>
+            </div>
 
 
-      <p data-i18n="traditionText2">
-        Od nekdaj so ljudje poznali moč kraške zemlje
-        in verjeli, da se ta moč odraža tudi v vinu.
-        Teranu so pripisovali različne blagodejne lastnosti
-        in ga povezovali z dobrim počutjem.
-        Med kraškimi pripovedmi se je skozi čas ohranila
-        tudi misel, da je »Teran dober za kri«.
-      </p>
+            <div class="wines-header-copy reveal">
 
+                <p class="section-text">
+                    Vino, ki ne potrebuje pretiranih besed.
+                    Prepoznaven značaj in jasna identiteta
+                    v vsakem kozarcu.
+                </p>
 
-      <p data-i18n="traditionText3">
-        Te zgodbe so del izročila, ki se je prenašalo
-        iz roda v rod – ob delu v vinogradu,
-        ob domači mizi in v kleti, kjer je vino
-        zorelo iz leta v leto.
-      </p>
+            </div>
 
-
-      <p>
-        <strong data-i18n="traditionTeranTitle">
-          Teran
-        </strong>
-      </p>
-
-
-      <p data-i18n="traditionText4">
-        Teran nosi značaj svojega kraja. Rdeča kraška
-        zemlja, kamen, burja in sonce ustvarjajo pogoje,
-        v katerih nastaja vino z izrazitim karakterjem.
-      </p>
-
-
-      <p data-i18n="traditionText5">
-        Prav zaradi svoje posebnosti je Teran skozi zgodovino
-        postal eden od prepoznavnih simbolov Krasa.
-        Z njim so povezane številne zgodbe o življenju
-        na kraški zemlji, o delu naših prednikov in o odnosu
-        do vina, ki ni bilo nikoli samo pijača,
-        temveč del doma in vsakdana.
-      </p>
-
-
-      <p>
-        <strong data-i18n="traditionTodayTitle">
-          Od nekdaj do danes
-        </strong>
-      </p>
-
-
-      <p data-i18n="traditionText6">
-        Danes na Teran gledamo z novim znanjem,
-        vendar stare zgodbe ostajajo del njegove identitete.
-      </p>
-
-
-      <p data-i18n="traditionText7">
-        Spoštujemo tisto, kar so nam pripovedovali naši
-        predniki, hkrati pa želimo bolje razumeti tudi to,
-        kar o Teranu in njegovih naravnih sestavinah
-        vemo danes.
-      </p>
-
-
-      <p class="health-closing" data-i18n="healthClosing">
-        Ker vino ni samo tisto, kar natočimo v kozarec.
-      </p>
-
-
-      <p class="health-final" data-i18n="healthFinal">
-        <strong>
-          Je tisto, kar so ustvarjale prejšnje generacije,<br>
-          kar ustvarjamo danes<br>
-          in kar bomo predali prihodnjim generacijam.
-        </strong>
-      </p>
-
-
-      <p class="health-final" data-i18n="healthFinal2">
-        <strong>
-          Kras v zemlji.<br>
-          Zgodba v vinu.<br>
-          Iz roda v rod.
-        </strong>
-      </p>
-
-
-      <p class="health-note" data-i18n="healthNote">
-        OPOMBA: Zdravstvene trditve bomo pred objavo preverili
-        glede na zanesljive znanstvene vire in veljavna pravila
-        za oglaševanje živil in alkoholnih pijač.
-      </p>
-
-    </div>
-
-  </section>
-
-
-  <!-- CONTACT -->
-
-  <section class="contact" id="kontakt">
-
-    <div class="reveal">
-
-      <div class="section-label" data-i18n="contactLabel">
-        06 · Obiščite nas
-      </div>
-
-      <h2 class="section-title" data-i18n="contactTitle">
-        Vrata naše<br>
-        kleti so odprta.
-      </h2>
-
-      <a
-        href="mailto:info@vinarstvo-filipcic.si"
-        class="hero-btn"
-        data-i18n="contactButton"
-      >
-        Kontaktirajte nas
-      </a>
-
-
-      <div class="contact-details">
-
-        <div>
-          <span data-i18n="locationLabel">
-            Lokacija
-          </span>
-          Brestovica pri Komnu
         </div>
 
 
-        <div>
-          <span data-i18n="phoneLabel">
-            Telefon
-          </span>
-          +386 XX XXX XX XX
+        <div class="wine-card reveal">
+
+            <div class="wine-number">
+                01
+            </div>
+
+            <div class="wine-card-content">
+
+                <span class="eyebrow">
+                    Kraška posebnost
+                </span>
+
+                <h3>
+                    Teran
+                </h3>
+
+                <p class="wine-card-description">
+                    Teran je vino izrazitega značaja, ki svojo
+                    prepoznavnost gradi na ravnovesju med močjo,
+                    svežino in sadnostjo. Njegova globoka rdeča
+                    barva je rezultat nežnega izvlečka barvil iz
+                    kožic grozdnih jagod, ki že na pogled napovejo
+                    njegovo intenzivnost.
+                </p>
+
+                <p class="wine-card-description" style="margin-top:20px;">
+                    V ustih je živahen in poln, z izrazito svežino,
+                    ki lepo uravnoteži njegovo strukturo. Sadne
+                    note se prepletajo z značilno svežino in
+                    ustvarjajo dolg, čist ter eleganten zaključek.
+                </p>
+
+                <div class="wine-tagline">
+                    Samosvoj po značaju.<br>
+                    Prepoznaven po okusu.
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =======================================================
+     KLET — SCROLL VIDEO
+======================================================= -->
+
+<section class="cellar-scroll" id="klet">
+
+    <div class="cellar-sticky">
+
+        <!-- VIDEO VRAT -->
+
+        <video
+            id="cellarVideo"
+            class="cellar-video"
+            muted
+            playsinline
+            preload="auto"
+            aria-label="Odpiranje vrat naše kleti"
+        >
+
+            <source
+                src="slike/Video%20Project%2016.mp4"
+                type="video/mp4"
+            >
+
+        </video>
+
+
+        <!-- TEMEN OVERLAY -->
+
+        <div class="cellar-dark"></div>
+
+
+        <!-- ZAČETNI NASLOV -->
+
+        <div class="cellar-title">
+
+            <span>
+                Naša klet
+            </span>
+
+            <h2>
+                Vstopite<br>
+                v našo klet.
+            </h2>
+
         </div>
 
 
-        <div>
-          <span data-i18n="emailLabel">
-            E-pošta
-          </span>
-          info@vinarstvo-filipcic.si
+        <!-- VSEBINA PO ODPRTJIH VRATIH -->
+
+        <div class="cellar-content">
+
+            <div class="cellar-photo cellar-photo-one">
+
+                <img
+                    src="slike/klettrta.jpg"
+                    alt="Trta v naši kleti"
+                    loading="eager"
+                >
+
+            </div>
+
+
+            <div class="cellar-text">
+
+                <span>
+                    Vinarstvo Filipčič
+                </span>
+
+                <h3>
+                    Kjer vino<br>
+                    dobiva svoj značaj.
+                </h3>
+
+                <p>
+                    V naši kleti se tradicija sreča s časom.
+                    Tukaj vino dozoreva počasi, brez hitenja,
+                    dokler ne doseže svojega pravega značaja.
+                </p>
+
+            </div>
+
+
+            <div class="cellar-photo cellar-photo-two">
+
+                <img
+                    src="slike/slika_glinagrozdje.jpg"
+                    alt="Grozdje v glineni posodi"
+                    loading="eager"
+                >
+
+            </div>
+
         </div>
 
-      </div>
+    </div>
+
+</section>
+
+
+<!-- =======================================================
+     ZGODBA
+======================================================= -->
+
+<section class="section story" id="zgodba">
+
+    <div class="container">
+
+        <div class="story-grid">
+
+            <div class="story-big reveal">
+
+                Ena družina.<br>
+                Ena klet.<br>
+                Ena zgodba.
+
+            </div>
+
+
+            <div class="story-copy reveal">
+
+                <span class="eyebrow">
+                    Naša zgodba
+                </span>
+
+                <p class="section-text">
+                    Vinarstvo Filipčič je povezano s krajem,
+                    v katerem živimo in ustvarjamo.
+                </p>
+
+                <p class="section-text">
+                    Vino pri nas ni samo izdelek. Je del doma,
+                    družine in načina življenja.
+                </p>
+
+                <p class="section-text">
+                    Znanje se prenaša iz roda v rod, vsaka
+                    generacija pa v zgodbo doda nekaj svojega.
+                </p>
+
+            </div>
+
+        </div>
 
     </div>
 
-  </section>
+</section>
 
 
-  <!-- FOOTER -->
+<!-- =======================================================
+     IZROČILO
+======================================================= -->
 
-  <footer>
+<section class="heritage" id="izrocilo">
 
-    <div>
-      © 2026 <strong>VINARSTVO FILIPČIČ</strong>
+    <div class="container">
+
+        <div class="heritage-content reveal">
+
+            <span class="eyebrow">
+                Izročilo
+            </span>
+
+            <h2>
+                Čas ne ustvarja<br>
+                samo vina.
+            </h2>
+
+            <div class="heritage-line"></div>
+
+            <p class="section-text">
+                Ustvarja spomin. Ustvarja značaj. Ustvarja zgodbo,
+                ki jo lahko nato delimo z drugimi.
+            </p>
+
+        </div>
+
     </div>
 
-    <div data-i18n="footerLocation">
-      KRAS · SLOVENIJA
+</section>
+
+
+<!-- =======================================================
+     KONTAKT
+======================================================= -->
+
+<section class="section contact" id="kontakt">
+
+    <div class="container">
+
+        <div class="contact-grid">
+
+            <div class="reveal">
+
+                <span class="eyebrow">
+                    Kontakt
+                </span>
+
+                <h2 class="contact-title">
+                    Pridite.<br>
+                    Poskusite.<br>
+                    Spoznajte Kras.
+                </h2>
+
+            </div>
+
+
+            <div class="contact-info reveal">
+
+                <div class="contact-row">
+
+                    <span class="contact-label">
+                        Vinarstvo
+                    </span>
+
+                    <div class="contact-value">
+                        Vinarstvo Filipčič
+                    </div>
+
+                </div>
+
+
+                <div class="contact-row">
+
+                    <span class="contact-label">
+                        Lokacija
+                    </span>
+
+                    <div class="contact-value">
+                        Brestovica pri Komnu<br>
+                        Kras, Slovenija
+                    </div>
+
+                </div>
+
+
+                <div class="contact-row">
+
+                    <span class="contact-label">
+                        E-pošta
+                    </span>
+
+                    <a
+                        class="contact-value"
+                        href="mailto:info@vinarstvofilipcic.si"
+                    >
+                        info@vinarstvofilipcic.si
+                    </a>
+
+                </div>
+
+
+                <div class="contact-row">
+
+                    <span class="contact-label">
+                        Pokušina
+                    </span>
+
+                    <div class="contact-value">
+                        Za obisk kleti nas predhodno kontaktirajte.
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
     </div>
 
-  </footer>
+</section>
 
 
-  <script>
+</main>
 
-    /* =========================
-       TRANSLATIONS
-    ========================= */
 
-    const translations = {
+<!-- =======================================================
+     FOOTER
+======================================================= -->
 
-      sl: {
+<footer class="footer">
 
-        navKras: "Kras",
-        navStory: "Zgodba",
-        navWine: "Vina",
-        navCellar: "Klet",
-        navTradition: "Izročilo",
-        navContact: "Kontakt",
+    <div class="container">
 
-        eyebrow: "Vinarstvo Filipčič · Kras · Slovenija",
+        <div class="footer-inner">
 
-        motto:
-          "»Bog blagoslovi gospodarja,<br>ki da piti brez denarja.«",
+            <div class="footer-brand">
+                Vinarstvo Filipčič
+            </div>
 
-        heroButton:
-          "Spoznajte našo zgodbo",
+            <p>
+                Okus Krasa
+            </p>
 
-        scroll:
-          "Scroll",
+            <p>
+                © 2026 Vinarstvo Filipčič
+            </p>
 
-        krasLabel:
-          "01 · Kraj",
+        </div>
 
-        krasTitle:
-          "Kjer kamen<br>sreča trto.",
+    </div>
 
-        krasText:
-          "Kras ni samo prostor. Je karakter. Kamen, burja, rdeča zemlja in sonce ustvarjajo okolje, ki daje vinu svojo posebno identiteto.",
+</footer>
 
-        storyLabel:
-          "02 · Naša zgodba",
 
-        storyTitle:
-          "Vino je<br>čas.",
+<script>
 
-        storyText:
-          "V Vinarstvu Filipčič spoštujemo tisto, kar je bilo ustvarjeno pred nami, in ustvarjamo nekaj, kar bo ostalo za nami.",
+/* =========================================================
+   NAVBAR
+========================================================= */
 
-        wineLabel:
-          "03 · Naša vina",
+const navbar = document.getElementById("navbar");
 
-        wineTitle:
-          "Iz naše zemlje.<br>V našo klet.",
+window.addEventListener("scroll", () => {
 
-        wineIntro:
-          "Vsako vino ima svoj karakter. Vsako leto svojo zgodbo.",
-
-        teranSmall:
-          "Kraška klasika",
-
-        teranText:
-          "Globok. Kraški. Samosvoj.",
-
-        teranDescriptionLabel:
-          "Teran",
-
-        teranDescriptionTitle:
-          "Vino, ki nosi<br>karakter Krasa.",
-
-        teranDescriptionText1:
-          "Teran je vino, ki je tesno povezano s kraško zemljo. Njegova globoka rubinasto rdeča barva, izrazita svežina in prepoznaven karakter so del njegove identitete.",
-
-        teranDescriptionText2:
-          "V njem se prepletajo značilnosti okolja, v katerem nastaja – rdeča kraška zemlja, kamen, burja in sonce. Vsak letnik pa doda svojo zgodbo in svoj karakter.",
-
-        teranDescriptionText3:
-          "Naš Teran želimo predstaviti takšnega, kot ga poznamo mi – kraškega, pristnega in povezanega z domačo zemljo ter tradicijo.",
-
-        cellarLabel:
-          "04 · Naša klet",
-
-        cellarTitle:
-          "Klet, kjer<br>se zgodba nadaljuje.",
-
-        cellarDraftLabel:
-          "OSNUTEK ZGODBE KLETI",
-
-        cellarDraftText:
-          "Na tem mestu bomo napisali zgodbo naše kleti – od njenih začetkov, prvih vinogradov in ljudi, ki so jo ustvarjali, do današnje generacije. Tukaj bomo skupaj dopolnili zgodovino družine, kleti, vinogradov, način dela, stare običaje in vse zgodbe, ki so se skozi leta prenašale iz roda v rod.",
-
-        traditionLabel:
-          "05 · Izročilo",
-
-        traditionTitle:
-          "Iz roda v rod",
-
-        traditionText1:
-          "Na Krasu ima Teran posebno mesto. Ni le vino, temveč del življenja, ki je skozi generacije povezoval človeka, zemljo in dom.",
-
-        traditionText2:
-          "Od nekdaj so ljudje poznali moč kraške zemlje in verjeli, da se ta moč odraža tudi v vinu. Teranu so pripisovali različne blagodejne lastnosti in ga povezovali z dobrim počutjem. Med kraškimi pripovedmi se je skozi čas ohranila tudi misel, da je »Teran dober za kri«.",
-
-        traditionText3:
-          "Te zgodbe so del izročila, ki se je prenašalo iz roda v rod – ob delu v vinogradu, ob domači mizi in v kleti, kjer je vino zorelo iz leta v leto.",
-
-        traditionTeranTitle:
-          "Teran",
-
-        traditionText4:
-          "Teran nosi značaj svojega kraja. Rdeča kraška zemlja, kamen, burja in sonce ustvarjajo pogoje, v katerih nastaja vino z izrazitim karakterjem.",
-
-        traditionText5:
-          "Prav zaradi svoje posebnosti je Teran skozi zgodovino postal eden od prepoznavnih simbolov Krasa. Z njim so povezane številne zgodbe o življenju na kraški zemlji, o delu naših prednikov in o odnosu do vina, ki ni bilo nikoli samo pijača, temveč del doma in vsakdana.",
-
-        traditionTodayTitle:
-          "Od nekdaj do danes",
-
-        traditionText6:
-          "Danes na Teran gledamo z novim znanjem, vendar stare zgodbe ostajajo del njegove identitete.",
-
-        traditionText7:
-          "Spoštujemo tisto, kar so nam pripovedovali naši predniki, hkrati pa želimo bolje razumeti tudi to, kar o Teranu in njegovih naravnih sestavinah vemo danes.",
-
-        healthClosing:
-          "Ker vino ni samo tisto, kar natočimo v kozarec.",
-
-        healthFinal:
-          "<strong>Je tisto, kar so ustvarjale prejšnje generacije,<br>kar ustvarjamo danes<br>in kar bomo predali prihodnjim generacijam.</strong>",
-
-        healthFinal2:
-          "<strong>Kras v zemlji.<br>Zgodba v vinu.<br>Iz roda v rod.</strong>",
-
-        healthNote:
-          "OPOMBA: Zdravstvene trditve bomo pred objavo preverili glede na zanesljive znanstvene vire in veljavna pravila za oglaševanje živil in alkoholnih pijač.",
-
-        contactLabel:
-          "06 · Obiščite nas",
-
-        contactTitle:
-          "Vrata naše<br>kleti so odprta.",
-
-        contactButton:
-          "Kontaktirajte nas",
-
-        locationLabel:
-          "Lokacija",
-
-        phoneLabel:
-          "Telefon",
-
-        emailLabel:
-          "E-pošta",
-
-        footerLocation:
-          "KRAS · SLOVENIJA"
-      },
-
-
-      en: {
-
-        navKras:
-          "Karst",
-
-        navStory:
-          "Story",
-
-        navWine:
-          "Wines",
-
-        navCellar:
-          "Cellar",
-
-        navTradition:
-          "Tradition",
-
-        navContact:
-          "Contact",
-
-        eyebrow:
-          "Filipčič Winery · Karst · Slovenia",
-
-        motto:
-          "“God bless the host,<br>who gives a drink without charge.”",
-
-        heroButton:
-          "Discover our story",
-
-        scroll:
-          "Scroll",
-
-        krasLabel:
-          "01 · Place",
-
-        krasTitle:
-          "Where stone<br>meets the vine.",
-
-        krasText:
-          "The Karst is more than a place. It is character. Stone, the bora wind, red soil and sunlight create an environment that gives the wine its distinctive identity.",
-
-        storyLabel:
-          "02 · Our story",
-
-        storyTitle:
-          "Wine is<br>time.",
-
-        storyText:
-          "At Filipčič Winery, we respect what was created before us and create something that will remain after us.",
-
-        wineLabel:
-          "03 · Our wines",
-
-        wineTitle:
-          "From our land.<br>To our cellar.",
-
-        wineIntro:
-          "Every wine has its own character. Every year its own story.",
-
-        teranSmall:
-          "A Karst classic",
-
-        teranText:
-          "Deep. Karst. Distinctive.",
-
-        teranDescriptionLabel:
-          "Teran",
-
-        teranDescriptionTitle:
-          "A wine carrying<br>the character of the Karst.",
-
-        teranDescriptionText1:
-          "Teran is a wine closely connected to the Karst soil. Its deep ruby-red colour, distinctive freshness and recognizable character are part of its identity.",
-
-        teranDescriptionText2:
-          "It reflects the environment in which it is created – red Karst soil, stone, the bora wind and sunlight. Every vintage adds its own story and its own character.",
-
-        teranDescriptionText3:
-          "We want to present our Teran as we know it – authentic, shaped by the Karst and connected to our land and tradition.",
-
-        cellarLabel:
-          "04 · Our cellar",
-
-        cellarTitle:
-          "A cellar where<br>the story continues.",
-
-        cellarDraftLabel:
-          "DRAFT OF THE CELLAR STORY",
-
-        cellarDraftText:
-          "This is where we will write the story of our cellar – from its beginnings, the first vineyards and the people who created it, to today's generation. Here we will add the history of the family, cellar and vineyards, our way of working, old customs and all the stories that have been passed down from generation to generation.",
-
-        traditionLabel:
-          "05 · Tradition",
-
-        traditionTitle:
-          "From generation<br>to generation.",
-
-        traditionText1:
-          "Teran holds a special place in the Karst. It is not merely a wine, but a part of life that has connected people, the land and the home for generations.",
-
-        traditionText2:
-          "For generations, people have recognized the strength of the Karst soil and believed that this strength was also reflected in the wine. Teran has traditionally been associated with various beneficial properties and with well-being. Among the stories of the Karst, the belief that “Teran is good for the blood” has also been passed down through the years.",
-
-        traditionText3:
-          "These stories are part of a tradition passed down from generation to generation – through work in the vineyards, around the family table and in the cellar, where the wine matured year after year.",
-
-        traditionTeranTitle:
-          "Teran",
-
-        traditionText4:
-          "Teran carries the character of its homeland. Red Karst soil, stone, the bora wind and sunlight create the conditions in which a wine with distinctive character is born.",
-
-        traditionText5:
-          "Because of its uniqueness, Teran has become one of the recognizable symbols of the Karst throughout history. It carries countless stories about life on the Karst land, the work of our ancestors and an attitude towards wine that was never simply about a drink, but a part of home and everyday life.",
-
-        traditionTodayTitle:
-          "From then to today",
-
-        traditionText6:
-          "Today we look at Teran with new knowledge, while the old stories remain part of its identity.",
-
-        traditionText7:
-          "We respect what our ancestors told us, while also seeking to better understand what we know today about Teran and its natural components.",
-
-        healthClosing:
-          "Because wine is not only what we pour into a glass.",
-
-        healthFinal:
-          "<strong>It is what previous generations created,<br>what we create today<br>and what we will pass on to future generations.</strong>",
-
-        healthFinal2:
-          "<strong>Karst in the soil.<br>A story in the wine.<br>From generation to generation.</strong>",
-
-        healthNote:
-          "NOTE: Health-related claims will be reviewed before publication against reliable scientific sources and applicable rules for the advertising of food and alcoholic beverages.",
-
-        contactLabel:
-          "06 · Visit us",
-
-        contactTitle:
-          "The doors to our<br>cellar are open.",
-
-        contactButton:
-          "Contact us",
-
-        locationLabel:
-          "Location",
-
-        phoneLabel:
-          "Phone",
-
-        emailLabel:
-          "Email",
-
-        footerLocation:
-          "KARST · SLOVENIA"
-      },
-
-
-      it: {
-
-        navKras:
-          "Carso",
-
-        navStory:
-          "Storia",
-
-        navWine:
-          "Vini",
-
-        navCellar:
-          "Cantina",
-
-        navTradition:
-          "Tradizione",
-
-        navContact:
-          "Contatti",
-
-        eyebrow:
-          "Cantina Filipčič · Carso · Slovenia",
-
-        motto:
-          "«Dio benedica il padrone,<br>che offre da bere senza denaro.»",
-
-        heroButton:
-          "Scopri la nostra storia",
-
-        scroll:
-          "Scorri",
-
-        krasLabel:
-          "01 · Luogo",
-
-        krasTitle:
-          "Dove la pietra<br>incontra la vite.",
-
-        krasText:
-          "Il Carso non è solo un luogo. È carattere. Pietra, bora, terra rossa e sole creano un ambiente che dona al vino la sua identità distintiva.",
-
-        storyLabel:
-          "02 · La nostra storia",
-
-        storyTitle:
-          "Il vino è<br>tempo.",
-
-        storyText:
-          "Alla Cantina Filipčič rispettiamo ciò che è stato creato prima di noi e creiamo qualcosa che rimarrà dopo di noi.",
-
-        wineLabel:
-          "03 · I nostri vini",
-
-        wineTitle:
-          "Dalla nostra terra.<br>Alla nostra cantina.",
-
-        wineIntro:
-          "Ogni vino ha il suo carattere. Ogni annata la sua storia.",
-
-        teranSmall:
-          "Un classico del Carso",
-
-        teranText:
-          "Profondo. Carsico. Inconfondibile.",
-
-        teranDescriptionLabel:
-          "Teran",
-
-        teranDescriptionTitle:
-          "Un vino che porta<br>il carattere del Carso.",
-
-        teranDescriptionText1:
-          "Il Teran è un vino strettamente legato alla terra carsica. Il suo intenso colore rosso rubino, la spiccata freschezza e il suo carattere riconoscibile fanno parte della sua identità.",
-
-        teranDescriptionText2:
-          "Riflette l'ambiente in cui nasce – la terra rossa del Carso, la pietra, la bora e il sole. Ogni annata aggiunge la propria storia e il proprio carattere.",
-
-        teranDescriptionText3:
-          "Vogliamo presentare il nostro Teran come lo conosciamo noi – autentico, carsico e legato alla nostra terra e alla nostra tradizione.",
-
-        cellarLabel:
-          "04 · La nostra cantina",
-
-        cellarTitle:
-          "Una cantina dove<br>la storia continua.",
-
-        cellarDraftLabel:
-          "BOZZA DELLA STORIA DELLA CANTINA",
-
-        cellarDraftText:
-          "Qui scriveremo la storia della nostra cantina – dalle sue origini, dai primi vigneti e dalle persone che l'hanno creata, fino alla generazione di oggi. Qui completeremo la storia della famiglia, della cantina e dei vigneti, il nostro modo di lavorare, le antiche usanze e tutte le storie tramandate di generazione in generazione.",
-
-        traditionLabel:
-          "05 · Tradizione",
-
-        traditionTitle:
-          "Di generazione<br>in generazione.",
-
-        traditionText1:
-          "Sul Carso il Teran occupa un posto speciale. Non è soltanto un vino, ma una parte della vita che per generazioni ha unito l'uomo, la terra e la casa.",
-
-        traditionText2:
-          "Da generazioni, le persone hanno riconosciuto la forza della terra carsica e creduto che questa forza si riflettesse anche nel vino. Al Teran sono state tradizionalmente attribuite diverse proprietà benefiche ed è stato associato al benessere. Tra i racconti del Carso si è conservata nel tempo anche la convinzione che «il Teran fa bene al sangue».",
-
-        traditionText3:
-          "Queste storie fanno parte di una tradizione tramandata di generazione in generazione – attraverso il lavoro nei vigneti, attorno alla tavola di casa e in cantina, dove il vino maturava anno dopo anno.",
-
-        traditionTeranTitle:
-          "Teran",
-
-        traditionText4:
-          "Il Teran porta con sé il carattere della sua terra. La terra rossa del Carso, la pietra, la bora e il sole creano le condizioni in cui nasce un vino dal carattere distintivo.",
-
-        traditionText5:
-          "Proprio per la sua particolarità, nel corso della storia il Teran è diventato uno dei simboli riconoscibili del Carso. Con esso sono legate numerose storie della vita sulla terra carsica, del lavoro dei nostri antenati e di un rapporto con il vino che non è mai stato soltanto quello di una bevanda, ma una parte della casa e della vita quotidiana.",
-
-        traditionTodayTitle:
-          "Da ieri a oggi",
-
-        traditionText6:
-          "Oggi guardiamo al Teran con nuove conoscenze, mentre le antiche storie rimangono parte della sua identità.",
-
-        traditionText7:
-          "Rispettiamo ciò che ci hanno raccontato i nostri antenati, cercando allo stesso tempo di comprendere meglio ciò che oggi sappiamo del Teran e dei suoi componenti naturali.",
-
-        healthClosing:
-          "Perché il vino non è soltanto ciò che versiamo nel bicchiere.",
-
-        healthFinal:
-          "<strong>È ciò che hanno creato le generazioni precedenti,<br>ciò che creiamo oggi<br>e ciò che trasmetteremo alle generazioni future.</strong>",
-
-        healthFinal2:
-          "<strong>Il Carso nella terra.<br>Una storia nel vino.<br>Di generazione in generazione.</strong>",
-
-        healthNote:
-          "NOTA: Le dichiarazioni relative alla salute saranno verificate prima della pubblicazione sulla base di fonti scientifiche affidabili e delle norme applicabili alla pubblicità degli alimenti e delle bevande alcoliche.",
-
-        contactLabel:
-          "06 · Venite a trovarci",
-
-        contactTitle:
-          "Le porte della nostra<br>cantina sono aperte.",
-
-        contactButton:
-          "Contattaci",
-
-        locationLabel:
-          "Posizione",
-
-        phoneLabel:
-          "Telefono",
-
-        emailLabel:
-          "Email",
-
-        footerLocation:
-          "CARSO · SLOVENIA"
-      }
-
-    };
-
-
-    /* =========================
-       LANGUAGE
-    ========================= */
-
-    function changeLanguage(language) {
-
-      if (!translations[language]) {
-        language = "sl";
-      }
-
-      document.querySelectorAll("[data-i18n]").forEach(element => {
-
-        const key = element.getAttribute("data-i18n");
-
-        if (translations[language][key] !== undefined) {
-          element.innerHTML = translations[language][key];
-        }
-
-      });
-
-
-      document.documentElement.lang = language;
-
-
-      if (language === "sl") {
-        document.title = "Vinarstvo Filipčič — Okus Krasa";
-      }
-
-      if (language === "en") {
-        document.title = "Filipčič Winery — Taste of the Karst";
-      }
-
-      if (language === "it") {
-        document.title = "Cantina Filipčič — Il gusto del Carso";
-      }
-
-
-      document.querySelectorAll(".languages button").forEach(button => {
-
-        button.classList.toggle(
-          "active",
-          button.dataset.lang === language
-        );
-
-      });
-
-
-      localStorage.setItem(
-        "filipcic-language",
-        language
-      );
-
+    if (window.scrollY > 40) {
+        navbar.classList.add("scrolled");
+    } else {
+        navbar.classList.remove("scrolled");
     }
 
-
-    document.querySelectorAll(".languages button").forEach(button => {
-
-      button.addEventListener("click", () => {
-
-        changeLanguage(button.dataset.lang);
-
-      });
-
-    });
+}, { passive: true });
 
 
-    const savedLanguage =
-      localStorage.getItem("filipcic-language") || "sl";
+/* =========================================================
+   MOBILE MENU
+========================================================= */
 
-    changeLanguage(savedLanguage);
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
+
+menuBtn.addEventListener("click", () => {
+
+    navLinks.classList.toggle("open");
+
+});
 
 
-    /* =========================
-       NAVBAR SCROLL
-    ========================= */
+document.querySelectorAll(".nav-links a").forEach(link => {
 
-    const navbar =
-      document.getElementById("navbar");
+    link.addEventListener("click", () => {
 
-    window.addEventListener("scroll", () => {
-
-      if (window.scrollY > 80) {
-        navbar.classList.add("scrolled");
-      } else {
-        navbar.classList.remove("scrolled");
-      }
+        navLinks.classList.remove("open");
 
     });
 
-
-    /* =========================
-       MOBILE MENU
-    ========================= */
-
-    const menu =
-      document.getElementById("menu");
-
-    const navLinks =
-      document.getElementById("navLinks");
+});
 
 
-    menu.addEventListener("click", () => {
+/* =========================================================
+   REVEAL ANIMATIONS
+========================================================= */
 
-      navLinks.classList.toggle("active");
+const revealElements =
+    document.querySelectorAll(".reveal");
 
-    });
+const revealObserver =
+    new IntersectionObserver(
 
+        entries => {
 
-    document.querySelectorAll(".nav-links a").forEach(link => {
+            entries.forEach(entry => {
 
-      link.addEventListener("click", () => {
+                if (entry.isIntersecting) {
 
-        navLinks.classList.remove("active");
+                    entry.target.classList.add("visible");
 
-      });
+                    revealObserver.unobserve(
+                        entry.target
+                    );
 
-    });
+                }
 
-
-    /* =========================
-       SCROLL REVEAL
-    ========================= */
-
-    const observer =
-      new IntersectionObserver(
-
-        (entries) => {
-
-          entries.forEach(entry => {
-
-            if (entry.isIntersecting) {
-
-              entry.target.classList.add("visible");
-
-            }
-
-          });
+            });
 
         },
 
         {
-          threshold: 0.12
+            threshold: 0.12
         }
 
-      );
+    );
 
 
-    document.querySelectorAll(".reveal").forEach(element => {
+revealElements.forEach(element => {
 
-      observer.observe(element);
+    revealObserver.observe(element);
 
-    });
-
-
-    /* =========================
-       HERO PARALLAX
-    ========================= */
-
-    const hero =
-      document.querySelector(".hero");
+});
 
 
-    window.addEventListener("scroll", () => {
+/* =========================================================
+   KLET — SCROLL CONTROLLED VIDEO
+========================================================= */
 
-      if (window.scrollY < window.innerHeight) {
+const cellarSection =
+    document.querySelector(".cellar-scroll");
 
-        hero.style.backgroundPosition =
-          `center ${window.scrollY * 0.35}px`;
+const cellarVideo =
+    document.getElementById("cellarVideo");
 
-      }
+const cellarTitle =
+    document.querySelector(".cellar-title");
 
-    });
+const cellarContent =
+    document.querySelector(".cellar-content");
 
-  </script>
+
+let videoReady = false;
+
+let targetProgress = 0;
+
+let currentProgress = 0;
+
+
+/*
+    Preprečimo normalno predvajanje.
+*/
+
+if (cellarVideo) {
+
+    cellarVideo.pause();
+
+}
+
+
+/*
+    Ko brskalnik prebere dolžino videa.
+*/
+
+if (cellarVideo) {
+
+    cellarVideo.addEventListener(
+        "loadedmetadata",
+        () => {
+
+            videoReady = true;
+
+            updateCellar();
+
+        }
+    );
+
+}
+
+
+/*
+    Glavna scroll animacija.
+*/
+
+function updateCellar() {
+
+    if (!cellarSection) {
+        return;
+    }
+
+
+    const rect =
+        cellarSection.getBoundingClientRect();
+
+
+    const scrollDistance =
+        cellarSection.offsetHeight -
+        window.innerHeight;
+
+
+    if (scrollDistance <= 0) {
+        return;
+    }
+
+
+    targetProgress =
+        -rect.top / scrollDistance;
+
+
+    targetProgress =
+        Math.max(
+            0,
+            Math.min(
+                1,
+                targetProgress
+            )
+        );
+
+
+    /*
+        Gladek premik.
+    */
+
+    currentProgress +=
+        (targetProgress - currentProgress) * 0.10;
+
+
+    /*
+        Video sledi scrollu.
+    */
+
+    if (
+        videoReady &&
+        cellarVideo.duration
+    ) {
+
+        cellarVideo.currentTime =
+            currentProgress *
+            cellarVideo.duration;
+
+    }
+
+
+    /*
+        Začetni naslov počasi izgine.
+    */
+
+    if (cellarTitle) {
+
+        const titleProgress =
+            Math.min(
+                1,
+                currentProgress * 4
+            );
+
+
+        const opacity =
+            1 - titleProgress;
+
+
+        const move =
+            currentProgress * 50;
+
+
+        cellarTitle.style.opacity =
+            opacity;
+
+
+        cellarTitle.style.transform =
+            `translate(
+                -50%,
+                calc(-50% - ${move}px)
+            )`;
+
+    }
+
+
+    /*
+        Fotografije in tekst pridejo na plano
+        po tem, ko so vrata večinoma odprta.
+    */
+
+    if (cellarContent) {
+
+        const contentProgress =
+            Math.max(
+                0,
+                Math.min(
+                    1,
+                    (currentProgress - .68) / .32
+                )
+            );
+
+
+        const opacity =
+            contentProgress;
+
+
+        const move =
+            (1 - contentProgress) * 60;
+
+
+        cellarContent.style.opacity =
+            opacity;
+
+
+        cellarContent.style.transform =
+            `translateY(${move}px)`;
+
+    }
+
+
+    requestAnimationFrame(updateCellar);
+
+}
+
+
+requestAnimationFrame(updateCellar);
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+if (
+    window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+    ).matches
+) {
+
+    if (cellarVideo) {
+
+        cellarVideo.currentTime =
+            cellarVideo.duration || 0;
+
+    }
+
+}
+
+
+/* =========================================================
+   PREVENT VIDEO AUTOPLAY
+========================================================= */
+
+if (cellarVideo) {
+
+    cellarVideo.addEventListener(
+        "play",
+        () => {
+
+            cellarVideo.pause();
+
+        }
+    );
+
+}
+
+</script>
+
 
 </body>
 </html>
