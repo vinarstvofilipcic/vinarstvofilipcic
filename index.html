@@ -12,6 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <style>
+
     :root {
       --black: #080807;
       --black2: #11100e;
@@ -49,7 +50,10 @@
       font-family: inherit;
     }
 
-    /* NAV */
+
+    /* =========================
+       NAVIGATION
+    ========================= */
 
     nav {
       position: fixed;
@@ -57,10 +61,13 @@
       left: 0;
       width: 100%;
       z-index: 1000;
+
       display: flex;
       align-items: center;
       justify-content: space-between;
+
       padding: 25px 5vw;
+
       transition: .5s ease;
     }
 
@@ -138,14 +145,19 @@
       user-select: none;
     }
 
-    /* HERO */
+
+    /* =========================
+       HERO
+    ========================= */
 
     .hero {
       min-height: 100vh;
       position: relative;
+
       display: flex;
       align-items: center;
       justify-content: center;
+
       text-align: center;
       overflow: hidden;
 
@@ -159,14 +171,22 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: radial-gradient(circle, transparent 20%, rgba(0,0,0,.7) 100%);
+
+      background:
+        radial-gradient(
+          circle,
+          transparent 20%,
+          rgba(0,0,0,.7) 100%
+        );
     }
 
     .hero-content {
       position: relative;
       z-index: 2;
+
       max-width: 950px;
       padding: 30px;
+
       animation: heroIn 1.7s ease forwards;
     }
 
@@ -189,9 +209,11 @@
     .hero-motto {
       margin: 35px auto 45px;
       max-width: 650px;
+
       font-family: "Cormorant Garamond", serif;
       font-size: clamp(20px, 2.5vw, 30px);
       font-style: italic;
+
       color: var(--cream);
       line-height: 1.3;
     }
@@ -205,11 +227,15 @@
 
     .hero-btn {
       display: inline-block;
+
       border: 1px solid var(--gold);
+
       padding: 16px 35px;
+
       font-size: 10px;
       letter-spacing: 3px;
       text-transform: uppercase;
+
       transition: .4s;
     }
 
@@ -222,25 +248,37 @@
       position: absolute;
       bottom: 35px;
       left: 50%;
+
       transform: translateX(-50%);
+
       z-index: 3;
+
       font-size: 9px;
       letter-spacing: 4px;
       text-transform: uppercase;
+
       color: var(--muted);
     }
 
     .scroll::after {
       content: "";
+
       display: block;
+
       width: 1px;
       height: 45px;
+
       margin: 12px auto 0;
+
       background: var(--gold);
+
       animation: scrollLine 2s infinite;
     }
 
-    /* SECTIONS */
+
+    /* =========================
+       GENERAL SECTIONS
+    ========================= */
 
     section {
       position: relative;
@@ -249,65 +287,116 @@
 
     .section-label {
       color: var(--gold);
+
       font-size: 10px;
       letter-spacing: 5px;
       text-transform: uppercase;
+
       margin-bottom: 20px;
     }
 
     .section-title {
       font-family: "Cormorant Garamond", serif;
+
       font-size: clamp(50px, 7vw, 100px);
       font-weight: 300;
+
       line-height: .9;
+
       margin-bottom: 35px;
     }
 
     .section-text {
       color: var(--muted);
+
       max-width: 550px;
+
       line-height: 1.9;
       font-size: 14px;
     }
 
-    /* KRAS */
+
+    /* =========================
+       KRAS
+    ========================= */
 
     .kras {
       min-height: 90vh;
+
       display: grid;
+
       grid-template-columns: 1fr 1fr;
+
       gap: 7vw;
+
       align-items: center;
+
       background: var(--black2);
     }
 
     .kras-image {
       height: 650px;
+
       background:
-        linear-gradient(rgba(0,0,0,.1), rgba(0,0,0,.4)),
-        url("https://images.unsplash.com/photo-1473973266408-ed4e27abdd47?auto=format&fit=crop&w=1400&q=85")
+        linear-gradient(
+          rgba(0,0,0,.08),
+          rgba(0,0,0,.48)
+        ),
+        url("https://commons.wikimedia.org/wiki/Special:FilePath/Brestovica%20pri%20Komnu%20-%20panoramio.jpg")
         center/cover;
-      filter: saturate(.75);
+
+      filter: saturate(.78);
     }
 
-    /* STORY */
+    .kras .section-text {
+      max-width: 620px;
+      line-height: 2;
+    }
+
+    .kras .section-text strong {
+      display: inline-block;
+
+      color: var(--cream);
+
+      font-family: "Cormorant Garamond", serif;
+
+      font-size: 23px;
+      font-weight: 500;
+
+      line-height: 1.3;
+    }
+
+
+    /* =========================
+       STORY
+    ========================= */
 
     .story {
       text-align: center;
+
       background:
-        linear-gradient(rgba(8,8,7,.82), rgba(8,8,7,.95)),
+        linear-gradient(
+          rgba(8,8,7,.82),
+          rgba(8,8,7,.95)
+        ),
         url("https://images.unsplash.com/photo-1516594915697-87eb3b1c14ea?auto=format&fit=crop&w=2200&q=85")
         center/cover fixed;
     }
 
     .story .section-text {
       margin: auto;
+
       font-family: "Cormorant Garamond", serif;
+
       font-size: 25px;
+
       color: var(--cream);
     }
 
-    /* WINES */
+
+    /* =========================
+       WINES
+    ========================= */
 
     .wines {
       background: #0c0b09;
@@ -315,35 +404,50 @@
 
     .wine-layout {
       display: grid;
+
       grid-template-columns: 1fr 1.4fr;
+
       gap: 7vw;
+
       align-items: center;
+
       margin-top: 70px;
     }
 
     .wine-card {
       min-height: 570px;
+
       position: relative;
+
       overflow: hidden;
+
       display: flex;
       align-items: flex-end;
+
       padding: 35px;
+
       border: 1px solid rgba(197,164,109,.12);
+
       transition: .6s;
     }
 
     .wine-card:hover {
       transform: translateY(-10px);
+
       border-color: var(--gold);
     }
 
     .wine-card::before {
       content: "";
+
       position: absolute;
       inset: 0;
+
       background-size: cover;
       background-position: center;
+
       transition: .8s;
+
       z-index: 0;
     }
 
@@ -353,7 +457,10 @@
 
     .teran::before {
       background:
-        linear-gradient(transparent 20%, rgba(0,0,0,.9)),
+        linear-gradient(
+          transparent 20%,
+          rgba(0,0,0,.9)
+        ),
         url("https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1000&q=85")
         center/cover;
     }
@@ -365,21 +472,28 @@
 
     .wine-info small {
       color: var(--gold-light);
+
       letter-spacing: 4px;
+
       font-size: 9px;
+
       text-transform: uppercase;
     }
 
     .wine-info h3 {
       font-family: "Cormorant Garamond", serif;
+
       font-size: 55px;
       font-weight: 400;
+
       margin: 5px 0 12px;
     }
 
     .wine-info p {
       color: #c4beb4;
+
       font-size: 12px;
+
       line-height: 1.7;
     }
 
@@ -389,43 +503,64 @@
 
     .teran-description h3 {
       font-family: "Cormorant Garamond", serif;
+
       font-size: clamp(40px, 5vw, 65px);
       font-weight: 300;
+
       line-height: .95;
+
       margin-bottom: 30px;
+
       color: var(--cream);
     }
 
     .teran-description p {
       color: var(--muted);
+
       font-size: 14px;
+
       line-height: 2;
+
       max-width: 650px;
+
       margin-bottom: 25px;
     }
 
     .gold-line-left {
       width: 70px;
       height: 1px;
+
       background: var(--gold);
+
       margin-bottom: 30px;
     }
 
-    /* CELLAR */
+
+    /* =========================
+       CELLAR
+    ========================= */
 
     .cellar {
       padding: 0;
+
       min-height: 90vh;
+
       display: flex;
       align-items: center;
+
       background:
-        linear-gradient(90deg, rgba(0,0,0,.88), rgba(0,0,0,.25)),
+        linear-gradient(
+          90deg,
+          rgba(0,0,0,.88),
+          rgba(0,0,0,.25)
+        ),
         url("https://images.unsplash.com/photo-1572567797557-3f6c8b5b8b28?auto=format&fit=crop&w=2200&q=90")
         center/cover;
     }
 
     .cellar-content {
       padding: 120px 10vw;
+
       max-width: 1000px;
     }
 
@@ -435,87 +570,131 @@
 
     .cellar-draft {
       margin-top: 55px;
+
       padding: 35px 40px;
+
       border-left: 1px solid var(--gold);
+
       background: rgba(0,0,0,.35);
     }
 
     .cellar-draft-label {
       color: var(--gold-light);
+
       font-size: 10px;
+
       letter-spacing: 4px;
+
       text-transform: uppercase;
+
       margin-bottom: 18px;
     }
 
     .cellar-draft p {
       color: #c8c1b8;
+
       font-family: "Cormorant Garamond", serif;
+
       font-size: 23px;
+
       line-height: 1.65;
+
       max-width: 750px;
     }
 
-    /* TRADITION */
+
+    /* =========================
+       TRADITION
+    ========================= */
 
     .experience {
       text-align: center;
+
       background: var(--burgundy);
     }
 
     .tradition-content {
       max-width: 1000px;
+
       margin: 70px auto 0;
+
       text-align: left;
     }
 
     .tradition-content p {
       color: #d0c3bb;
+
       font-size: 14px;
+
       line-height: 2;
+
       margin-bottom: 28px;
     }
 
     .tradition-content strong {
       color: var(--cream);
+
       font-family: "Cormorant Garamond", serif;
+
       font-size: 28px;
+
       font-weight: 500;
     }
 
     .health-closing {
       color: var(--gold-light) !important;
+
       font-family: "Cormorant Garamond", serif;
+
       font-size: 27px !important;
+
       margin-top: 50px;
     }
 
     .health-final {
       color: var(--cream) !important;
+
       font-family: "Cormorant Garamond", serif;
+
       font-size: 30px !important;
+
       line-height: 1.5 !important;
+
       margin-top: 30px;
     }
 
     .health-note {
       color: var(--gold-light) !important;
+
       font-size: 11px !important;
+
       line-height: 1.8 !important;
+
       padding-top: 25px;
+
       border-top: 1px solid var(--line);
+
       margin-top: 50px;
     }
 
-    /* CONTACT */
+
+    /* =========================
+       CONTACT
+    ========================= */
 
     .contact {
       text-align: center;
+
       min-height: 80vh;
+
       display: flex;
+
       flex-direction: column;
+
       justify-content: center;
+
       align-items: center;
+
       background: #070706;
     }
 
@@ -525,76 +704,154 @@
 
     .contact-details {
       display: flex;
+
       gap: 60px;
+
       margin-top: 50px;
+
       color: var(--muted);
+
       font-size: 12px;
     }
 
     .contact-details span {
       display: block;
+
       color: var(--gold);
+
       font-size: 9px;
+
       letter-spacing: 3px;
+
       text-transform: uppercase;
+
       margin-bottom: 8px;
     }
 
-    /* FOOTER */
+
+    /* =========================
+       LOCATION / GOOGLE MAPS
+    ========================= */
+
+    .location-map {
+      padding: 0;
+
+      background: var(--black2);
+    }
+
+    .location-map-header {
+      padding: 110px 7vw 55px;
+
+      text-align: center;
+    }
+
+    .location-map-header .section-title {
+      margin-bottom: 20px;
+    }
+
+    .location-map-address {
+      color: var(--muted);
+
+      font-size: 13px;
+
+      letter-spacing: 1px;
+    }
+
+    .map-frame {
+      display: block;
+
+      width: 100%;
+      height: 520px;
+
+      border: 0;
+
+      filter: grayscale(.15) contrast(1.05);
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================= */
 
     footer {
       padding: 40px 7vw;
+
       border-top: 1px solid var(--line);
+
       display: flex;
+
       justify-content: space-between;
+
       color: #77736d;
+
       font-size: 10px;
+
       letter-spacing: 1px;
     }
 
     footer strong {
       color: var(--gold);
+
       font-weight: 400;
     }
 
-    /* ANIMATION */
+
+    /* =========================
+       ANIMATION
+    ========================= */
 
     .reveal {
       opacity: 0;
+
       transform: translateY(50px);
-      transition: opacity 1s ease, transform 1s ease;
+
+      transition:
+        opacity 1s ease,
+        transform 1s ease;
     }
 
     .reveal.visible {
       opacity: 1;
+
       transform: translateY(0);
     }
 
     @keyframes heroIn {
+
       from {
         opacity: 0;
+
         transform: translateY(30px);
       }
 
       to {
         opacity: 1;
+
         transform: translateY(0);
       }
+
     }
 
     @keyframes scrollLine {
+
       0%,100% {
         opacity: .2;
+
         transform: scaleY(.5);
       }
 
       50% {
         opacity: 1;
+
         transform: scaleY(1);
       }
+
     }
 
-    /* MOBILE */
+
+    /* =========================
+       MOBILE
+    ========================= */
 
     @media (max-width: 800px) {
 
@@ -612,14 +869,22 @@
 
       .nav-links {
         position: absolute;
+
         top: 70px;
         right: 20px;
+
         width: 220px;
+
         background: rgba(8,8,7,.97);
+
         padding: 25px;
+
         flex-direction: column;
+
         gap: 20px;
+
         display: none;
+
         border: 1px solid var(--line);
       }
 
@@ -641,11 +906,13 @@
 
       .hero h1 {
         font-size: 65px;
+
         letter-spacing: -2px;
       }
 
       .eyebrow {
         font-size: 9px;
+
         letter-spacing: 4px;
       }
 
@@ -659,6 +926,7 @@
 
       .kras-image {
         height: 450px;
+
         order: -1;
       }
 
@@ -696,17 +964,35 @@
 
       .contact-details {
         flex-direction: column;
+
         gap: 25px;
+      }
+
+      .location-map-header {
+        padding: 80px 6vw 40px;
+      }
+
+      .map-frame {
+        height: 430px;
       }
 
       footer {
         flex-direction: column;
+
         gap: 15px;
+
         text-align: center;
       }
+
     }
 
+
+    /* =========================
+       REDUCED MOTION
+    ========================= */
+
     @media (prefers-reduced-motion: reduce) {
+
       html {
         scroll-behavior: auto;
       }
@@ -715,73 +1001,113 @@
       *::before,
       *::after {
         animation-duration: .01ms !important;
+
         animation-iteration-count: 1 !important;
+
         transition-duration: .01ms !important;
       }
+
     }
+
   </style>
 </head>
 
+
 <body>
 
-  <!-- NAVIGATION -->
+
+  <!-- =========================
+       NAVIGATION
+  ========================= -->
 
   <nav id="navbar">
 
-    <a href="#top" class="logo">FILIPČIČ</a>
+    <a href="#top" class="logo">
+      FILIPČIČ
+    </a>
 
     <div class="nav-right">
 
       <ul class="nav-links" id="navLinks">
 
         <li>
-          <a href="#kras" data-i18n="navKras">Kras</a>
+          <a href="#kras" data-i18n="navKras">
+            Kras
+          </a>
         </li>
 
         <li>
-          <a href="#zgodba" data-i18n="navStory">Zgodba</a>
+          <a href="#zgodba" data-i18n="navStory">
+            Zgodba
+          </a>
         </li>
 
         <li>
-          <a href="#vina" data-i18n="navWine">Vina</a>
+          <a href="#vina" data-i18n="navWine">
+            Vina
+          </a>
         </li>
 
         <li>
-          <a href="#klet" data-i18n="navCellar">Klet</a>
+          <a href="#klet" data-i18n="navCellar">
+            Klet
+          </a>
         </li>
 
         <li>
-          <a href="#izrocilo" data-i18n="navTradition">Izročilo</a>
+          <a href="#izrocilo" data-i18n="navTradition">
+            Izročilo
+          </a>
         </li>
 
         <li>
-          <a href="#kontakt" data-i18n="navContact">Kontakt</a>
+          <a href="#kontakt" data-i18n="navContact">
+            Kontakt
+          </a>
+        </li>
+
+        <li>
+          <a href="#lokacija" data-i18n="navLocation">
+            Lokacija
+          </a>
         </li>
 
       </ul>
 
+
       <div class="languages">
 
-        <button class="active" data-lang="sl">SL</button>
+        <button class="active" data-lang="sl">
+          SL
+        </button>
 
         <span>|</span>
 
-        <button data-lang="en">EN</button>
+        <button data-lang="en">
+          EN
+        </button>
 
         <span>|</span>
 
-        <button data-lang="it">IT</button>
+        <button data-lang="it">
+          IT
+        </button>
 
       </div>
 
-      <div class="menu" id="menu">☰</div>
+
+      <div class="menu" id="menu">
+        ☰
+      </div>
 
     </div>
 
   </nav>
 
 
-  <!-- HERO -->
+  <!-- =========================
+       HERO
+  ========================= -->
 
   <header class="hero" id="top">
 
@@ -791,7 +1117,9 @@
         Vinarstvo Filipčič · Kras · Slovenija
       </div>
 
-      <h1>FILIPČIČ</h1>
+      <h1>
+        FILIPČIČ
+      </h1>
 
       <div class="gold-line"></div>
 
@@ -800,11 +1128,16 @@
         ki da piti brez denarja.«
       </p>
 
-      <a href="#zgodba" class="hero-btn" data-i18n="heroButton">
+      <a
+        href="#zgodba"
+        class="hero-btn"
+        data-i18n="heroButton"
+      >
         Spoznajte našo zgodbo
       </a>
 
     </div>
+
 
     <div class="scroll" data-i18n="scroll">
       Scroll
@@ -813,28 +1146,66 @@
   </header>
 
 
-  <!-- KRAS -->
+  <!-- =========================
+       KRAS
+  ========================= -->
 
   <section class="kras" id="kras">
 
+
     <div class="kras-image reveal"></div>
+
 
     <div class="reveal">
 
-      <div class="section-label" data-i18n="krasLabel">
-        01 · Kraj
+      <div
+        class="section-label"
+        data-i18n="krasLabel"
+      >
+        01 · Kras
       </div>
 
-      <h2 class="section-title" data-i18n="krasTitle">
+
+      <h2
+        class="section-title"
+        data-i18n="krasTitle"
+      >
         Kjer kamen<br>
-        sreča trto.
+        daje vinu značaj.
       </h2>
 
-      <p class="section-text" data-i18n="krasText">
-        Kras ni samo prostor. Je karakter.
-        Kamen, burja, rdeča zemlja in sonce
-        ustvarjajo okolje, ki daje vinu svojo
-        posebno identiteto.
+
+      <p
+        class="section-text"
+        data-i18n="krasText"
+      >
+        Kras je pokrajina kamna, burje in rdeče zemlje.
+        Trta tu ne raste zlahka — prav zato pa daje grozdju
+        značaj, ki ga drugje ni mogoče poustvariti.
+
+        <br><br>
+
+        Med kraškimi gmajnami in suhim kamnitim svetom
+        trta išče svojo pot. Sonce, burja in terra rossa
+        skupaj ustvarjajo pogoje, iz katerih nastajajo vina
+        z izrazitim, pristnim kraškim značajem.
+
+        <br><br>
+
+        <strong>
+          Naše vino je odsev tega prostora.
+        </strong>
+
+        <br><br>
+
+        Ni ustvarjeno samo iz grozdja, temveč tudi iz zemlje,
+        podnebja in tradicije, ki se na Krasu prenaša iz roda v rod.
+
+        <br><br>
+
+        <strong>
+          Kras v kozarcu.
+        </strong>
       </p>
 
     </div>
@@ -842,22 +1213,35 @@
   </section>
 
 
-  <!-- STORY -->
+  <!-- =========================
+       STORY
+  ========================= -->
 
   <section class="story" id="zgodba">
 
     <div class="reveal">
 
-      <div class="section-label" data-i18n="storyLabel">
+      <div
+        class="section-label"
+        data-i18n="storyLabel"
+      >
         02 · Naša zgodba
       </div>
 
-      <h2 class="section-title" data-i18n="storyTitle">
+
+      <h2
+        class="section-title"
+        data-i18n="storyTitle"
+      >
         Vino je<br>
         čas.
       </h2>
 
-      <p class="section-text" data-i18n="storyText">
+
+      <p
+        class="section-text"
+        data-i18n="storyText"
+      >
         V Vinarstvu Filipčič spoštujemo tisto,
         kar je bilo ustvarjeno pred nami,
         in ustvarjamo nekaj, kar bo ostalo za nami.
@@ -868,29 +1252,44 @@
   </section>
 
 
-  <!-- WINES -->
+  <!-- =========================
+       WINES
+  ========================= -->
 
   <section class="wines" id="vina">
 
     <div class="reveal">
 
-      <div class="section-label" data-i18n="wineLabel">
+      <div
+        class="section-label"
+        data-i18n="wineLabel"
+      >
         03 · Naša vina
       </div>
 
-      <h2 class="section-title" data-i18n="wineTitle">
+
+      <h2
+        class="section-title"
+        data-i18n="wineTitle"
+      >
         Iz naše zemlje.<br>
         V našo klet.
       </h2>
 
-      <p class="section-text" data-i18n="wineIntro">
+
+      <p
+        class="section-text"
+        data-i18n="wineIntro"
+      >
         Vsako vino ima svoj karakter.
         Vsako leto svojo zgodbo.
       </p>
 
     </div>
 
+
     <div class="wine-layout">
+
 
       <article class="wine-card teran reveal">
 
@@ -900,7 +1299,9 @@
             Kraška klasika
           </small>
 
-          <h3>Teran</h3>
+          <h3>
+            Teran
+          </h3>
 
           <p data-i18n="teranText">
             Globok. Kraški. Samosvoj.
@@ -913,16 +1314,24 @@
 
       <div class="teran-description reveal">
 
-        <div class="section-label" data-i18n="teranDescriptionLabel">
+        <div
+          class="section-label"
+          data-i18n="teranDescriptionLabel"
+        >
           Teran
         </div>
 
-        <h3 data-i18n="teranDescriptionTitle">
+
+        <h3
+          data-i18n="teranDescriptionTitle"
+        >
           Vino, ki nosi<br>
           karakter Krasa.
         </h3>
 
+
         <div class="gold-line-left"></div>
+
 
         <p data-i18n="teranDescriptionText1">
           Teran je vino, ki je tesno povezano s kraško zemljo.
@@ -930,11 +1339,13 @@
           in prepoznaven karakter so del njegove identitete.
         </p>
 
+
         <p data-i18n="teranDescriptionText2">
           V njem se prepletajo značilnosti okolja, v katerem
           nastaja – rdeča kraška zemlja, kamen, burja in sonce.
           Vsak letnik pa doda svojo zgodbo in svoj karakter.
         </p>
+
 
         <p data-i18n="teranDescriptionText3">
           Naš Teran želimo predstaviti takšnega, kot ga poznamo
@@ -949,26 +1360,40 @@
   </section>
 
 
-  <!-- CELLAR -->
+  <!-- =========================
+       CELLAR
+  ========================= -->
 
   <section class="cellar" id="klet">
 
     <div class="cellar-content reveal">
 
-      <div class="section-label" data-i18n="cellarLabel">
+      <div
+        class="section-label"
+        data-i18n="cellarLabel"
+      >
         04 · Naša klet
       </div>
 
-      <h2 class="section-title" data-i18n="cellarTitle">
+
+      <h2
+        class="section-title"
+        data-i18n="cellarTitle"
+      >
         Klet, kjer<br>
         se zgodba nadaljuje.
       </h2>
 
+
       <div class="cellar-draft">
 
-        <div class="cellar-draft-label" data-i18n="cellarDraftLabel">
+        <div
+          class="cellar-draft-label"
+          data-i18n="cellarDraftLabel"
+        >
           OSNUTEK ZGODBE KLETI
         </div>
+
 
         <p data-i18n="cellarDraftText">
           Na tem mestu bomo napisali zgodbo naše kleti –
@@ -987,17 +1412,26 @@
   </section>
 
 
-  <!-- TRADITION -->
+  <!-- =========================
+       TRADITION
+  ========================= -->
 
   <section class="experience" id="izrocilo">
 
     <div class="reveal">
 
-      <div class="section-label" data-i18n="traditionLabel">
+      <div
+        class="section-label"
+        data-i18n="traditionLabel"
+      >
         05 · Izročilo
       </div>
 
-      <h2 class="section-title" data-i18n="traditionTitle">
+
+      <h2
+        class="section-title"
+        data-i18n="traditionTitle"
+      >
         Iz roda v rod
       </h2>
 
@@ -1005,6 +1439,7 @@
 
 
     <div class="tradition-content reveal">
+
 
       <p data-i18n="traditionText1">
         Na Krasu ima Teran posebno mesto. Ni le vino,
@@ -1032,9 +1467,11 @@
 
 
       <p>
+
         <strong data-i18n="traditionTeranTitle">
           Teran
         </strong>
+
       </p>
 
 
@@ -1056,9 +1493,11 @@
 
 
       <p>
+
         <strong data-i18n="traditionTodayTitle">
           Od nekdaj do danes
         </strong>
+
       </p>
 
 
@@ -1076,12 +1515,18 @@
       </p>
 
 
-      <p class="health-closing" data-i18n="healthClosing">
+      <p
+        class="health-closing"
+        data-i18n="healthClosing"
+      >
         Ker vino ni samo tisto, kar natočimo v kozarec.
       </p>
 
 
-      <p class="health-final" data-i18n="healthFinal">
+      <p
+        class="health-final"
+        data-i18n="healthFinal"
+      >
         <strong>
           Je tisto, kar so ustvarjale prejšnje generacije,<br>
           kar ustvarjamo danes<br>
@@ -1090,7 +1535,10 @@
       </p>
 
 
-      <p class="health-final" data-i18n="healthFinal2">
+      <p
+        class="health-final"
+        data-i18n="healthFinal2"
+      >
         <strong>
           Kras v zemlji.<br>
           Zgodba v vinu.<br>
@@ -1099,7 +1547,10 @@
       </p>
 
 
-      <p class="health-note" data-i18n="healthNote">
+      <p
+        class="health-note"
+        data-i18n="healthNote"
+      >
         OPOMBA: Zdravstvene trditve bomo pred objavo preverili
         glede na zanesljive znanstvene vire in veljavna pravila
         za oglaševanje živil in alkoholnih pijač.
@@ -1110,20 +1561,30 @@
   </section>
 
 
-  <!-- CONTACT -->
+  <!-- =========================
+       CONTACT
+  ========================= -->
 
   <section class="contact" id="kontakt">
 
     <div class="reveal">
 
-      <div class="section-label" data-i18n="contactLabel">
+      <div
+        class="section-label"
+        data-i18n="contactLabel"
+      >
         06 · Obiščite nas
       </div>
 
-      <h2 class="section-title" data-i18n="contactTitle">
+
+      <h2
+        class="section-title"
+        data-i18n="contactTitle"
+      >
         Vrata naše<br>
         kleti so odprta.
       </h2>
+
 
       <a
         href="mailto:info@vinarstvo-filipcic.si"
@@ -1136,28 +1597,39 @@
 
       <div class="contact-details">
 
+
         <div>
+
           <span data-i18n="locationLabel">
             Lokacija
           </span>
+
           Brestovica pri Komnu
+
         </div>
 
 
         <div>
+
           <span data-i18n="phoneLabel">
             Telefon
           </span>
+
           +386 XX XXX XX XX
+
         </div>
 
 
         <div>
+
           <span data-i18n="emailLabel">
             E-pošta
           </span>
+
           info@vinarstvo-filipcic.si
+
         </div>
+
 
       </div>
 
@@ -1166,13 +1638,66 @@
   </section>
 
 
-  <!-- FOOTER -->
+  <!-- =========================
+       LOCATION / GOOGLE MAPS
+  ========================= -->
+
+  <section
+    class="location-map"
+    id="lokacija"
+  >
+
+    <div class="location-map-header reveal">
+
+      <div
+        class="section-label"
+        data-i18n="locationMapLabel"
+      >
+        07 · Lokacija
+      </div>
+
+
+      <h2
+        class="section-title"
+        data-i18n="locationMapTitle"
+      >
+        Najdete nas<br>
+        na Krasu.
+      </h2>
+
+
+      <p
+        class="location-map-address"
+        data-i18n="locationMapAddress"
+      >
+        Brestovica pri Komnu 1a · 6223 Komen · Slovenija
+      </p>
+
+    </div>
+
+
+    <iframe
+      class="map-frame"
+      src="https://www.google.com/maps?q=Brestovica+pri+Komnu+1A,+6223+Komen,+Slovenia&output=embed"
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      allowfullscreen
+      title="Vinarstvo Filipčič — Brestovica pri Komnu 1a">
+    </iframe>
+
+  </section>
+
+
+  <!-- =========================
+       FOOTER
+  ========================= -->
 
   <footer>
 
     <div>
       © 2026 <strong>VINARSTVO FILIPČIČ</strong>
     </div>
+
 
     <div data-i18n="footerLocation">
       KRAS · SLOVENIJA
@@ -1197,8 +1722,10 @@
         navCellar: "Klet",
         navTradition: "Izročilo",
         navContact: "Kontakt",
+        navLocation: "Lokacija",
 
-        eyebrow: "Vinarstvo Filipčič · Kras · Slovenija",
+        eyebrow:
+          "Vinarstvo Filipčič · Kras · Slovenija",
 
         motto:
           "»Bog živi gospodarja,<br>ki da piti brez denarja.«",
@@ -1209,6 +1736,7 @@
         scroll:
           "Scroll",
 
+
         krasLabel:
           "01 · Kras",
 
@@ -1216,9 +1744,8 @@
           "Kjer kamen<br>daje vinu značaj.",
 
         krasText:
-          "Kras je pokrajina kamna, burje in rdeče zemlje. Trta tu ne raste zlahka — prav zato pa daje grozdju značaj, ki ga drugje ni mogoče poustvariti. Med kraškimi gmajnami in suhim kamnitim svetom trta išče svojo pot. Sonce, burja in terra rossa skupaj ustvarjajo pogoje, iz katerih nastajajo vina z izrazitim, pristnim kraškim značajem. Naše vino je odsev tega prostora. Ni ustvarjeno samo iz grozdja, temveč tudi iz zemlje, podnebja in tradicije, ki se na Krasu prenaša iz roda v rod.
+          "Kras je pokrajina kamna, burje in rdeče zemlje. Trta tu ne raste zlahka — prav zato pa daje grozdju značaj, ki ga drugje ni mogoče poustvariti.<br><br>Med kraškimi gmajnami in suhim kamnitim svetom trta išče svojo pot. Sonce, burja in terra rossa skupaj ustvarjajo pogoje, iz katerih nastajajo vina z izrazitim, pristnim kraškim značajem.<br><br><strong>Naše vino je odsev tega prostora.</strong><br><br>Ni ustvarjeno samo iz grozdja, temveč tudi iz zemlje, podnebja in tradicije, ki se na Krasu prenaša iz roda v rod.<br><br><strong>Kras v kozarcu.</strong>",
 
-Kras v kozarcu.",
 
         storyLabel:
           "02 · Naša zgodba",
@@ -1228,6 +1755,7 @@ Kras v kozarcu.",
 
         storyText:
           "V Vinarstvu Filipčič spoštujemo tisto, kar je bilo ustvarjeno pred nami, in ustvarjamo nekaj, kar bo ostalo za nami.",
+
 
         wineLabel:
           "03 · Naša vina",
@@ -1259,6 +1787,7 @@ Kras v kozarcu.",
         teranDescriptionText3:
           "Naš Teran želimo predstaviti takšnega, kot ga poznamo mi – kraškega, pristnega in povezanega z domačo zemljo ter tradicijo.",
 
+
         cellarLabel:
           "04 · Naša klet",
 
@@ -1270,6 +1799,7 @@ Kras v kozarcu.",
 
         cellarDraftText:
           "Na tem mestu bomo napisali zgodbo naše kleti – od njenih začetkov, prvih vinogradov in ljudi, ki so jo ustvarjali, do današnje generacije. Tukaj bomo skupaj dopolnili zgodovino družine, kleti, vinogradov, način dela, stare običaje in vse zgodbe, ki so se skozi leta prenašale iz roda v rod.",
+
 
         traditionLabel:
           "05 · Izročilo",
@@ -1316,6 +1846,7 @@ Kras v kozarcu.",
         healthNote:
           "OPOMBA: Zdravstvene trditve bomo pred objavo preverili glede na zanesljive znanstvene vire in veljavna pravila za oglaševanje živil in alkoholnih pijač.",
 
+
         contactLabel:
           "06 · Obiščite nas",
 
@@ -1334,8 +1865,20 @@ Kras v kozarcu.",
         emailLabel:
           "E-pošta",
 
+
+        locationMapLabel:
+          "07 · Lokacija",
+
+        locationMapTitle:
+          "Najdete nas<br>na Krasu.",
+
+        locationMapAddress:
+          "Brestovica pri Komnu 1a · 6223 Komen · Slovenija",
+
+
         footerLocation:
           "KRAS · SLOVENIJA"
+
       },
 
 
@@ -1359,6 +1902,10 @@ Kras v kozarcu.",
         navContact:
           "Contact",
 
+        navLocation:
+          "Location",
+
+
         eyebrow:
           "Filipčič Winery · Karst · Slovenia",
 
@@ -1371,14 +1918,16 @@ Kras v kozarcu.",
         scroll:
           "Scroll",
 
+
         krasLabel:
-          "01 · Place",
+          "01 · Karst",
 
         krasTitle:
-          "Where stone<br>meets the vine.",
+          "Where stone<br>gives wine its character.",
 
         krasText:
-          "The Karst is more than a place. It is character. Stone, the bora wind, red soil and sunlight create an environment that gives the wine its distinctive identity.",
+          "The Karst is a landscape of stone, the bora wind and red soil. The vine does not grow easily here — and that is precisely what gives the grapes a character that cannot be recreated elsewhere.<br><br>Among the Karst scrublands and the dry, stony landscape, the vine finds its own path. Sun, bora and terra rossa create the conditions from which wines of distinctive, authentic Karst character emerge.<br><br><strong>Our wine is a reflection of this place.</strong><br><br>It is shaped not only by grapes, but also by the soil, climate and tradition that has been passed down on the Karst from generation to generation.<br><br><strong>The Karst in a glass.</strong>",
+
 
         storyLabel:
           "02 · Our story",
@@ -1388,6 +1937,7 @@ Kras v kozarcu.",
 
         storyText:
           "At Filipčič Winery, we respect what was created before us and create something that will remain after us.",
+
 
         wineLabel:
           "03 · Our wines",
@@ -1419,6 +1969,7 @@ Kras v kozarcu.",
         teranDescriptionText3:
           "We want to present our Teran as we know it – authentic, shaped by the Karst and connected to our land and tradition.",
 
+
         cellarLabel:
           "04 · Our cellar",
 
@@ -1430,6 +1981,7 @@ Kras v kozarcu.",
 
         cellarDraftText:
           "This is where we will write the story of our cellar – from its beginnings, the first vineyards and the people who created it, to today's generation. Here we will add the history of the family, cellar and vineyards, our way of working, old customs and all the stories that have been passed down from generation to generation.",
+
 
         traditionLabel:
           "05 · Tradition",
@@ -1476,6 +2028,7 @@ Kras v kozarcu.",
         healthNote:
           "NOTE: Health-related claims will be reviewed before publication against reliable scientific sources and applicable rules for the advertising of food and alcoholic beverages.",
 
+
         contactLabel:
           "06 · Visit us",
 
@@ -1494,8 +2047,20 @@ Kras v kozarcu.",
         emailLabel:
           "Email",
 
+
+        locationMapLabel:
+          "07 · Location",
+
+        locationMapTitle:
+          "Find us<br>in the Karst.",
+
+        locationMapAddress:
+          "Brestovica pri Komnu 1a · 6223 Komen · Slovenia",
+
+
         footerLocation:
           "KARST · SLOVENIA"
+
       },
 
 
@@ -1519,6 +2084,10 @@ Kras v kozarcu.",
         navContact:
           "Contatti",
 
+        navLocation:
+          "Posizione",
+
+
         eyebrow:
           "Cantina Filipčič · Carso · Slovenia",
 
@@ -1531,14 +2100,16 @@ Kras v kozarcu.",
         scroll:
           "Scorri",
 
+
         krasLabel:
-          "01 · Luogo",
+          "01 · Carso",
 
         krasTitle:
-          "Dove la pietra<br>incontra la vite.",
+          "Dove la pietra<br>dà carattere al vino.",
 
         krasText:
-          "Il Carso non è solo un luogo. È carattere. Pietra, bora, terra rossa e sole creano un ambiente che dona al vino la sua identità distintiva.",
+          "Il Carso è una terra di pietra, bora e terra rossa. Qui la vite non cresce facilmente — ed è proprio questo a dare all'uva un carattere che altrove non può essere ricreato.<br><br>Tra la macchia carsica e il paesaggio arido e pietroso, la vite trova la propria strada. Sole, bora e terra rossa creano le condizioni da cui nascono vini dal carattere carsico, autentico e distintivo.<br><br><strong>Il nostro vino è il riflesso di questo luogo.</strong><br><br>Non nasce soltanto dall'uva, ma anche dalla terra, dal clima e dalla tradizione che sul Carso si tramanda di generazione in generazione.<br><br><strong>Il Carso nel bicchiere.</strong>",
+
 
         storyLabel:
           "02 · La nostra storia",
@@ -1548,6 +2119,7 @@ Kras v kozarcu.",
 
         storyText:
           "Alla Cantina Filipčič rispettiamo ciò che è stato creato prima di noi e creiamo qualcosa che rimarrà dopo di noi.",
+
 
         wineLabel:
           "03 · I nostri vini",
@@ -1579,6 +2151,7 @@ Kras v kozarcu.",
         teranDescriptionText3:
           "Vogliamo presentare il nostro Teran come lo conosciamo noi – autentico, carsico e legato alla nostra terra e alla nostra tradizione.",
 
+
         cellarLabel:
           "04 · La nostra cantina",
 
@@ -1590,6 +2163,7 @@ Kras v kozarcu.",
 
         cellarDraftText:
           "Qui scriveremo la storia della nostra cantina – dalle sue origini, dai primi vigneti e dalle persone che l'hanno creata, fino alla generazione di oggi. Qui completeremo la storia della famiglia, della cantina e dei vigneti, il nostro modo di lavorare, le antiche usanze e tutte le storie tramandate di generazione in generazione.",
+
 
         traditionLabel:
           "05 · Tradizione",
@@ -1636,6 +2210,7 @@ Kras v kozarcu.",
         healthNote:
           "NOTA: Le dichiarazioni relative alla salute saranno verificate prima della pubblicazione sulla base di fonti scientifiche affidabili e delle norme applicabili alla pubblicità degli alimenti e delle bevande alcoliche.",
 
+
         contactLabel:
           "06 · Venite a trovarci",
 
@@ -1654,8 +2229,20 @@ Kras v kozarcu.",
         emailLabel:
           "Email",
 
+
+        locationMapLabel:
+          "07 · Posizione",
+
+        locationMapTitle:
+          "Venite a trovarci<br>sul Carso.",
+
+        locationMapAddress:
+          "Brestovica pri Komnu 1a · 6223 Komen · Slovenia",
+
+
         footerLocation:
           "CARSO · SLOVENIA"
+
       }
 
     };
@@ -1671,41 +2258,64 @@ Kras v kozarcu.",
         language = "sl";
       }
 
-      document.querySelectorAll("[data-i18n]").forEach(element => {
 
-        const key = element.getAttribute("data-i18n");
+      document
+        .querySelectorAll("[data-i18n]")
+        .forEach(element => {
 
-        if (translations[language][key] !== undefined) {
-          element.innerHTML = translations[language][key];
-        }
+          const key =
+            element.getAttribute("data-i18n");
 
-      });
+          if (
+            translations[language][key] !== undefined
+          ) {
+
+            element.innerHTML =
+              translations[language][key];
+
+          }
+
+        });
 
 
-      document.documentElement.lang = language;
+      document.documentElement.lang =
+        language;
 
 
       if (language === "sl") {
-        document.title = "Vinarstvo Filipčič — Okus Krasa";
+
+        document.title =
+          "Vinarstvo Filipčič — Okus Krasa";
+
       }
+
 
       if (language === "en") {
-        document.title = "Filipčič Winery — Taste of the Karst";
+
+        document.title =
+          "Filipčič Winery — Taste of the Karst";
+
       }
+
 
       if (language === "it") {
-        document.title = "Cantina Filipčič — Il gusto del Carso";
+
+        document.title =
+          "Cantina Filipčič — Il gusto del Carso";
+
       }
 
 
-      document.querySelectorAll(".languages button").forEach(button => {
+      document
+        .querySelectorAll(".languages button")
+        .forEach(button => {
 
-        button.classList.toggle(
-          "active",
-          button.dataset.lang === language
-        );
+          button.classList.toggle(
+            "active",
+            button.dataset.lang === language
+          );
 
-      });
+        });
 
 
       localStorage.setItem(
@@ -1716,19 +2326,29 @@ Kras v kozarcu.",
     }
 
 
-    document.querySelectorAll(".languages button").forEach(button => {
+    document
+      .querySelectorAll(".languages button")
+      .forEach(button => {
 
-      button.addEventListener("click", () => {
+        button.addEventListener(
+          "click",
+          () => {
 
-        changeLanguage(button.dataset.lang);
+            changeLanguage(
+              button.dataset.lang
+            );
+
+          }
+        );
 
       });
 
-    });
-
 
     const savedLanguage =
-      localStorage.getItem("filipcic-language") || "sl";
+      localStorage.getItem(
+        "filipcic-language"
+      ) || "sl";
+
 
     changeLanguage(savedLanguage);
 
@@ -1740,15 +2360,23 @@ Kras v kozarcu.",
     const navbar =
       document.getElementById("navbar");
 
-    window.addEventListener("scroll", () => {
 
-      if (window.scrollY > 80) {
-        navbar.classList.add("scrolled");
-      } else {
-        navbar.classList.remove("scrolled");
+    window.addEventListener(
+      "scroll",
+      () => {
+
+        if (window.scrollY > 80) {
+
+          navbar.classList.add("scrolled");
+
+        } else {
+
+          navbar.classList.remove("scrolled");
+
+        }
+
       }
-
-    });
+    );
 
 
     /* =========================
@@ -1762,22 +2390,34 @@ Kras v kozarcu.",
       document.getElementById("navLinks");
 
 
-    menu.addEventListener("click", () => {
+    menu.addEventListener(
+      "click",
+      () => {
 
-      navLinks.classList.toggle("active");
+        navLinks.classList.toggle(
+          "active"
+        );
 
-    });
+      }
+    );
 
 
-    document.querySelectorAll(".nav-links a").forEach(link => {
+    document
+      .querySelectorAll(".nav-links a")
+      .forEach(link => {
 
-      link.addEventListener("click", () => {
+        link.addEventListener(
+          "click",
+          () => {
 
-        navLinks.classList.remove("active");
+            navLinks.classList.remove(
+              "active"
+            );
+
+          }
+        );
 
       });
-
-    });
 
 
     /* =========================
@@ -1793,7 +2433,9 @@ Kras v kozarcu.",
 
             if (entry.isIntersecting) {
 
-              entry.target.classList.add("visible");
+              entry.target.classList.add(
+                "visible"
+              );
 
             }
 
@@ -1808,11 +2450,13 @@ Kras v kozarcu.",
       );
 
 
-    document.querySelectorAll(".reveal").forEach(element => {
+    document
+      .querySelectorAll(".reveal")
+      .forEach(element => {
 
-      observer.observe(element);
+        observer.observe(element);
 
-    });
+      });
 
 
     /* =========================
@@ -1823,16 +2467,22 @@ Kras v kozarcu.",
       document.querySelector(".hero");
 
 
-    window.addEventListener("scroll", () => {
+    window.addEventListener(
+      "scroll",
+      () => {
 
-      if (window.scrollY < window.innerHeight) {
+        if (
+          window.scrollY <
+          window.innerHeight
+        ) {
 
-        hero.style.backgroundPosition =
-          `center ${window.scrollY * 0.35}px`;
+          hero.style.backgroundPosition =
+            `center ${window.scrollY * 0.35}px`;
+
+        }
 
       }
-
-    });
+    );
 
   </script>
 
