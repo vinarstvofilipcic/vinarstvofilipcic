@@ -541,31 +541,27 @@
     ========================= */
 
     .cellar {
-      padding: 0;
+      padding: 100px 7vw;
 
       min-height: 90vh;
 
-      display: flex;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      gap: 6vw;
+
       align-items: center;
 
-      background:
-        linear-gradient(
-          90deg,
-          rgba(0,0,0,.88),
-          rgba(0,0,0,.25)
-        ),
-        url("https://images.unsplash.com/photo-1572567797557-3f6c8b5b8b28?auto=format&fit=crop&w=2200&q=90")
-        center/cover;
+      background: var(--black2);
     }
 
     .cellar-content {
-      padding: 120px 10vw;
-
-      max-width: 1000px;
+      padding: 40px 0;
+      max-width: 850px;
     }
 
     .cellar .section-title {
-      font-size: clamp(70px, 9vw, 130px);
+      font-size: clamp(60px, 8vw, 120px);
     }
 
     .cellar-draft {
@@ -600,6 +596,83 @@
       line-height: 1.65;
 
       max-width: 750px;
+    }
+
+
+    /* =========================
+       CELLAR GALLERY
+    ========================= */
+
+    .cellar-gallery {
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      grid-template-rows: 1fr 1fr;
+
+      gap: 15px;
+
+      height: 650px;
+    }
+
+    .cellar-photo {
+      position: relative;
+
+      overflow: hidden;
+
+      border: 1px solid rgba(197,164,109,.18);
+
+      background: #0c0b09;
+    }
+
+    .cellar-photo-main {
+      grid-row: span 2;
+    }
+
+    .cellar-photo img {
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+
+      display: block;
+
+      transition: .7s ease;
+    }
+
+    .cellar-photo:hover img {
+      transform: scale(1.05);
+    }
+
+    .cellar-photo::after {
+      content: "";
+
+      position: absolute;
+      inset: 0;
+
+      background: linear-gradient(
+        transparent 55%,
+        rgba(0,0,0,.75)
+      );
+
+      pointer-events: none;
+    }
+
+    .cellar-caption {
+      position: absolute;
+
+      left: 20px;
+      bottom: 18px;
+
+      z-index: 2;
+
+      color: var(--cream);
+
+      font-family: "Cormorant Garamond", serif;
+
+      font-size: 20px;
+
+      letter-spacing: 1px;
     }
 
 
@@ -730,31 +803,13 @@
 
 
     /* =========================
-       LOCATION / GOOGLE MAPS
+       GOOGLE MAPS
     ========================= */
 
     .location-map {
       padding: 0;
 
       background: var(--black2);
-    }
-
-    .location-map-header {
-      padding: 110px 7vw 55px;
-
-      text-align: center;
-    }
-
-    .location-map-header .section-title {
-      margin-bottom: 20px;
-    }
-
-    .location-map-address {
-      color: var(--muted);
-
-      font-size: 13px;
-
-      letter-spacing: 1px;
     }
 
     .map-frame {
@@ -939,11 +994,15 @@
       }
 
       .cellar {
-        min-height: 900px;
+        grid-template-columns: 1fr;
+
+        min-height: auto;
+
+        padding: 90px 6vw;
       }
 
       .cellar-content {
-        padding: 90px 7vw;
+        padding: 0;
       }
 
       .cellar-draft {
@@ -952,6 +1011,11 @@
 
       .cellar-draft p {
         font-size: 20px;
+      }
+
+      .cellar-gallery {
+        height: 600px;
+        margin-top: 20px;
       }
 
       .tradition-content {
@@ -966,10 +1030,6 @@
         flex-direction: column;
 
         gap: 25px;
-      }
-
-      .location-map-header {
-        padding: 80px 6vw 40px;
       }
 
       .map-frame {
@@ -1066,12 +1126,6 @@
           </a>
         </li>
 
-        <li>
-          <a href="#lokacija" data-i18n="navLocation">
-            Lokacija
-          </a>
-        </li>
-
       </ul>
 
 
@@ -1152,9 +1206,7 @@
 
   <section class="kras" id="kras">
 
-
     <div class="kras-image reveal"></div>
-
 
     <div class="reveal">
 
@@ -1165,7 +1217,6 @@
         01 · Kras
       </div>
 
-
       <h2
         class="section-title"
         data-i18n="krasTitle"
@@ -1173,7 +1224,6 @@
         Kjer kamen<br>
         daje vinu značaj.
       </h2>
-
 
       <p
         class="section-text"
@@ -1228,7 +1278,6 @@
         02 · Naša zgodba
       </div>
 
-
       <h2
         class="section-title"
         data-i18n="storyTitle"
@@ -1236,7 +1285,6 @@
         Vino je<br>
         čas.
       </h2>
-
 
       <p
         class="section-text"
@@ -1267,15 +1315,12 @@
         03 · Naša vina
       </div>
 
-
       <h2
         class="section-title"
         data-i18n="wineTitle"
       >
-        Iz naše zemlje.<br>
-        V našo klet.
+        Iz naše zemlje, V našo klet.
       </h2>
-
 
       <p
         class="section-text"
@@ -1289,7 +1334,6 @@
 
 
     <div class="wine-layout">
-
 
       <article class="wine-card teran reveal">
 
@@ -1321,7 +1365,6 @@
           Teran
         </div>
 
-
         <h3
           data-i18n="teranDescriptionTitle"
         >
@@ -1329,9 +1372,7 @@
           karakter Krasa.
         </h3>
 
-
         <div class="gold-line-left"></div>
-
 
         <p data-i18n="teranDescriptionText1">
           Teran je vino, ki je tesno povezano s kraško zemljo.
@@ -1339,13 +1380,11 @@
           in prepoznaven karakter so del njegove identitete.
         </p>
 
-
         <p data-i18n="teranDescriptionText2">
           V njem se prepletajo značilnosti okolja, v katerem
           nastaja – rdeča kraška zemlja, kamen, burja in sonce.
           Vsak letnik pa doda svojo zgodbo in svoj karakter.
         </p>
-
 
         <p data-i18n="teranDescriptionText3">
           Naš Teran želimo predstaviti takšnega, kot ga poznamo
@@ -1375,7 +1414,6 @@
         04 · Naša klet
       </div>
 
-
       <h2
         class="section-title"
         data-i18n="cellarTitle"
@@ -1384,26 +1422,94 @@
         se zgodba nadaljuje.
       </h2>
 
-
       <div class="cellar-draft">
 
         <div
           class="cellar-draft-label"
           data-i18n="cellarDraftLabel"
         >
-          OSNUTEK ZGODBE KLETI
+          NAŠA ZGODBA
         </div>
 
-
         <p data-i18n="cellarDraftText">
-          Na tem mestu bomo napisali zgodbo naše kleti –
-          od njenih začetkov, prvih vinogradov in ljudi,
-          ki so jo ustvarjali, do današnje generacije.
-          Tukaj bomo skupaj dopolnili zgodovino družine,
-          kleti, vinogradov, način dela, stare običaje
-          in vse zgodbe, ki so se skozi leta prenašale
-          iz roda v rod.
+          Vinarstvo Filipčič je povezano s krajem, v katerem živimo
+          in ustvarjamo. Naša zgodba sega daleč v preteklost.
+          Trte naše družine so na Krasu prisotne že od 19. stoletja,
+          ko se je vinogradništvo začelo prepletati z našim domom,
+          družino in načinom življenja.
+
+          <br><br>
+
+          Vino pri nas nikoli ni bilo samo izdelek. Je del doma,
+          družine in zemlje, iz katere izhajamo. Znanje in ljubezen
+          do vinogradništva se prenašata iz roda v rod, vsaka
+          generacija pa v zgodbo doda nekaj svojega.
+
+          <br><br>
+
+          Leta 1981 smo zgradili novo vinsko klet, ki je postala
+          srce našega vinarstva. Skozi leta se je klet spreminjala
+          skupaj z nami, okoli leta 2010 pa smo jo prenovili in ji
+          dali novo podobo, ne da bi izgubili njeno prvotno bistvo.
+
+          <br><br>
+
+          Danes v njej nadaljujemo zgodbo, ki se je začela že pred
+          mnogimi desetletji. Spoštujemo tradicijo, vendar gledamo
+          naprej. Kajti vsaka nova letina je nova stran iste zgodbe.
+
+          <br><br>
+
+          Korenine ostajajo. Zgodba se nadaljuje.
         </p>
+
+      </div>
+
+    </div>
+
+
+    <!-- SLIKE KLETI -->
+
+    <div class="cellar-gallery reveal">
+
+      <div class="cellar-photo cellar-photo-main">
+
+        <img
+          src="slike/vrataklet.jpg"
+          alt="Vrata vinske kleti"
+        >
+
+        <div class="cellar-caption">
+          Vhod v našo klet
+        </div>
+
+      </div>
+
+
+      <div class="cellar-photo">
+
+        <img
+          src="slike/klettrta.jpg"
+          alt="Trta in vinska klet"
+        >
+
+        <div class="cellar-caption">
+          Od trte do vina
+        </div>
+
+      </div>
+
+
+      <div class="cellar-photo">
+
+        <img
+          src="slike/slika_glinagrozdje.jpg"
+          alt="Grozdje in glina"
+        >
+
+        <div class="cellar-caption">
+          Zemlja in grozdje
+        </div>
 
       </div>
 
@@ -1427,7 +1533,6 @@
         05 · Izročilo
       </div>
 
-
       <h2
         class="section-title"
         data-i18n="traditionTitle"
@@ -1440,13 +1545,11 @@
 
     <div class="tradition-content reveal">
 
-
       <p data-i18n="traditionText1">
         Na Krasu ima Teran posebno mesto. Ni le vino,
         temveč del življenja, ki je skozi generacije
         povezoval človeka, zemljo in dom.
       </p>
-
 
       <p data-i18n="traditionText2">
         Od nekdaj so ljudje poznali moč kraške zemlje
@@ -1457,14 +1560,12 @@
         tudi misel, da je »Teran dober za kri«.
       </p>
 
-
       <p data-i18n="traditionText3">
         Te zgodbe so del izročila, ki se je prenašalo
         iz roda v rod – ob delu v vinogradu,
         ob domači mizi in v kleti, kjer je vino
         zorelo iz leta v leto.
       </p>
-
 
       <p>
 
@@ -1474,13 +1575,11 @@
 
       </p>
 
-
       <p data-i18n="traditionText4">
         Teran nosi značaj svojega kraja. Rdeča kraška
         zemlja, kamen, burja in sonce ustvarjajo pogoje,
         v katerih nastaja vino z izrazitim karakterjem.
       </p>
-
 
       <p data-i18n="traditionText5">
         Prav zaradi svoje posebnosti je Teran skozi zgodovino
@@ -1491,7 +1590,6 @@
         temveč del doma in vsakdana.
       </p>
 
-
       <p>
 
         <strong data-i18n="traditionTodayTitle">
@@ -1500,12 +1598,10 @@
 
       </p>
 
-
       <p data-i18n="traditionText6">
         Danes na Teran gledamo z novim znanjem,
         vendar stare zgodbe ostajajo del njegove identitete.
       </p>
-
 
       <p data-i18n="traditionText7">
         Spoštujemo tisto, kar so nam pripovedovali naši
@@ -1514,14 +1610,12 @@
         vemo danes.
       </p>
 
-
       <p
         class="health-closing"
         data-i18n="healthClosing"
       >
         Ker vino ni samo tisto, kar natočimo v kozarec.
       </p>
-
 
       <p
         class="health-final"
@@ -1534,7 +1628,6 @@
         </strong>
       </p>
 
-
       <p
         class="health-final"
         data-i18n="healthFinal2"
@@ -1545,7 +1638,6 @@
           Iz roda v rod.
         </strong>
       </p>
-
 
       <p
         class="health-note"
@@ -1576,7 +1668,6 @@
         06 · Obiščite nas
       </div>
 
-
       <h2
         class="section-title"
         data-i18n="contactTitle"
@@ -1584,7 +1675,6 @@
         Vrata naše<br>
         kleti so odprta.
       </h2>
-
 
       <a
         href="mailto:info@vinarstvo-filipcic.si"
@@ -1594,9 +1684,7 @@
         Kontaktirajte nas
       </a>
 
-
       <div class="contact-details">
-
 
         <div>
 
@@ -1604,10 +1692,9 @@
             Lokacija
           </span>
 
-          Brestovica pri Komnu
+          Brestovica pri Komnu 1a
 
         </div>
-
 
         <div>
 
@@ -1619,7 +1706,6 @@
 
         </div>
 
-
         <div>
 
           <span data-i18n="emailLabel">
@@ -1630,7 +1716,6 @@
 
         </div>
 
-
       </div>
 
     </div>
@@ -1639,42 +1724,11 @@
 
 
   <!-- =========================
-       LOCATION / GOOGLE MAPS
+       GOOGLE MAPS
+       BREZ POSEBNEGA ZAVIHKA
   ========================= -->
 
-  <section
-    class="location-map"
-    id="lokacija"
-  >
-
-    <div class="location-map-header reveal">
-
-      <div
-        class="section-label"
-        data-i18n="locationMapLabel"
-      >
-        07 · Lokacija
-      </div>
-
-
-      <h2
-        class="section-title"
-        data-i18n="locationMapTitle"
-      >
-        Najdete nas<br>
-        na Krasu.
-      </h2>
-
-
-      <p
-        class="location-map-address"
-        data-i18n="locationMapAddress"
-      >
-        Brestovica pri Komnu 1a · 6223 Komen · Slovenija
-      </p>
-
-    </div>
-
+  <section class="location-map">
 
     <iframe
       class="map-frame"
@@ -1697,7 +1751,6 @@
     <div>
       © 2026 <strong>VINARSTVO FILIPČIČ</strong>
     </div>
-
 
     <div data-i18n="footerLocation">
       KRAS · SLOVENIJA
@@ -1722,7 +1775,6 @@
         navCellar: "Klet",
         navTradition: "Izročilo",
         navContact: "Kontakt",
-        navLocation: "Lokacija",
 
         eyebrow:
           "Vinarstvo Filipčič · Kras · Slovenija",
@@ -1795,10 +1847,10 @@
           "Klet, kjer se <br>zgodba nadaljuje.",
 
         cellarDraftLabel:
-          "OSNUTEK ZGODBE KLETI",
+          "NAŠA ZGODBA",
 
         cellarDraftText:
-          "Na tem mestu bomo napisali zgodbo naše kleti – od njenih začetkov, prvih vinogradov in ljudi, ki so jo ustvarjali, do današnje generacije. Tukaj bomo skupaj dopolnili zgodovino družine, kleti, vinogradov, način dela, stare običaje in vse zgodbe, ki so se skozi leta prenašale iz roda v rod.",
+          "Vinarstvo Filipčič je povezano s krajem, v katerem živimo in ustvarjamo. Naša zgodba sega daleč v preteklost. Trte naše družine so na Krasu prisotne že od 19. stoletja, ko se je vinogradništvo začelo prepletati z našim domom, družino in načinom življenja.<br><br>Vino pri nas nikoli ni bilo samo izdelek. Je del doma, družine in zemlje, iz katere izhajamo. Znanje in ljubezen do vinogradništva se prenašata iz roda v rod, vsaka generacija pa v zgodbo doda nekaj svojega.<br><br>Leta 1981 smo zgradili novo vinsko klet, ki je postala srce našega vinarstva. Skozi leta se je klet spreminjala skupaj z nami, okoli leta 2010 pa smo jo prenovili in ji dali novo podobo, ne da bi izgubili njeno prvotno bistvo.<br><br>Danes v njej nadaljujemo zgodbo, ki se je začela že pred mnogimi desetletji. Spoštujemo tradicijo, vendar gledamo naprej. Kajti vsaka nova letina je nova stran iste zgodbe.<br><br>Korenine ostajajo. Zgodba se nadaljuje.",
 
 
         traditionLabel:
@@ -1866,16 +1918,6 @@
           "E-pošta",
 
 
-        locationMapLabel:
-          "07 · Lokacija",
-
-        locationMapTitle:
-          "Najdete nas<br>na Krasu.",
-
-        locationMapAddress:
-          "Brestovica pri Komnu 1a · 6223 Komen · Slovenija",
-
-
         footerLocation:
           "KRAS · SLOVENIJA"
 
@@ -1884,27 +1926,12 @@
 
       en: {
 
-        navKras:
-          "Karst",
-
-        navStory:
-          "Story",
-
-        navWine:
-          "Wines",
-
-        navCellar:
-          "Cellar",
-
-        navTradition:
-          "Tradition",
-
-        navContact:
-          "Contact",
-
-        navLocation:
-          "Location",
-
+        navKras: "Karst",
+        navStory: "Story",
+        navWine: "Wines",
+        navCellar: "Cellar",
+        navTradition: "Tradition",
+        navContact: "Contact",
 
         eyebrow:
           "Filipčič Winery · Karst · Slovenia",
@@ -1977,10 +2004,10 @@
           "A cellar where<br>the story continues.",
 
         cellarDraftLabel:
-          "DRAFT OF THE CELLAR STORY",
+          "OUR STORY",
 
         cellarDraftText:
-          "This is where we will write the story of our cellar – from its beginnings, the first vineyards and the people who created it, to today's generation. Here we will add the history of the family, cellar and vineyards, our way of working, old customs and all the stories that have been passed down from generation to generation.",
+          "Filipčič Winery is connected to the place where we live and create. Our story reaches far back into the past. The vineyards of our family have been present in the Karst since the 19th century, when winemaking became intertwined with our home, family and way of life.<br><br>Wine has never been merely a product for us. It is part of home, family and the land from which we come. Knowledge and love for winemaking are passed down from generation to generation, with each generation adding something of its own to the story.<br><br>In 1981, we built a new wine cellar, which became the heart of our winery. Over the years, the cellar changed together with us, and around 2010 it was renovated and given a new appearance without losing its original essence.<br><br>Today, we continue the story that began many decades ago. We respect tradition, but we also look ahead. Every new vintage is a new page in the same story.<br><br>The roots remain. The story continues.",
 
 
         traditionLabel:
@@ -2048,16 +2075,6 @@
           "Email",
 
 
-        locationMapLabel:
-          "07 · Location",
-
-        locationMapTitle:
-          "Find us<br>in the Karst.",
-
-        locationMapAddress:
-          "Brestovica pri Komnu 1a · 6223 Komen · Slovenia",
-
-
         footerLocation:
           "KARST · SLOVENIA"
 
@@ -2066,27 +2083,12 @@
 
       it: {
 
-        navKras:
-          "Carso",
-
-        navStory:
-          "Storia",
-
-        navWine:
-          "Vini",
-
-        navCellar:
-          "Cantina",
-
-        navTradition:
-          "Tradizione",
-
-        navContact:
-          "Contatti",
-
-        navLocation:
-          "Posizione",
-
+        navKras: "Carso",
+        navStory: "Storia",
+        navWine: "Vini",
+        navCellar: "Cantina",
+        navTradition: "Tradizione",
+        navContact: "Contatti",
 
         eyebrow:
           "Cantina Filipčič · Carso · Slovenia",
@@ -2159,10 +2161,10 @@
           "Una cantina dove<br>la storia continua.",
 
         cellarDraftLabel:
-          "BOZZA DELLA STORIA DELLA CANTINA",
+          "LA NOSTRA STORIA",
 
         cellarDraftText:
-          "Qui scriveremo la storia della nostra cantina – dalle sue origini, dai primi vigneti e dalle persone che l'hanno creata, fino alla generazione di oggi. Qui completeremo la storia della famiglia, della cantina e dei vigneti, il nostro modo di lavorare, le antiche usanze e tutte le storie tramandate di generazione in generazione.",
+          "La Cantina Filipčič è legata al luogo in cui viviamo e creiamo. La nostra storia affonda le sue radici nel passato. I vigneti della nostra famiglia sono presenti sul Carso fin dal XIX secolo, quando la viticoltura ha iniziato a intrecciarsi con la nostra casa, la nostra famiglia e il nostro modo di vivere.<br><br>Per noi il vino non è mai stato soltanto un prodotto. È parte della casa, della famiglia e della terra da cui proveniamo. La conoscenza e l'amore per la viticoltura vengono trasmessi di generazione in generazione, e ogni generazione aggiunge qualcosa di proprio alla storia.<br><br>Nel 1981 abbiamo costruito una nuova cantina, che è diventata il cuore della nostra attività. Nel corso degli anni la cantina è cambiata insieme a noi e, intorno al 2010, è stata rinnovata e ha ricevuto un nuovo aspetto, senza perdere la sua essenza originale.<br><br>Oggi continuiamo la storia iniziata molti decenni fa. Rispettiamo la tradizione, ma guardiamo anche avanti. Ogni nuova annata è una nuova pagina della stessa storia.<br><br>Le radici rimangono. La storia continua.",
 
 
         traditionLabel:
@@ -2230,16 +2232,6 @@
           "Email",
 
 
-        locationMapLabel:
-          "07 · Posizione",
-
-        locationMapTitle:
-          "Venite a trovarci<br>sul Carso.",
-
-        locationMapAddress:
-          "Brestovica pri Komnu 1a · 6223 Komen · Slovenia",
-
-
         footerLocation:
           "CARSO · SLOVENIA"
 
@@ -2257,7 +2249,6 @@
       if (!translations[language]) {
         language = "sl";
       }
-
 
       document
         .querySelectorAll("[data-i18n]")
