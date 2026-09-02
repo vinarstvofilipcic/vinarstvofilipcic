@@ -986,472 +986,505 @@ Spoštujemo tisto, kar so nam pripovedovali naši predniki, hkrati pa želimo bo
 
   <script>
 
-    const translations = {
+<script>
 
-      sl: {
+  const translations = {
 
-        navKras: "Kras",
-        navStory: "Zgodba",
-        navWine: "Vina",
-        navCellar: "Klet",
-        navTradition: "Izročilo",
-        navContact: "Kontakt",
+    sl: {
 
-        eyebrow: "Vinarstvo Filipčič · Kras · Slovenija",
+      navKras: "Kras",
+      navStory: "Zgodba",
+      navWine: "Vina",
+      navCellar: "Klet",
+      navTradition: "Izročilo",
+      navContact: "Kontakt",
 
-        motto: "»Bog blagoslovi gospodarja,<br>ki da piti brez denarja.«",
+      eyebrow: "Vinarstvo Filipčič · Kras · Slovenija",
 
-        heroButton: "Spoznajte našo zgodbo",
+      motto: "»Bog blagoslovi gospodarja,<br>ki da piti brez denarja.«",
 
-        scroll: "Scroll",
+      heroButton: "Spoznajte našo zgodbo",
 
-        krasLabel: "01 · Kraj",
+      scroll: "Scroll",
 
-        krasTitle: "Kjer kamen<br>sreča trto.",
+      krasLabel: "01 · Kraj",
 
-        krasText:
-          "Kras ni samo prostor. Je karakter. Kamen, burja, rdeča zemlja in sonce ustvarjajo okolje, ki daje vinu svojo posebno identiteto.",
+      krasTitle: "Kjer kamen<br>sreča trto.",
 
-        storyLabel: "02 · Naša zgodba",
+      krasText:
+        "Kras ni samo prostor. Je karakter. Kamen, burja, rdeča zemlja in sonce ustvarjajo okolje, ki daje vinu svojo posebno identiteto.",
 
-        storyTitle: "Vino je<br>čas.",
+      storyLabel: "02 · Naša zgodba",
 
-        storyText:
-          "V Vinarstvu Filipčič spoštujemo tisto, kar je bilo ustvarjeno pred nami, in ustvarjamo nekaj, kar bo ostalo za nami.",
+      storyTitle: "Vino je<br>čas.",
 
-        wineLabel: "03 · Naša vina",
+      storyText:
+        "V Vinarstvu Filipčič spoštujemo tisto, kar je bilo ustvarjeno pred nami, in ustvarjamo nekaj, kar bo ostalo za nami.",
 
-        wineTitle: "Iz naše zemlje.<br>V našo klet.",
+      wineLabel: "03 · Naša vina",
 
-        wineIntro:
-          "Vsako vino ima svoj karakter. Vsako leto svojo zgodbo.",
+      wineTitle: "Iz naše zemlje.<br>V našo klet.",
 
-        teranSmall: "Kraška klasika",
+      wineIntro:
+        "Vsako vino ima svoj karakter. Vsako leto svojo zgodbo.",
 
-        teranText:
-          "Globok. Kraški. Samosvoj.",
+      teranSmall: "Kraška klasika",
 
-        teranDescriptionLabel: "Teran",
+      teranText:
+        "Globok. Kraški. Samosvoj.",
 
-        teranDescriptionTitle:
-          "Vino, ki nosi<br>karakter Krasa.",
+      teranDescriptionLabel: "Teran",
 
-        teranDescriptionText1:
-          "Teran je vino, ki je tesno povezano s kraško zemljo. Njegova globoka rubinasto rdeča barva, izrazita svežina in prepoznaven karakter so del njegove identitete.",
+      teranDescriptionTitle:
+        "Vino, ki nosi<br>karakter Krasa.",
 
-        teranDescriptionText2:
-          "V njem se prepletajo značilnosti okolja, v katerem nastaja – rdeča kraška zemlja, kamen, burja in sonce. Vsak letnik pa doda svojo zgodbo in svoj karakter.",
+      teranDescriptionText1:
+        "Teran je vino, ki je tesno povezano s kraško zemljo. Njegova globoka rubinasto rdeča barva, izrazita svežina in prepoznaven karakter so del njegove identitete.",
 
-        teranDescriptionText3:
-          "Naš Teran želimo predstaviti takšnega, kot ga poznamo mi – kraškega, pristnega in povezanega z domačo zemljo ter tradicijo.",
+      teranDescriptionText2:
+        "V njem se prepletajo značilnosti okolja, v katerem nastaja – rdeča kraška zemlja, kamen, burja in sonce. Vsak letnik pa doda svojo zgodbo in svoj karakter.",
 
-        cellarLabel: "04 · Naša klet",
+      teranDescriptionText3:
+        "Naš Teran želimo predstaviti takšnega, kot ga poznamo mi – kraškega, pristnega in povezanega z domačo zemljo ter tradicijo.",
 
-        cellarTitle:
-          "Klet, kjer<br>se zgodba nadaljuje.",
+      cellarLabel: "04 · Naša klet",
 
-        cellarDraftLabel:
-          "OSNUTEK ZGODBE KLETI",
+      cellarTitle:
+        "Klet, kjer<br>se zgodba nadaljuje.",
 
-        cellarDraftText:
-          "Na tem mestu bomo napisali zgodbo naše kleti – od njenih začetkov, prvih vinogradov in ljudi, ki so jo ustvarjali, do današnje generacije. Tukaj bomo skupaj dopolnili zgodovino družine, kleti, vinogradov, način dela, stare običaje in vse zgodbe, ki so se skozi leta prenašale iz roda v rod.",
+      cellarDraftLabel:
+        "OSNUTEK ZGODBE KLETI",
 
-        traditionLabel:
-          "05 · Izročilo",
+      cellarDraftText:
+        "Na tem mestu bomo napisali zgodbo naše kleti – od njenih začetkov, prvih vinogradov in ljudi, ki so jo ustvarjali, do današnje generacije. Tukaj bomo skupaj dopolnili zgodovino družine, kleti, vinogradov, način dela, stare običaje in vse zgodbe, ki so se skozi leta prenašale iz roda v rod.",
 
-        traditionTitle:
-          "Teran in<br>dobro počutje.",
+      traditionLabel:
+        "05 · Izročilo",
 
-        traditionText:
-          "Zgodbe o Teranu se na Krasu prenašajo iz roda v rod. Na tem mestu bomo predstavili tradicionalna verovanja, zgodovinske zapise in znanstvene ugotovitve o njegovih sestavinah ter morebitnih vplivih na zdravje.",
+      traditionTitle:
+        "Iz roda v rod",
 
-        healthTitle:
-          "Zdravstveni učinki Terana",
+      traditionText:
+        "Na Krasu ima Teran posebno mesto. Ni le vino, temveč del življenja, ki je skozi generacije povezoval človeka, zemljo in dom.",
 
-        healthNote:
-          "OPOMBA: Zdravstvene trditve bomo pred objavo preverili glede na zanesljive znanstvene vire in veljavna pravila za oglaševanje živil in alkoholnih pijač.",
+      healthTitle:
+        "Zdravstveni učinki Terana",
 
-        contactLabel: "06 · Obiščite nas",
+      healthText1:
+        "Na Krasu ima Teran posebno mesto. Ni le vino, temveč del življenja, ki je skozi generacije povezoval človeka, zemljo in dom.",
 
-        contactTitle:
-          "Vrata naše<br>kleti so odprta.",
+      healthText2:
+        "Od nekdaj so ljudje poznali moč kraške zemlje in verjeli, da se ta moč odraža tudi v vinu. Teranu so pripisovali različne blagodejne lastnosti in ga povezovali z dobrim počutjem. Med kraškimi pripovedmi se je skozi čas ohranila tudi misel, da je »Teran dober za kri«.",
 
-        contactButton:
-          "Kontaktirajte nas",
+      healthText3:
+        "Te zgodbe so del izročila, ki se je prenašalo iz roda v rod – ob delu v vinogradu, ob domači mizi in v kleti, kjer je vino zorelo iz leta v leto.",
 
-        locationLabel:
-          "Lokacija",
+      contactLabel: "06 · Obiščite nas",
 
-        phoneLabel:
-          "Telefon",
+      contactTitle:
+        "Vrata naše<br>kleti so odprta.",
 
-        emailLabel:
-          "E-pošta",
+      contactButton:
+        "Kontaktirajte nas",
 
-        footerLocation:
-          "KRAS · SLOVENIJA"
-      },
+      locationLabel:
+        "Lokacija",
 
-      en: {
+      phoneLabel:
+        "Telefon",
 
-        navKras: "Karst",
-        navStory: "Story",
-        navWine: "Wines",
-        navCellar: "Cellar",
-        navTradition: "Tradition",
-        navContact: "Contact",
+      emailLabel:
+        "E-pošta",
 
-        eyebrow: "Filipčič Winery · Karst · Slovenia",
+      footerLocation:
+        "KRAS · SLOVENIJA"
+    },
 
-        motto:
-          "“God bless the host,<br>who gives a drink without charge.”",
 
-        heroButton:
-          "Discover our story",
+    en: {
 
-        scroll:
-          "Scroll",
+      navKras: "Karst",
+      navStory: "Story",
+      navWine: "Wines",
+      navCellar: "Cellar",
+      navTradition: "Tradition",
+      navContact: "Contact",
 
-        krasLabel:
-          "01 · Place",
+      eyebrow: "Filipčič Winery · Karst · Slovenia",
 
-        krasTitle:
-          "Where stone<br>meets the vine.",
+      motto:
+        "“God bless the host,<br>who gives a drink without charge.”",
 
-        krasText:
-          "The Karst is more than a place. It is character. Stone, the bora wind, red soil and sunlight create an environment that gives the wine its distinctive identity.",
+      heroButton:
+        "Discover our story",
 
-        storyLabel:
-          "02 · Our story",
+      scroll:
+        "Scroll",
 
-        storyTitle:
-          "Wine is<br>time.",
+      krasLabel:
+        "01 · Place",
 
-        storyText:
-          "At Filipčič Winery, we respect what was created before us and create something that will remain after us.",
+      krasTitle:
+        "Where stone<br>meets the vine.",
 
-        wineLabel:
-          "03 · Our wines",
+      krasText:
+        "The Karst is more than a place. It is character. Stone, the bora wind, red soil and sunlight create an environment that gives the wine its distinctive identity.",
 
-        wineTitle:
-          "From our land.<br>To our cellar.",
+      storyLabel:
+        "02 · Our story",
 
-        wineIntro:
-          "Every wine has its own character. Every year its own story.",
+      storyTitle:
+        "Wine is<br>time.",
 
-        teranSmall:
-          "A Karst classic",
+      storyText:
+        "At Filipčič Winery, we respect what was created before us and create something that will remain after us.",
 
-        teranText:
-          "Deep. Karst. Distinctive.",
+      wineLabel:
+        "03 · Our wines",
 
-        teranDescriptionLabel:
-          "Teran",
+      wineTitle:
+        "From our land.<br>To our cellar.",
 
-        teranDescriptionTitle:
-          "A wine carrying<br>the character of the Karst.",
+      wineIntro:
+        "Every wine has its own character. Every year its own story.",
 
-        teranDescriptionText1:
-          "Teran is a wine closely connected to the Karst soil. Its deep ruby-red colour, distinctive freshness and recognizable character are part of its identity.",
+      teranSmall:
+        "A Karst classic",
 
-        teranDescriptionText2:
-          "It reflects the environment in which it is created – red Karst soil, stone, the bora wind and sunlight. Every vintage adds its own story and its own character.",
+      teranText:
+        "Deep. Karst. Distinctive.",
 
-        teranDescriptionText3:
-          "We want to present our Teran as we know it – authentic, shaped by the Karst and connected to our land and tradition.",
+      teranDescriptionLabel:
+        "Teran",
 
-        cellarLabel:
-          "04 · Our cellar",
+      teranDescriptionTitle:
+        "A wine carrying<br>the character of the Karst.",
 
-        cellarTitle:
-          "A cellar where<br>the story continues.",
+      teranDescriptionText1:
+        "Teran is a wine closely connected to the Karst soil. Its deep ruby-red colour, distinctive freshness and recognizable character are part of its identity.",
 
-        cellarDraftLabel:
-          "DRAFT OF THE CELLAR STORY",
+      teranDescriptionText2:
+        "It reflects the environment in which it is created – red Karst soil, stone, the bora wind and sunlight. Every vintage adds its own story and its own character.",
 
-        cellarDraftText:
-          "This is where we will write the story of our cellar – from its beginnings, the first vineyards and the people who created it, to today's generation. Here we will add the history of the family, cellar and vineyards, our way of working, old customs and all the stories that have been passed down from generation to generation.",
+      teranDescriptionText3:
+        "We want to present our Teran as we know it – authentic, shaped by the Karst and connected to our land and tradition.",
 
-        traditionLabel:
-          "05 · Tradition",
+      cellarLabel:
+        "04 · Our cellar",
 
-        traditionTitle:
-          "Teran and<br>well-being.",
+      cellarTitle:
+        "A cellar where<br>the story continues.",
 
-        traditionText:
-          "Stories about Teran have been passed down across the Karst from generation to generation. Here we will present traditional beliefs, historical records and scientific findings about its components and possible effects on health.",
+      cellarDraftLabel:
+        "DRAFT OF THE CELLAR STORY",
 
-        healthTitle:
-          "The health effects of Teran",
+      cellarDraftText:
+        "This is where we will write the story of our cellar – from its beginnings, the first vineyards and the people who created it, to today's generation. Here we will add the history of the family, cellar and vineyards, our way of working, old customs and all the stories that have been passed down from generation to generation.",
 
-        healthNote:
-          "NOTE: Health claims will be checked against reliable scientific sources and applicable rules for advertising food and alcoholic beverages before publication.",
+      traditionLabel:
+        "05 · Tradition",
 
-        contactLabel:
-          "06 · Visit us",
+      traditionTitle:
+        "From generation<br>to generation.",
 
-        contactTitle:
-          "The doors to our<br>cellar are open.",
+      traditionText:
+        "These stories are part of a tradition passed down from generation to generation – through work in the vineyards, around the family table and in the cellar, where the wine matured year after year.",
 
-        contactButton:
-          "Contact us",
+      healthTitle:
+        "Health effects of Teran",
 
-        locationLabel:
-          "Location",
+      healthText1:
+        "Teran holds a special place in the Karst. It is not merely a wine, but a part of life that has connected people, the land and the home for generations.",
 
-        phoneLabel:
-          "Phone",
+      healthText2:
+        "Since ancient times, people have recognized the strength of the Karst soil and believed that this strength was also reflected in the wine. Teran has traditionally been associated with various beneficial properties and with well-being. Among the stories of the Karst, the belief that “Teran is good for the blood” has also been passed down through the years.",
 
-        emailLabel:
-          "Email",
+      healthText3:
+        "These stories are part of a tradition passed down from generation to generation – through work in the vineyards, around the family table and in the cellar, where the wine matured year after year.",
 
-        footerLocation:
-          "KARST · SLOVENIA"
-      },
+      contactLabel:
+        "06 · Visit us",
 
-      it: {
+      contactTitle:
+        "The doors to our<br>cellar are open.",
 
-        navKras: "Carso",
-        navStory: "Storia",
-        navWine: "Vini",
-        navCellar: "Cantina",
-        navTradition: "Tradizione",
-        navContact: "Contatti",
+      contactButton:
+        "Contact us",
 
-        eyebrow:
-          "Cantina Filipčič · Carso · Slovenia",
+      locationLabel:
+        "Location",
 
-        motto:
-          "«Dio benedica il padrone,<br>che offre da bere senza denaro.»",
+      phoneLabel:
+        "Phone",
 
-        heroButton:
-          "Scopri la nostra storia",
+      emailLabel:
+        "Email",
 
-        scroll:
-          "Scorri",
+      footerLocation:
+        "KARST · SLOVENIA"
+    },
 
-        krasLabel:
-          "01 · Luogo",
 
-        krasTitle:
-          "Dove la pietra<br>incontra la vite.",
+    it: {
 
-        krasText:
-          "Il Carso non è solo un luogo. È carattere. Pietra, bora, terra rossa e sole creano un ambiente che dona al vino la sua identità distintiva.",
+      navKras: "Carso",
+      navStory: "Storia",
+      navWine: "Vini",
+      navCellar: "Cantina",
+      navTradition: "Tradizione",
+      navContact: "Contatti",
 
-        storyLabel:
-          "02 · La nostra storia",
+      eyebrow:
+        "Cantina Filipčič · Carso · Slovenia",
 
-        storyTitle:
-          "Il vino è<br>tempo.",
+      motto:
+        "«Dio benedica il padrone,<br>che offre da bere senza denaro.»",
 
-        storyText:
-          "Alla Cantina Filipčič rispettiamo ciò che è stato creato prima di noi e creiamo qualcosa che rimarrà dopo di noi.",
+      heroButton:
+        "Scopri la nostra storia",
 
-        wineLabel:
-          "03 · I nostri vini",
+      scroll:
+        "Scorri",
 
-        wineTitle:
-          "Dalla nostra terra.<br>Alla nostra cantina.",
+      krasLabel:
+        "01 · Luogo",
 
-        wineIntro:
-          "Ogni vino ha il suo carattere. Ogni annata la sua storia.",
+      krasTitle:
+        "Dove la pietra<br>incontra la vite.",
 
-        teranSmall:
-          "Un classico del Carso",
+      krasText:
+        "Il Carso non è solo un luogo. È carattere. Pietra, bora, terra rossa e sole creano un ambiente che dona al vino la sua identità distintiva.",
 
-        teranText:
-          "Profondo. Carsico. Inconfondibile.",
+      storyLabel:
+        "02 · La nostra storia",
 
-        teranDescriptionLabel:
-          "Teran",
+      storyTitle:
+        "Il vino è<br>tempo.",
 
-        teranDescriptionTitle:
-          "Un vino che porta<br>il carattere del Carso.",
+      storyText:
+        "Alla Cantina Filipčič rispettiamo ciò che è stato creato prima di noi e creiamo qualcosa che rimarrà dopo di noi.",
 
-        teranDescriptionText1:
-          "Il Teran è un vino strettamente legato alla terra carsica. Il suo intenso colore rosso rubino, la spiccata freschezza e il suo carattere riconoscibile fanno parte della sua identità.",
+      wineLabel:
+        "03 · I nostri vini",
 
-        teranDescriptionText2:
-          "Riflette l'ambiente in cui nasce – la terra rossa del Carso, la pietra, la bora e il sole. Ogni annata aggiunge la propria storia e il proprio carattere.",
+      wineTitle:
+        "Dalla nostra terra.<br>Alla nostra cantina.",
 
-        teranDescriptionText3:
-          "Vogliamo presentare il nostro Teran come lo conosciamo noi – autentico, carsico e legato alla nostra terra e alla nostra tradizione.",
+      wineIntro:
+        "Ogni vino ha il suo carattere. Ogni annata la sua storia.",
 
-        cellarLabel:
-          "04 · La nostra cantina",
+      teranSmall:
+        "Un classico del Carso",
 
-        cellarTitle:
-          "Una cantina dove<br>la storia continua.",
+      teranText:
+        "Profondo. Carsico. Inconfondibile.",
 
-        cellarDraftLabel:
-          "BOZZA DELLA STORIA DELLA CANTINA",
+      teranDescriptionLabel:
+        "Teran",
 
-        cellarDraftText:
-          "Qui scriveremo la storia della nostra cantina – dalle sue origini, dai primi vigneti e dalle persone che l'hanno creata, fino alla generazione di oggi. Qui completeremo la storia della famiglia, della cantina e dei vigneti, il nostro modo di lavorare, le antiche usanze e tutte le storie tramandate di generazione in generazione.",
+      teranDescriptionTitle:
+        "Un vino che porta<br>il carattere del Carso.",
 
-        traditionLabel:
-          "05 · Tradizione",
+      teranDescriptionText1:
+        "Il Teran è un vino strettamente legato alla terra carsica. Il suo intenso colore rosso rubino, la spiccata freschezza e il suo carattere riconoscibile fanno parte della sua identità.",
 
-        traditionTitle:
-          "Il Teran e<br>il benessere.",
+      teranDescriptionText2:
+        "Riflette l'ambiente in cui nasce – la terra rossa del Carso, la pietra, la bora e il sole. Ogni annata aggiunge la propria storia e il proprio carattere.",
 
-        traditionText:
-          "Le storie sul Teran si tramandano sul Carso di generazione in generazione. Qui presenteremo le credenze tradizionali, le testimonianze storiche e le conoscenze scientifiche sui suoi componenti e sui possibili effetti sulla salute.",
+      teranDescriptionText3:
+        "Vogliamo presentare il nostro Teran come lo conosciamo noi – autentico, carsico e legato alla nostra terra e alla nostra tradizione.",
 
-        healthTitle:
-          "Gli effetti del Teran sulla salute",
+      cellarLabel:
+        "04 · La nostra cantina",
 
-        healthNote:
-          "NOTA: Prima della pubblicazione, le indicazioni sulla salute saranno verificate sulla base di fonti scientifiche affidabili e delle norme applicabili alla pubblicità degli alimenti e delle bevande alcoliche.",
+      cellarTitle:
+        "Una cantina dove<br>la storia continua.",
 
-        contactLabel:
-          "06 · Venite a trovarci",
+      cellarDraftLabel:
+        "BOZZA DELLA STORIA DELLA CANTINA",
 
-        contactTitle:
-          "Le porte della nostra<br>cantina sono aperte.",
+      cellarDraftText:
+        "Qui scriveremo la storia della nostra cantina – dalle sue origini, dai primi vigneti e dalle persone che l'hanno creata, fino alla generazione di oggi. Qui completeremo la storia della famiglia, della cantina e dei vigneti, il nostro modo di lavorare, le antiche usanze e tutte le storie tramandate di generazione in generazione.",
 
-        contactButton:
-          "Contattaci",
+      traditionLabel:
+        "05 · Tradizione",
 
-        locationLabel:
-          "Posizione",
+      traditionTitle:
+        "Di generazione<br>in generazione.",
 
-        phoneLabel:
-          "Telefono",
+      traditionText:
+        "Queste storie fanno parte di una tradizione tramandata di generazione in generazione – attraverso il lavoro nei vigneti, attorno alla tavola di casa e in cantina, dove il vino maturava anno dopo anno.",
 
-        emailLabel:
-          "Email",
+      healthTitle:
+        "Gli effetti del Teran sulla salute",
 
-        footerLocation:
-          "CARSO · SLOVENIA"
-      }
+      healthText1:
+        "Sul Carso il Teran occupa un posto speciale. Non è soltanto un vino, ma una parte della vita che per generazioni ha unito l'uomo, la terra e la casa.",
 
-    };
+      healthText2:
+        "Da sempre, le persone conoscevano la forza della terra carsica e credevano che questa forza si riflettesse anche nel vino. Al Teran sono state tradizionalmente attribuite diverse proprietà benefiche ed è stato associato al benessere. Tra i racconti del Carso si è conservata nel tempo anche la convinzione che «il Teran fa bene al sangue».",
 
-    function changeLanguage(language) {
+      healthText3:
+        "Queste storie fanno parte di una tradizione tramandata di generazione in generazione – attraverso il lavoro nei vigneti, attorno alla tavola di casa e in cantina, dove il vino maturava anno dopo anno.",
 
-      document.querySelectorAll("[data-i18n]").forEach(element => {
+      contactLabel:
+        "06 · Venite a trovarci",
 
-        const key = element.getAttribute("data-i18n");
+      contactTitle:
+        "Le porte della nostra<br>cantina sono aperte.",
 
-        if (translations[language][key]) {
-          element.innerHTML = translations[language][key];
-        }
+      contactButton:
+        "Contattaci",
 
-      });
+      locationLabel:
+        "Posizione",
 
-      document.documentElement.lang = language;
+      phoneLabel:
+        "Telefono",
 
-      if (language === "sl") {
-        document.title = "Vinarstvo Filipčič — Okus Krasa";
-      }
+      emailLabel:
+        "Email",
 
-      if (language === "en") {
-        document.title = "Filipčič Winery — Taste of the Karst";
-      }
-
-      if (language === "it") {
-        document.title = "Cantina Filipčič — Il gusto del Carso";
-      }
-
-      document.querySelectorAll(".languages button").forEach(button => {
-
-        button.classList.remove("active");
-
-        if (button.dataset.lang === language) {
-          button.classList.add("active");
-        }
-
-      });
-
-      localStorage.setItem("filipcic-language", language);
-
+      footerLocation:
+        "CARSO · SLOVENIA"
     }
+
+  };
+
+
+  function changeLanguage(language) {
+
+    document.querySelectorAll("[data-i18n]").forEach(element => {
+
+      const key = element.getAttribute("data-i18n");
+
+      if (translations[language][key]) {
+        element.innerHTML = translations[language][key];
+      }
+
+    });
+
+    document.documentElement.lang = language;
+
+
+    if (language === "sl") {
+      document.title = "Vinarstvo Filipčič — Okus Krasa";
+    }
+
+    if (language === "en") {
+      document.title = "Filipčič Winery — Taste of the Karst";
+    }
+
+    if (language === "it") {
+      document.title = "Cantina Filipčič — Il gusto del Carso";
+    }
+
 
     document.querySelectorAll(".languages button").forEach(button => {
 
-      button.addEventListener("click", () => {
+      button.classList.remove("active");
 
-        changeLanguage(button.dataset.lang);
-
-      });
-
-    });
-
-    const savedLanguage =
-      localStorage.getItem("filipcic-language") || "sl";
-
-    changeLanguage(savedLanguage);
-
-    const navbar = document.getElementById("navbar");
-
-    window.addEventListener("scroll", () => {
-
-      if (window.scrollY > 80) {
-        navbar.classList.add("scrolled");
-      } else {
-        navbar.classList.remove("scrolled");
+      if (button.dataset.lang === language) {
+        button.classList.add("active");
       }
 
     });
 
-    const menu = document.getElementById("menu");
+    localStorage.setItem("filipcic-language", language);
 
-    const navLinks = document.getElementById("navLinks");
+  }
 
-    menu.addEventListener("click", () => {
 
-      navLinks.classList.toggle("active");
+  document.querySelectorAll(".languages button").forEach(button => {
 
-    });
+    button.addEventListener("click", () => {
 
-    document.querySelectorAll(".nav-links a").forEach(link => {
-
-      link.addEventListener("click", () => {
-
-        navLinks.classList.remove("active");
-
-      });
+      changeLanguage(button.dataset.lang);
 
     });
 
-    const observer = new IntersectionObserver((entries) => {
+  });
 
-      entries.forEach(entry => {
 
-        if (entry.isIntersecting) {
+  const savedLanguage =
+    localStorage.getItem("filipcic-language") || "sl";
 
-          entry.target.classList.add("visible");
+  changeLanguage(savedLanguage);
 
-        }
 
-      });
+  const navbar = document.getElementById("navbar");
 
-    }, {
-      threshold: 0.12
+  window.addEventListener("scroll", () => {
+
+    if (window.scrollY > 80) {
+      navbar.classList.add("scrolled");
+    } else {
+      navbar.classList.remove("scrolled");
+    }
+
+  });
+
+
+  const menu = document.getElementById("menu");
+
+  const navLinks = document.getElementById("navLinks");
+
+  menu.addEventListener("click", () => {
+
+    navLinks.classList.toggle("active");
+
+  });
+
+
+  document.querySelectorAll(".nav-links a").forEach(link => {
+
+    link.addEventListener("click", () => {
+
+      navLinks.classList.remove("active");
+
     });
 
-    document.querySelectorAll(".reveal").forEach(element => {
+  });
 
-      observer.observe(element);
 
-    });
+  const observer = new IntersectionObserver((entries) => {
 
-    window.addEventListener("scroll", () => {
+    entries.forEach(entry => {
 
-      const hero = document.querySelector(".hero");
+      if (entry.isIntersecting) {
 
-      if (window.scrollY < window.innerHeight) {
-
-        hero.style.backgroundPosition =
-          `center ${window.scrollY * 0.35}px`;
+        entry.target.classList.add("visible");
 
       }
 
     });
 
-  </script>
+  }, {
+    threshold: 0.12
+  });
+
+
+  document.querySelectorAll(".reveal").forEach(element => {
+
+    observer.observe(element);
+
+  });
+
+
+  window.addEventListener("scroll", () => {
+
+    const hero = document.querySelector(".hero");
+
+    if (window.scrollY < window.innerHeight) {
+
+      hero.style.backgroundPosition =
+        `center ${window.scrollY * 0.35}px`;
+
+    }
+
+  });
+
+</script>
 
 </body>
 </html>
