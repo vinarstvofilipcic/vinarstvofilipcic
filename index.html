@@ -45,8 +45,6 @@
       text-decoration: none;
     }
 
-    /* ---------------- NAVIGATION ---------------- */
-
     nav {
       position: fixed;
       top: 0;
@@ -74,6 +72,12 @@
       color: var(--gold-light);
     }
 
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 35px;
+    }
+
     .nav-links {
       display: flex;
       gap: 35px;
@@ -93,13 +97,40 @@
       opacity: 1;
     }
 
+    .languages {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 10px;
+      letter-spacing: 2px;
+    }
+
+    .languages button {
+      background: none;
+      border: none;
+      color: rgba(238,231,218,.55);
+      font-family: "Inter", sans-serif;
+      font-size: 10px;
+      letter-spacing: 2px;
+      cursor: pointer;
+      padding: 3px 0;
+      transition: .3s;
+    }
+
+    .languages button:hover,
+    .languages button.active {
+      color: var(--gold-light);
+    }
+
+    .languages span {
+      color: rgba(197,164,109,.35);
+    }
+
     .menu {
       display: none;
       font-size: 25px;
       cursor: pointer;
     }
-
-    /* ---------------- HERO ---------------- */
 
     .hero {
       min-height: 100vh;
@@ -201,8 +232,6 @@
       animation: scrollLine 2s infinite;
     }
 
-    /* ---------------- SECTIONS ---------------- */
-
     section {
       position: relative;
       padding: 130px 7vw;
@@ -231,8 +260,6 @@
       font-size: 14px;
     }
 
-    /* ---------------- KRAS ---------------- */
-
     .kras {
       min-height: 90vh;
       display: grid;
@@ -251,8 +278,6 @@
       filter: saturate(.75);
     }
 
-    /* ---------------- STORY ---------------- */
-
     .story {
       text-align: center;
       background:
@@ -268,16 +293,15 @@
       color: var(--cream);
     }
 
-    /* ---------------- WINES ---------------- */
-
     .wines {
       background: #0c0b09;
     }
 
-    .wine-grid {
+    .wine-layout {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 30px;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 7vw;
+      align-items: center;
       margin-top: 70px;
     }
 
@@ -318,20 +342,6 @@
         center/cover;
     }
 
-    .malvazija::before {
-      background:
-        linear-gradient(transparent 20%, rgba(0,0,0,.9)),
-        url("https://images.unsplash.com/photo-1569529465841-dfecdab7503b?auto=format&fit=crop&w=1000&q=85")
-        center/cover;
-    }
-
-    .vitovska::before {
-      background:
-        linear-gradient(transparent 20%, rgba(0,0,0,.9)),
-        url("https://images.unsplash.com/photo-1547595628-c61a29f496f0?auto=format&fit=crop&w=1000&q=85")
-        center/cover;
-    }
-
     .wine-info {
       position: relative;
       z-index: 2;
@@ -357,12 +367,37 @@
       line-height: 1.7;
     }
 
-    /* ---------------- CELLAR ---------------- */
+    .teran-description {
+      padding: 20px 0;
+    }
+
+    .teran-description h3 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(40px, 5vw, 65px);
+      font-weight: 300;
+      line-height: .95;
+      margin-bottom: 30px;
+      color: var(--cream);
+    }
+
+    .teran-description p {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 2;
+      max-width: 650px;
+      margin-bottom: 25px;
+    }
+
+    .teran-description .gold-line-left {
+      width: 70px;
+      height: 1px;
+      background: var(--gold);
+      margin-bottom: 30px;
+    }
 
     .cellar {
       padding: 0;
-      height: 90vh;
-      min-height: 650px;
+      min-height: 90vh;
       display: flex;
       align-items: center;
       background:
@@ -372,58 +407,72 @@
     }
 
     .cellar-content {
-      padding-left: 10vw;
-      max-width: 700px;
+      padding: 120px 10vw;
+      max-width: 1000px;
     }
 
     .cellar .section-title {
       font-size: clamp(70px, 9vw, 130px);
     }
 
-    /* ---------------- EXPERIENCE ---------------- */
+    .cellar-draft {
+      margin-top: 55px;
+      padding: 35px 40px;
+      border-left: 1px solid var(--gold);
+      background: rgba(0,0,0,.35);
+    }
+
+    .cellar-draft-label {
+      color: var(--gold-light);
+      font-size: 10px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .cellar-draft p {
+      color: #c8c1b8;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 23px;
+      line-height: 1.65;
+      max-width: 750px;
+    }
 
     .experience {
       text-align: center;
       background: var(--burgundy);
     }
 
-    .experience-grid {
-      display: grid;
-      grid-template-columns: repeat(3,1fr);
-      margin-top: 70px;
+    .health-content {
+      max-width: 1000px;
+      margin: 70px auto 0;
+      text-align: left;
+      padding: 60px;
       border-top: 1px solid var(--line);
       border-bottom: 1px solid var(--line);
     }
 
-    .experience-item {
-      padding: 55px 30px;
-      border-right: 1px solid var(--line);
-    }
-
-    .experience-item:last-child {
-      border-right: 0;
-    }
-
-    .experience-number {
-      color: var(--gold);
+    .health-content h3 {
       font-family: "Cormorant Garamond", serif;
-      font-size: 40px;
+      font-size: clamp(40px, 5vw, 65px);
+      font-weight: 300;
+      margin-bottom: 30px;
     }
 
-    .experience-item h3 {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 32px;
-      font-weight: 400;
-      margin: 15px 0;
+    .health-content p {
+      color: #d0c3bb;
+      font-size: 14px;
+      line-height: 2;
+      margin-bottom: 25px;
     }
 
-    .experience-item p {
-      color: #c8bbb3;
-      font-size: 12px;
-      line-height: 1.8;
+    .health-note {
+      color: var(--gold-light) !important;
+      font-size: 12px !important;
+      line-height: 1.8 !important;
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
     }
-
-    /* ---------------- CONTACT ---------------- */
 
     .contact {
       text-align: center;
@@ -456,8 +505,6 @@
       margin-bottom: 8px;
     }
 
-    /* ---------------- FOOTER ---------------- */
-
     footer {
       padding: 40px 7vw;
       border-top: 1px solid var(--line);
@@ -472,8 +519,6 @@
       color: var(--gold);
       font-weight: 400;
     }
-
-    /* ---------------- ANIMATIONS ---------------- */
 
     .reveal {
       opacity: 0;
@@ -491,6 +536,7 @@
         opacity: 0;
         transform: translateY(30px);
       }
+
       to {
         opacity: 1;
         transform: translateY(0);
@@ -498,16 +544,25 @@
     }
 
     @keyframes scrollLine {
-      0%,100% { opacity: .2; transform: scaleY(.5); }
-      50% { opacity: 1; transform: scaleY(1); }
-    }
+      0%,100% {
+        opacity: .2;
+        transform: scaleY(.5);
+      }
 
-    /* ---------------- MOBILE ---------------- */
+      50% {
+        opacity: 1;
+        transform: scaleY(1);
+      }
+    }
 
     @media(max-width: 800px) {
 
       nav {
         padding: 20px;
+      }
+
+      .nav-right {
+        gap: 15px;
       }
 
       .nav-links {
@@ -530,6 +585,10 @@
         display: block;
       }
 
+      .languages {
+        gap: 5px;
+      }
+
       section {
         padding: 90px 6vw;
       }
@@ -548,8 +607,7 @@
         order: -1;
       }
 
-      .wine-grid,
-      .experience-grid {
+      .wine-layout {
         grid-template-columns: 1fr;
       }
 
@@ -557,21 +615,20 @@
         min-height: 500px;
       }
 
-      .experience-item {
-        border-right: 0;
-        border-bottom: 1px solid var(--line);
-      }
-
-      .experience-item:last-child {
-        border-bottom: 0;
-      }
-
       .cellar {
-        height: 80vh;
+        min-height: 900px;
       }
 
       .cellar-content {
-        padding: 0 7vw;
+        padding: 90px 7vw;
+      }
+
+      .cellar-draft {
+        padding: 30px 25px;
+      }
+
+      .health-content {
+        padding: 40px 0;
       }
 
       .contact-details {
@@ -590,55 +647,61 @@
 
 <body>
 
-  <!-- NAVIGATION -->
-
   <nav id="navbar">
     <a href="#top" class="logo">FILIPČIČ</a>
 
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#kras">Kras</a></li>
-      <li><a href="#zgodba">Zgodba</a></li>
-      <li><a href="#vina">Vina</a></li>
-      <li><a href="#klet">Klet</a></li>
-      <li><a href="#dozivetje">Doživetje</a></li>
-      <li><a href="#kontakt">Kontakt</a></li>
-    </ul>
+    <div class="nav-right">
 
-    <div class="menu" id="menu">☰</div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#kras" data-i18n="navKras">Kras</a></li>
+        <li><a href="#zgodba" data-i18n="navStory">Zgodba</a></li>
+        <li><a href="#vina" data-i18n="navWine">Vina</a></li>
+        <li><a href="#klet" data-i18n="navCellar">Klet</a></li>
+        <li><a href="#izrocilo" data-i18n="navTradition">Izročilo</a></li>
+        <li><a href="#kontakt" data-i18n="navContact">Kontakt</a></li>
+      </ul>
+
+      <div class="languages">
+        <button class="active" data-lang="sl">SL</button>
+        <span>|</span>
+        <button data-lang="en">EN</button>
+        <span>|</span>
+        <button data-lang="it">IT</button>
+      </div>
+
+      <div class="menu" id="menu">☰</div>
+
+    </div>
   </nav>
-
-
-  <!-- HERO -->
 
   <header class="hero" id="top">
 
     <div class="hero-content">
 
-      <div class="eyebrow">Vinarstvo Filipčič · Kras · Slovenija</div>
+      <div class="eyebrow" data-i18n="eyebrow">
+        Vinarstvo Filipčič · Kras · Slovenija
+      </div>
 
       <h1>FILIPČIČ</h1>
 
       <div class="gold-line"></div>
 
-      <p class="hero-motto">
+      <p class="hero-motto" data-i18n="motto">
         »Bog blagoslovi gospodarja,<br>
         ki da piti brez denarja.«
       </p>
 
-      <a href="#zgodba" class="hero-btn">
+      <a href="#zgodba" class="hero-btn" data-i18n="heroButton">
         Spoznajte našo zgodbo
       </a>
 
     </div>
 
-    <div class="scroll">
+    <div class="scroll" data-i18n="scroll">
       Scroll
     </div>
 
   </header>
-
-
-  <!-- KRAS -->
 
   <section class="kras" id="kras">
 
@@ -646,15 +709,17 @@
 
     <div class="reveal">
 
-      <div class="section-label">01 · Kraj</div>
+      <div class="section-label" data-i18n="krasLabel">
+        01 · Kraj
+      </div>
 
-      <h2 class="section-title">
+      <h2 class="section-title" data-i18n="krasTitle">
         Kjer kamen<br>
         sreča trto.
       </h2>
 
-      <p class="section-text">
-        Kras ni samo prostor. Je značaj.
+      <p class="section-text" data-i18n="krasText">
+        Kras ni samo prostor. Je karakter.
         Kamen, burja, rdeča zemlja in sonce
         ustvarjajo okolje, ki daje vinu svojo
         posebno identiteto.
@@ -664,21 +729,20 @@
 
   </section>
 
-
-  <!-- STORY -->
-
   <section class="story" id="zgodba">
 
     <div class="reveal">
 
-      <div class="section-label">02 · Naša zgodba</div>
+      <div class="section-label" data-i18n="storyLabel">
+        02 · Naša zgodba
+      </div>
 
-      <h2 class="section-title">
+      <h2 class="section-title" data-i18n="storyTitle">
         Vino je<br>
         čas.
       </h2>
 
-      <p class="section-text">
+      <p class="section-text" data-i18n="storyText">
         V Vinarstvu Filipčič spoštujemo tisto,
         kar je bilo ustvarjeno pred nami,
         in ustvarjamo nekaj, kar bo ostalo za nami.
@@ -688,178 +752,241 @@
 
   </section>
 
-
-  <!-- WINES -->
-
   <section class="wines" id="vina">
 
     <div class="reveal">
 
-      <div class="section-label">03 · Naša vina</div>
+      <div class="section-label" data-i18n="wineLabel">
+        03 · Naša vina
+      </div>
 
-      <h2 class="section-title">
+      <h2 class="section-title" data-i18n="wineTitle">
         Iz naše zemlje.<br>
         V našo klet.
       </h2>
 
-      <p class="section-text">
-        Vsako vino ima svoj značaj.
+      <p class="section-text" data-i18n="wineIntro">
+        Vsako vino ima svoj karakter.
         Vsako leto svojo zgodbo.
       </p>
 
     </div>
 
-    <div class="wine-grid">
+    <div class="wine-layout">
 
       <article class="wine-card teran reveal">
 
         <div class="wine-info">
-          <small>Kraška klasika</small>
+
+          <small data-i18n="teranSmall">
+            Kraška klasika
+          </small>
+
           <h3>Teran</h3>
-          <p>
+
+          <p data-i18n="teranText">
             Globok. Kraški. Samosvoj.
           </p>
+
         </div>
 
       </article>
 
-      <article class="wine-card malvazija reveal">
+      <div class="teran-description reveal">
 
-        <div class="wine-info">
-          <small>Bela vina</small>
-          <h3>Malvazija</h3>
-          <p>
-            Sveža, aromatična in elegantna.
-          </p>
+        <div class="section-label" data-i18n="teranDescriptionLabel">
+          Teran
         </div>
 
-      </article>
+        <h3 data-i18n="teranDescriptionTitle">
+          Vino, ki nosi<br>
+          karakter Krasa.
+        </h3>
 
-      <article class="wine-card vitovska reveal">
+        <div class="gold-line-left"></div>
 
-        <div class="wine-info">
-          <small>Avtohtona sorta</small>
-          <h3>Vitovska</h3>
-          <p>
-            Značaj Krasa v belem.
-          </p>
-        </div>
+        <p data-i18n="teranDescriptionText1">
+          Teran je vino, ki je tesno povezano s kraško zemljo.
+          Njegova globoka rubinasto rdeča barva, izrazita svežina
+          in prepoznaven karakter so del njegove identitete.
+        </p>
 
-      </article>
+        <p data-i18n="teranDescriptionText2">
+          V njem se prepletajo značilnosti okolja, v katerem
+          nastaja – rdeča kraška zemlja, kamen, burja in sonce.
+          Vsak letnik pa doda svojo zgodbo in svoj karakter.
+        </p>
+
+        <p data-i18n="teranDescriptionText3">
+          Naš Teran želimo predstaviti takšnega, kot ga poznamo
+          mi – kraškega, pristnega in povezanega z domačo zemljo
+          ter tradicijo.
+        </p>
+
+      </div>
 
     </div>
 
   </section>
-
-
-  <!-- CELLAR -->
 
   <section class="cellar" id="klet">
 
     <div class="cellar-content reveal">
 
-      <div class="section-label">04 · Naša klet</div>
+      <div class="section-label" data-i18n="cellarLabel">
+        04 · Naša klet
+      </div>
 
-      <h2 class="section-title">
-        Tam, kjer<br>
-        vino dozori.
+      <h2 class="section-title" data-i18n="cellarTitle">
+        Klet, kjer<br>
+        se zgodba nadaljuje.
       </h2>
 
-      <p class="section-text">
-        Vrata naše kleti so odprta.
-        Stopite noter in spoznajte prostor,
-        kjer se začne druga polovica zgodbe.
-      </p>
+      <div class="cellar-draft">
+
+        <div class="cellar-draft-label" data-i18n="cellarDraftLabel">
+          OSNUTEK ZGODBE KLETI
+        </div>
+
+        <p data-i18n="cellarDraftText">
+          Na tem mestu bomo napisali zgodbo naše kleti –
+          od njenih začetkov, prvih vinogradov in ljudi,
+          ki so jo ustvarjali, do današnje generacije.
+          Tukaj bomo skupaj dopolnili zgodovino družine,
+          kleti, vinogradov, način dela, stare običaje
+          in vse zgodbe, ki so se skozi leta prenašale
+          iz roda v rod.
+        </p>
+
+      </div>
 
     </div>
 
   </section>
 
-
-  <!-- EXPERIENCE -->
-
-  <section class="experience" id="dozivetje">
+  <section class="experience" id="izrocilo">
 
     <div class="reveal">
 
-      <div class="section-label">05 · Doživetje</div>
+      <div class="section-label" data-i18n="traditionLabel">
+        05 · Izročilo
+      </div>
 
-      <h2 class="section-title">
-        Doživite Filipčič.
+      <h2 class="section-title" data-i18n="traditionTitle">
+        Teran in<br>
+        dobro počutje.
       </h2>
 
-      <p class="section-text" style="margin:auto;">
-        Vino je najlepše tam, kjer ga lahko
-        spoznaš, povohaš, okušaš in deliš.
+      <p class="section-text" style="margin:auto;" data-i18n="traditionText">
+        Zgodbe o Teranu se na Krasu prenašajo iz roda v rod.
+        Na tem mestu bomo predstavili tradicionalna verovanja,
+        zgodovinske zapise in znanstvene ugotovitve o njegovih
+        sestavinah ter morebitnih vplivih na zdravje.
       </p>
 
     </div>
 
-    <div class="experience-grid">
+    <div class="health-content reveal">
 
-      <div class="experience-item reveal">
-        <div class="experience-number">01</div>
-        <h3>Degustacija</h3>
-        <p>
-          Spoznajte naša vina skozi vodeno
-          degustacijo v naši kleti.
-        </p>
-      </div>
+      <h3 data-i18n="healthTitle">
+        Zdravstveni učinki Terana
+      </h3>
 
-      <div class="experience-item reveal">
-        <div class="experience-number">02</div>
-        <h3>Obisk kleti</h3>
-        <p>
-          Odkrijte prostor, kjer iz kraške zemlje
-          nastane vino.
-        </p>
-      </div>
+      <p data-i18n="healthText1">
+        Na Krasu ima Teran posebno mesto. Ni le vino, temveč del življenja, ki je skozi generacije povezoval človeka, zemljo in dom.
+      </p>
 
-      <div class="experience-item reveal">
-        <div class="experience-number">03</div>
-        <h3>Kras</h3>
-        <p>
-          Vino povežite s krajem, hrano,
-          ljudmi in zgodbo.
-        </p>
-      </div>
+      <p data-i18n="healthText2">
+        Od nekdaj so ljudje poznali moč kraške zemlje in verjeli, da se ta moč odraža tudi v vinu. Teranu so pripisovali različne blagodejne lastnosti in ga povezovali z dobrim počutjem. Med kraškimi pripovedmi se je skozi čas ohranila tudi misel, da je »Teran dober za kri«.
+      </p>
+
+      <p data-i18n="healthText3">
+        Te zgodbe so del izročila, ki se je prenašalo iz roda v rod – ob delu v vinogradu, ob domači mizi in v kleti, kjer je vino zorelo iz leta v leto.
+      </p>
+
+      <p>
+        <strong>Vino, povezano z zemljo</strong>
+      </p>
+
+      <p>
+        Teran nosi značaj svojega kraja. Rdeča kraška zemlja, kamen, burja in sonce ustvarjajo pogoje, v katerih nastaja vino z izrazitim karakterjem.
+      </p>
+
+      <p>
+        Prav zaradi svoje posebnosti je Teran skozi zgodovino postal eden od prepoznavnih simbolov Krasa. Z njim so povezane številne zgodbe o življenju na kraški zemlji, o delu naših prednikov in o odnosu do vina, ki ni bilo nikoli samo pijača, temveč del doma in vsakdana.
+      </p>
+
+      <p>
+        <strong>Od nekdaj do danes</strong>
+      </p>
+
+      <p>
+        Danes na Teran gledamo z novim znanjem, vendar stare zgodbe ostajajo del njegove identitete.
+      </p>
+
+      <p>
+        Spoštujemo tisto, kar so nam pripovedovali naši predniki, hkrati pa želimo bolje razumeti tudi to, kar o Teranu in njegovih naravnih sestavinah vemo danes.
+      </p>
+
+      <p class="health-closing">
+        Ker vino ni samo tisto, kar natočimo v kozarec.
+      </p>
+
+      <p class="health-closing">
+        Je tisto, kar so ustvarjale prejšnje generacije,<br>
+        kar ustvarjamo danes<br>
+        in kar bomo predali prihodnjim generacijam.
+      </p>
+
+      <p class="health-final">
+        <strong>Kras v zemlji.</strong><br>
+        <strong>Zgodba v vinu.</strong><br>
+        <strong>Iz roda v rod.</strong>
+      </p>
+
+      <p class="health-note" data-i18n="healthNote">
+        OPOMBA: Zdravstvene trditve bomo pred objavo preverili
+        glede na zanesljive znanstvene vire in veljavna pravila
+        za oglaševanje živil in alkoholnih pijač.
+      </p>
 
     </div>
 
   </section>
-
-
-  <!-- CONTACT -->
 
   <section class="contact" id="kontakt">
 
     <div class="reveal">
 
-      <div class="section-label">06 · Obiščite nas</div>
+      <div class="section-label" data-i18n="contactLabel">
+        06 · Obiščite nas
+      </div>
 
-      <h2 class="section-title">
+      <h2 class="section-title" data-i18n="contactTitle">
         Vrata naše<br>
         kleti so odprta.
       </h2>
 
-      <a href="mailto:info@vinarstvo-filipcic.si" class="hero-btn">
+      <a href="mailto:info@vinarstvo-filipcic.si"
+         class="hero-btn"
+         data-i18n="contactButton">
         Kontaktirajte nas
       </a>
 
       <div class="contact-details">
 
         <div>
-          <span>Lokacija</span>
+          <span data-i18n="locationLabel">Lokacija</span>
           Brestovica pri Komnu
         </div>
 
         <div>
-          <span>Telefon</span>
+          <span data-i18n="phoneLabel">Telefon</span>
           +386 XX XXX XX XX
         </div>
 
         <div>
-          <span>E-pošta</span>
+          <span data-i18n="emailLabel">E-pošta</span>
           info@vinarstvo-filipcic.si
         </div>
 
@@ -869,27 +996,417 @@
 
   </section>
 
-
-  <!-- FOOTER -->
-
   <footer>
 
     <div>
       © 2026 <strong>VINARSTVO FILIPČIČ</strong>
     </div>
 
-    <div>
+    <div data-i18n="footerLocation">
       KRAS · SLOVENIJA
     </div>
 
   </footer>
 
-
-  <!-- JAVASCRIPT -->
-
   <script>
 
-    /* Navigation background */
+    const translations = {
+
+      sl: {
+
+        navKras: "Kras",
+        navStory: "Zgodba",
+        navWine: "Vina",
+        navCellar: "Klet",
+        navTradition: "Izročilo",
+        navContact: "Kontakt",
+
+        eyebrow: "Vinarstvo Filipčič · Kras · Slovenija",
+
+        motto: "»Bog blagoslovi gospodarja,<br>ki da piti brez denarja.«",
+
+        heroButton: "Spoznajte našo zgodbo",
+
+        scroll: "Scroll",
+
+        krasLabel: "01 · Kraj",
+
+        krasTitle: "Kjer kamen<br>sreča trto.",
+
+        krasText:
+          "Kras ni samo prostor. Je karakter. Kamen, burja, rdeča zemlja in sonce ustvarjajo okolje, ki daje vinu svojo posebno identiteto.",
+
+        storyLabel: "02 · Naša zgodba",
+
+        storyTitle: "Vino je<br>čas.",
+
+        storyText:
+          "V Vinarstvu Filipčič spoštujemo tisto, kar je bilo ustvarjeno pred nami, in ustvarjamo nekaj, kar bo ostalo za nami.",
+
+        wineLabel: "03 · Naša vina",
+
+        wineTitle: "Iz naše zemlje.<br>V našo klet.",
+
+        wineIntro:
+          "Vsako vino ima svoj karakter. Vsako leto svojo zgodbo.",
+
+        teranSmall: "Kraška klasika",
+
+        teranText:
+          "Globok. Kraški. Samosvoj.",
+
+        teranDescriptionLabel: "Teran",
+
+        teranDescriptionTitle:
+          "Vino, ki nosi<br>karakter Krasa.",
+
+        teranDescriptionText1:
+          "Teran je vino, ki je tesno povezano s kraško zemljo. Njegova globoka rubinasto rdeča barva, izrazita svežina in prepoznaven karakter so del njegove identitete.",
+
+        teranDescriptionText2:
+          "V njem se prepletajo značilnosti okolja, v katerem nastaja – rdeča kraška zemlja, kamen, burja in sonce. Vsak letnik pa doda svojo zgodbo in svoj karakter.",
+
+        teranDescriptionText3:
+          "Naš Teran želimo predstaviti takšnega, kot ga poznamo mi – kraškega, pristnega in povezanega z domačo zemljo ter tradicijo.",
+
+        cellarLabel: "04 · Naša klet",
+
+        cellarTitle:
+          "Klet, kjer<br>se zgodba nadaljuje.",
+
+        cellarDraftLabel:
+          "OSNUTEK ZGODBE KLETI",
+
+        cellarDraftText:
+          "Na tem mestu bomo napisali zgodbo naše kleti – od njenih začetkov, prvih vinogradov in ljudi, ki so jo ustvarjali, do današnje generacije. Tukaj bomo skupaj dopolnili zgodovino družine, kleti, vinogradov, način dela, stare običaje in vse zgodbe, ki so se skozi leta prenašale iz roda v rod.",
+
+        traditionLabel:
+          "05 · Izročilo",
+
+        traditionTitle:
+          "Teran in<br>dobro počutje.",
+
+        traditionText:
+          "Zgodbe o Teranu se na Krasu prenašajo iz roda v rod. Na tem mestu bomo predstavili tradicionalna verovanja, zgodovinske zapise in znanstvene ugotovitve o njegovih sestavinah ter morebitnih vplivih na zdravje.",
+
+        healthTitle:
+          "Zdravstveni učinki Terana",
+
+        healthNote:
+          "OPOMBA: Zdravstvene trditve bomo pred objavo preverili glede na zanesljive znanstvene vire in veljavna pravila za oglaševanje živil in alkoholnih pijač.",
+
+        contactLabel: "06 · Obiščite nas",
+
+        contactTitle:
+          "Vrata naše<br>kleti so odprta.",
+
+        contactButton:
+          "Kontaktirajte nas",
+
+        locationLabel:
+          "Lokacija",
+
+        phoneLabel:
+          "Telefon",
+
+        emailLabel:
+          "E-pošta",
+
+        footerLocation:
+          "KRAS · SLOVENIJA"
+      },
+
+      en: {
+
+        navKras: "Karst",
+        navStory: "Story",
+        navWine: "Wines",
+        navCellar: "Cellar",
+        navTradition: "Tradition",
+        navContact: "Contact",
+
+        eyebrow: "Filipčič Winery · Karst · Slovenia",
+
+        motto:
+          "“God bless the host,<br>who gives a drink without charge.”",
+
+        heroButton:
+          "Discover our story",
+
+        scroll:
+          "Scroll",
+
+        krasLabel:
+          "01 · Place",
+
+        krasTitle:
+          "Where stone<br>meets the vine.",
+
+        krasText:
+          "The Karst is more than a place. It is character. Stone, the bora wind, red soil and sunlight create an environment that gives the wine its distinctive identity.",
+
+        storyLabel:
+          "02 · Our story",
+
+        storyTitle:
+          "Wine is<br>time.",
+
+        storyText:
+          "At Filipčič Winery, we respect what was created before us and create something that will remain after us.",
+
+        wineLabel:
+          "03 · Our wines",
+
+        wineTitle:
+          "From our land.<br>To our cellar.",
+
+        wineIntro:
+          "Every wine has its own character. Every year its own story.",
+
+        teranSmall:
+          "A Karst classic",
+
+        teranText:
+          "Deep. Karst. Distinctive.",
+
+        teranDescriptionLabel:
+          "Teran",
+
+        teranDescriptionTitle:
+          "A wine carrying<br>the character of the Karst.",
+
+        teranDescriptionText1:
+          "Teran is a wine closely connected to the Karst soil. Its deep ruby-red colour, distinctive freshness and recognizable character are part of its identity.",
+
+        teranDescriptionText2:
+          "It reflects the environment in which it is created – red Karst soil, stone, the bora wind and sunlight. Every vintage adds its own story and its own character.",
+
+        teranDescriptionText3:
+          "We want to present our Teran as we know it – authentic, shaped by the Karst and connected to our land and tradition.",
+
+        cellarLabel:
+          "04 · Our cellar",
+
+        cellarTitle:
+          "A cellar where<br>the story continues.",
+
+        cellarDraftLabel:
+          "DRAFT OF THE CELLAR STORY",
+
+        cellarDraftText:
+          "This is where we will write the story of our cellar – from its beginnings, the first vineyards and the people who created it, to today's generation. Here we will add the history of the family, cellar and vineyards, our way of working, old customs and all the stories that have been passed down from generation to generation.",
+
+        traditionLabel:
+          "05 · Tradition",
+
+        traditionTitle:
+          "Teran and<br>well-being.",
+
+        traditionText:
+          "Stories about Teran have been passed down across the Karst from generation to generation. Here we will present traditional beliefs, historical records and scientific findings about its components and possible effects on health.",
+
+        healthTitle:
+          "The health effects of Teran",
+
+        healthNote:
+          "NOTE: Health claims will be checked against reliable scientific sources and applicable rules for advertising food and alcoholic beverages before publication.",
+
+        contactLabel:
+          "06 · Visit us",
+
+        contactTitle:
+          "The doors to our<br>cellar are open.",
+
+        contactButton:
+          "Contact us",
+
+        locationLabel:
+          "Location",
+
+        phoneLabel:
+          "Phone",
+
+        emailLabel:
+          "Email",
+
+        footerLocation:
+          "KARST · SLOVENIA"
+      },
+
+      it: {
+
+        navKras: "Carso",
+        navStory: "Storia",
+        navWine: "Vini",
+        navCellar: "Cantina",
+        navTradition: "Tradizione",
+        navContact: "Contatti",
+
+        eyebrow:
+          "Cantina Filipčič · Carso · Slovenia",
+
+        motto:
+          "«Dio benedica il padrone,<br>che offre da bere senza denaro.»",
+
+        heroButton:
+          "Scopri la nostra storia",
+
+        scroll:
+          "Scorri",
+
+        krasLabel:
+          "01 · Luogo",
+
+        krasTitle:
+          "Dove la pietra<br>incontra la vite.",
+
+        krasText:
+          "Il Carso non è solo un luogo. È carattere. Pietra, bora, terra rossa e sole creano un ambiente che dona al vino la sua identità distintiva.",
+
+        storyLabel:
+          "02 · La nostra storia",
+
+        storyTitle:
+          "Il vino è<br>tempo.",
+
+        storyText:
+          "Alla Cantina Filipčič rispettiamo ciò che è stato creato prima di noi e creiamo qualcosa che rimarrà dopo di noi.",
+
+        wineLabel:
+          "03 · I nostri vini",
+
+        wineTitle:
+          "Dalla nostra terra.<br>Alla nostra cantina.",
+
+        wineIntro:
+          "Ogni vino ha il suo carattere. Ogni annata la sua storia.",
+
+        teranSmall:
+          "Un classico del Carso",
+
+        teranText:
+          "Profondo. Carsico. Inconfondibile.",
+
+        teranDescriptionLabel:
+          "Teran",
+
+        teranDescriptionTitle:
+          "Un vino che porta<br>il carattere del Carso.",
+
+        teranDescriptionText1:
+          "Il Teran è un vino strettamente legato alla terra carsica. Il suo intenso colore rosso rubino, la spiccata freschezza e il suo carattere riconoscibile fanno parte della sua identità.",
+
+        teranDescriptionText2:
+          "Riflette l'ambiente in cui nasce – la terra rossa del Carso, la pietra, la bora e il sole. Ogni annata aggiunge la propria storia e il proprio carattere.",
+
+        teranDescriptionText3:
+          "Vogliamo presentare il nostro Teran come lo conosciamo noi – autentico, carsico e legato alla nostra terra e alla nostra tradizione.",
+
+        cellarLabel:
+          "04 · La nostra cantina",
+
+        cellarTitle:
+          "Una cantina dove<br>la storia continua.",
+
+        cellarDraftLabel:
+          "BOZZA DELLA STORIA DELLA CANTINA",
+
+        cellarDraftText:
+          "Qui scriveremo la storia della nostra cantina – dalle sue origini, dai primi vigneti e dalle persone che l'hanno creata, fino alla generazione di oggi. Qui completeremo la storia della famiglia, della cantina e dei vigneti, il nostro modo di lavorare, le antiche usanze e tutte le storie tramandate di generazione in generazione.",
+
+        traditionLabel:
+          "05 · Tradizione",
+
+        traditionTitle:
+          "Il Teran e<br>il benessere.",
+
+        traditionText:
+          "Le storie sul Teran si tramandano sul Carso di generazione in generazione. Qui presenteremo le credenze tradizionali, le testimonianze storiche e le conoscenze scientifiche sui suoi componenti e sui possibili effetti sulla salute.",
+
+        healthTitle:
+          "Gli effetti del Teran sulla salute",
+
+        healthNote:
+          "NOTA: Prima della pubblicazione, le indicazioni sulla salute saranno verificate sulla base di fonti scientifiche affidabili e delle norme applicabili alla pubblicità degli alimenti e delle bevande alcoliche.",
+
+        contactLabel:
+          "06 · Venite a trovarci",
+
+        contactTitle:
+          "Le porte della nostra<br>cantina sono aperte.",
+
+        contactButton:
+          "Contattaci",
+
+        locationLabel:
+          "Posizione",
+
+        phoneLabel:
+          "Telefono",
+
+        emailLabel:
+          "Email",
+
+        footerLocation:
+          "CARSO · SLOVENIA"
+      }
+
+    };
+
+    function changeLanguage(language) {
+
+      document.querySelectorAll("[data-i18n]").forEach(element => {
+
+        const key = element.getAttribute("data-i18n");
+
+        if (translations[language][key]) {
+          element.innerHTML = translations[language][key];
+        }
+
+      });
+
+      document.documentElement.lang = language;
+
+      if (language === "sl") {
+        document.title = "Vinarstvo Filipčič — Okus Krasa";
+      }
+
+      if (language === "en") {
+        document.title = "Filipčič Winery — Taste of the Karst";
+      }
+
+      if (language === "it") {
+        document.title = "Cantina Filipčič — Il gusto del Carso";
+      }
+
+      document.querySelectorAll(".languages button").forEach(button => {
+
+        button.classList.remove("active");
+
+        if (button.dataset.lang === language) {
+          button.classList.add("active");
+        }
+
+      });
+
+      localStorage.setItem("filipcic-language", language);
+
+    }
+
+    document.querySelectorAll(".languages button").forEach(button => {
+
+      button.addEventListener("click", () => {
+
+        changeLanguage(button.dataset.lang);
+
+      });
+
+    });
+
+    const savedLanguage =
+      localStorage.getItem("filipcic-language") || "sl";
+
+    changeLanguage(savedLanguage);
 
     const navbar = document.getElementById("navbar");
 
@@ -903,31 +1420,34 @@
 
     });
 
-
-    /* Mobile menu */
-
     const menu = document.getElementById("menu");
+
     const navLinks = document.getElementById("navLinks");
 
     menu.addEventListener("click", () => {
+
       navLinks.classList.toggle("active");
+
     });
 
     document.querySelectorAll(".nav-links a").forEach(link => {
+
       link.addEventListener("click", () => {
+
         navLinks.classList.remove("active");
+
       });
+
     });
-
-
-    /* Scroll reveal */
 
     const observer = new IntersectionObserver((entries) => {
 
       entries.forEach(entry => {
 
         if (entry.isIntersecting) {
+
           entry.target.classList.add("visible");
+
         }
 
       });
@@ -937,11 +1457,10 @@
     });
 
     document.querySelectorAll(".reveal").forEach(element => {
+
       observer.observe(element);
+
     });
-
-
-    /* Subtle parallax effect */
 
     window.addEventListener("scroll", () => {
 
