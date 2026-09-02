@@ -50,7 +50,6 @@
       font-family: inherit;
     }
 
-
     /* =========================
        NAVIGATION
     ========================= */
@@ -144,7 +143,6 @@
       cursor: pointer;
       user-select: none;
     }
-
 
     /* =========================
        HERO
@@ -275,9 +273,8 @@
       animation: scrollLine 2s infinite;
     }
 
-
     /* =========================
-       GENERAL SECTIONS
+       GENERAL
     ========================= */
 
     section {
@@ -298,23 +295,45 @@
     .section-title {
       font-family: "Cormorant Garamond", serif;
 
-      font-size: clamp(50px, 7vw, 100px);
+      font-size: clamp(48px, 6vw, 82px);
       font-weight: 300;
 
-      line-height: .9;
+      line-height: .95;
 
-      margin-bottom: 35px;
+      margin: 0 0 35px;
+
+      white-space: normal;
+      max-width: 900px;
+
+      overflow-wrap: normal;
+    }
+
+    .section-title br {
+      display: none;
+    }
+
+    /* Enoten slog navadnega besedila */
+
+    .section-text,
+    .teran-description p,
+    .cellar-draft p,
+    .tradition-content p,
+    .wine-info p,
+    .contact-details {
+      font-family: "Inter", sans-serif;
+      font-weight: 300;
     }
 
     .section-text {
       color: var(--muted);
 
-      max-width: 550px;
+      max-width: 600px;
 
+      font-size: 15px;
       line-height: 1.9;
-      font-size: 14px;
-    }
 
+      margin: 0;
+    }
 
     /* =========================
        KRAS
@@ -350,7 +369,7 @@
 
     .kras .section-text {
       max-width: 620px;
-      line-height: 2;
+      line-height: 1.9;
     }
 
     .kras .section-text strong {
@@ -364,8 +383,9 @@
       font-weight: 500;
 
       line-height: 1.3;
-    }
 
+      margin-top: 4px;
+    }
 
     /* =========================
        STORY
@@ -383,16 +403,35 @@
         center/cover fixed;
     }
 
-    .story .section-text {
-      margin: auto;
-
-      font-family: "Cormorant Garamond", serif;
-
-      font-size: 25px;
-
-      color: var(--cream);
+    .story .reveal {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
+    .story .section-title {
+      width: 100%;
+      max-width: 900px;
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .story .section-text {
+      margin: 0 auto;
+
+      max-width: 780px;
+
+      color: var(--muted);
+
+      font-family: "Inter", sans-serif;
+      font-size: 15px;
+      font-weight: 300;
+
+      line-height: 1.9;
+
+      text-align: center;
+    }
 
     /* =========================
        WINES
@@ -486,15 +525,19 @@
       font-size: 55px;
       font-weight: 400;
 
-      margin: 5px 0 12px;
+      line-height: .95;
+
+      margin: 8px 0 15px;
     }
 
     .wine-info p {
       color: #c4beb4;
 
-      font-size: 12px;
+      font-size: 15px;
 
-      line-height: 1.7;
+      line-height: 1.9;
+
+      margin: 0;
     }
 
     .teran-description {
@@ -504,12 +547,12 @@
     .teran-description h3 {
       font-family: "Cormorant Garamond", serif;
 
-      font-size: clamp(40px, 5vw, 65px);
+      font-size: clamp(48px, 5vw, 70px);
       font-weight: 300;
 
       line-height: .95;
 
-      margin-bottom: 30px;
+      margin: 0 0 35px;
 
       color: var(--cream);
     }
@@ -517,13 +560,16 @@
     .teran-description p {
       color: var(--muted);
 
-      font-size: 14px;
-
-      line-height: 2;
+      font-size: 15px;
+      line-height: 1.9;
 
       max-width: 650px;
 
-      margin-bottom: 25px;
+      margin: 0 0 28px;
+    }
+
+    .teran-description p:last-child {
+      margin-bottom: 0;
     }
 
     .gold-line-left {
@@ -535,7 +581,6 @@
       margin-bottom: 30px;
     }
 
-
     /* =========================
        CELLAR
     ========================= */
@@ -546,6 +591,7 @@
       min-height: 90vh;
 
       display: grid;
+
       grid-template-columns: 1fr 1fr;
 
       gap: 6vw;
@@ -561,11 +607,18 @@
     }
 
     .cellar .section-title {
-      font-size: clamp(60px, 8vw, 120px);
+      font-size: clamp(48px, 6vw, 82px);
+      line-height: .95;
+
+      white-space: normal;
+
+      max-width: 800px;
+
+      margin-bottom: 35px;
     }
 
     .cellar-draft {
-      margin-top: 55px;
+      margin-top: 0;
 
       padding: 35px 40px;
 
@@ -587,17 +640,19 @@
     }
 
     .cellar-draft p {
-      color: #c8c1b8;
+      color: var(--muted);
 
-      font-family: "Cormorant Garamond", serif;
+      font-family: "Inter", sans-serif;
 
-      font-size: 23px;
+      font-size: 15px;
+      font-weight: 300;
 
-      line-height: 1.65;
+      line-height: 1.9;
 
       max-width: 750px;
-    }
 
+      margin: 0;
+    }
 
     /* =========================
        CELLAR GALLERY
@@ -612,7 +667,7 @@
 
       gap: 15px;
 
-      height: 650px;
+      height: 760px;
     }
 
     .cellar-photo {
@@ -675,7 +730,6 @@
       letter-spacing: 1px;
     }
 
-
     /* =========================
        TRADITION
     ========================= */
@@ -686,22 +740,45 @@
       background: var(--burgundy);
     }
 
+    .experience > .reveal {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .experience .section-title {
+      width: 100%;
+      max-width: 900px;
+
+      text-align: center;
+
+      margin-left: auto;
+      margin-right: auto;
+
+      margin-bottom: 35px;
+    }
+
     .tradition-content {
       max-width: 1000px;
 
-      margin: 70px auto 0;
+      margin: 35px auto 0;
 
-      text-align: left;
+      text-align: center;
     }
 
     .tradition-content p {
       color: #d0c3bb;
 
-      font-size: 14px;
+      font-size: 15px;
+      font-weight: 300;
 
-      line-height: 2;
+      line-height: 1.9;
 
-      margin-bottom: 28px;
+      margin: 0 0 28px;
+    }
+
+    .tradition-content p:last-child {
+      margin-bottom: 0;
     }
 
     .tradition-content strong {
@@ -717,23 +794,25 @@
     .health-closing {
       color: var(--gold-light) !important;
 
-      font-family: "Cormorant Garamond", serif;
+      font-family: "Cormorant Garamond", serif !important;
 
       font-size: 27px !important;
 
-      margin-top: 50px;
+      line-height: 1.3 !important;
+
+      margin-top: 50px !important;
     }
 
     .health-final {
       color: var(--cream) !important;
 
-      font-family: "Cormorant Garamond", serif;
+      font-family: "Cormorant Garamond", serif !important;
 
       font-size: 30px !important;
 
       line-height: 1.5 !important;
 
-      margin-top: 30px;
+      margin-top: 30px !important;
     }
 
     .health-note {
@@ -749,7 +828,6 @@
 
       margin-top: 50px;
     }
-
 
     /* =========================
        CONTACT
@@ -771,20 +849,49 @@
       background: #070706;
     }
 
+    .contact .reveal {
+      display: flex;
+
+      flex-direction: column;
+
+      align-items: center;
+
+      width: 100%;
+    }
+
     .contact .section-title {
+      width: 100%;
       max-width: 900px;
+
+      text-align: center;
+
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .contact-details {
       display: flex;
 
-      gap: 60px;
+      justify-content: center;
+      align-items: flex-start;
+
+      gap: 80px;
+
+      width: 100%;
 
       margin-top: 50px;
 
       color: var(--muted);
 
-      font-size: 12px;
+      font-size: 15px;
+
+      line-height: 1.7;
+
+      text-align: center;
+    }
+
+    .contact-details div {
+      min-width: 170px;
     }
 
     .contact-details span {
@@ -801,9 +908,8 @@
       margin-bottom: 8px;
     }
 
-
     /* =========================
-       GOOGLE MAPS
+       MAP
     ========================= */
 
     .location-map {
@@ -822,7 +928,6 @@
 
       filter: grayscale(.15) contrast(1.05);
     }
-
 
     /* =========================
        FOOTER
@@ -850,7 +955,6 @@
       font-weight: 400;
     }
 
-
     /* =========================
        ANIMATION
     ========================= */
@@ -875,13 +979,11 @@
 
       from {
         opacity: 0;
-
         transform: translateY(30px);
       }
 
       to {
         opacity: 1;
-
         transform: translateY(0);
       }
 
@@ -891,18 +993,15 @@
 
       0%,100% {
         opacity: .2;
-
         transform: scaleY(.5);
       }
 
       50% {
         opacity: 1;
-
         transform: scaleY(1);
       }
 
     }
-
 
     /* =========================
        MOBILE
@@ -959,6 +1058,18 @@
         padding: 90px 6vw;
       }
 
+      .section-title {
+        font-size: clamp(38px, 10vw, 58px);
+
+        line-height: .95;
+
+        max-width: 100%;
+
+        white-space: normal;
+
+        margin-bottom: 30px;
+      }
+
       .hero h1 {
         font-size: 65px;
 
@@ -975,6 +1086,15 @@
         font-size: 21px;
       }
 
+      .section-text,
+      .story .section-text,
+      .teran-description p,
+      .cellar-draft p,
+      .tradition-content p {
+        font-size: 15px;
+        line-height: 1.9;
+      }
+
       .kras {
         grid-template-columns: 1fr;
       }
@@ -987,10 +1107,26 @@
 
       .wine-layout {
         grid-template-columns: 1fr;
+
+        margin-top: 55px;
       }
 
       .wine-card {
         min-height: 500px;
+      }
+
+      .teran-description {
+        padding: 0;
+      }
+
+      .teran-description h3 {
+        font-size: clamp(42px, 10vw, 58px);
+
+        margin-bottom: 30px;
+      }
+
+      .teran-description p {
+        margin-bottom: 25px;
       }
 
       .cellar {
@@ -1005,31 +1141,64 @@
         padding: 0;
       }
 
+      .cellar .section-title {
+        font-size: clamp(38px, 10vw, 58px);
+
+        max-width: 100%;
+
+        margin-bottom: 30px;
+      }
+
       .cellar-draft {
         padding: 30px 25px;
       }
 
       .cellar-draft p {
-        font-size: 20px;
+        font-size: 15px;
       }
 
       .cellar-gallery {
         height: 600px;
+
         margin-top: 20px;
       }
 
       .tradition-content {
-        margin-top: 45px;
+        margin-top: 30px;
       }
 
       .tradition-content p {
-        font-size: 13px;
+        margin-bottom: 25px;
+      }
+
+      .tradition-content strong {
+        font-size: 25px;
+      }
+
+      .health-closing {
+        font-size: 24px !important;
+        margin-top: 45px !important;
+      }
+
+      .health-final {
+        font-size: 26px !important;
+        margin-top: 25px !important;
       }
 
       .contact-details {
         flex-direction: column;
 
+        align-items: center;
+
         gap: 25px;
+
+        width: 100%;
+
+        margin-top: 45px;
+      }
+
+      .contact-details div {
+        min-width: 0;
       }
 
       .map-frame {
@@ -1045,7 +1214,6 @@
       }
 
     }
-
 
     /* =========================
        REDUCED MOTION
@@ -1072,9 +1240,7 @@
   </style>
 </head>
 
-
 <body>
-
 
   <!-- =========================
        NAVIGATION
@@ -1128,27 +1294,19 @@
 
       </ul>
 
-
       <div class="languages">
 
-        <button class="active" data-lang="sl">
-          SL
-        </button>
+        <button class="active" data-lang="sl">SL</button>
 
         <span>|</span>
 
-        <button data-lang="en">
-          EN
-        </button>
+        <button data-lang="en">EN</button>
 
         <span>|</span>
 
-        <button data-lang="it">
-          IT
-        </button>
+        <button data-lang="it">IT</button>
 
       </div>
-
 
       <div class="menu" id="menu">
         ☰
@@ -1157,7 +1315,6 @@
     </div>
 
   </nav>
-
 
   <!-- =========================
        HERO
@@ -1192,13 +1349,11 @@
 
     </div>
 
-
     <div class="scroll" data-i18n="scroll">
       Scroll
     </div>
 
   </header>
-
 
   <!-- =========================
        KRAS
@@ -1261,7 +1416,6 @@
 
   </section>
 
-
   <!-- =========================
        STORY
   ========================= -->
@@ -1281,24 +1435,23 @@
         class="section-title"
         data-i18n="storyTitle"
       >
-        Zgodba, ki jo pišejo generacije..
+        Zgodba, ki jo pišejo generacije.
       </h2>
 
       <p
         class="section-text"
         data-i18n="storyText"
       >
-        Naša zgodba se je začela na Krasu, kjer je bilo vinogradništvo skozi generacije del družinskega življenja. 
-        Korenine našega vinarstva segajo v 19. stoletje, ko so naši predniki obdelovali vinograde in skrbeli za vino. 
-        Znanje o trti in vinu se je prenašalo iz roda v rod. Vsaka generacija je nadaljevala delo prejšnje in mu dodala nekaj svojega. 
-        Danes nadaljujemo isto zgodbo – povezani z zemljo, iz katere prihajamo, in s tradicijo, ki nam je bila predana. 
+        Naša zgodba se je začela na Krasu, kjer je bilo vinogradništvo skozi generacije del družinskega življenja.
+        Korenine našega vinarstva segajo v 19. stoletje, ko so naši predniki obdelovali vinograde in skrbeli za vino.
+        Znanje o trti in vinu se je prenašalo iz roda v rod. Vsaka generacija je nadaljevala delo prejšnje in mu dodala nekaj svojega.
+        Danes nadaljujemo isto zgodbo – povezani z zemljo, iz katere prihajamo, in s tradicijo, ki nam je bila predana.
         Generacije se menjajo. Ljubezen do vina ostaja.
       </p>
 
     </div>
 
   </section>
-
 
   <!-- =========================
        WINES
@@ -1319,19 +1472,17 @@
         class="section-title"
         data-i18n="wineTitle"
       >
-        Iz naše zemlje, V našo klet.
+        Iz naše zemlje. V našo klet.
       </h2>
 
       <p
         class="section-text"
         data-i18n="wineIntro"
       >
-        Vsako vino ima svoj karakter.
-        Vsako leto svojo zgodbo.
+        Vsako vino ima svoj karakter. Vsako leto svojo zgodbo.
       </p>
 
     </div>
-
 
     <div class="wine-layout">
 
@@ -1354,7 +1505,6 @@
         </div>
 
       </article>
-
 
       <div class="teran-description reveal">
 
@@ -1398,7 +1548,6 @@
 
   </section>
 
-
   <!-- =========================
        CELLAR
   ========================= -->
@@ -1431,9 +1580,13 @@
         </div>
 
         <p data-i18n="cellarDraftText">
-          Leta 1981 smo zgradili navo vinsko klet. Postala je prostor, kjer se je naše vinogradništvo razvijalo in kjer je vino dobivalo svoj čas.
-          Skozi leta se je spreminjala tudi klet. Okoli leta 2010 smo jo prenovili in ji dali novo podobo, pri tem pa ohranili njen značaj in namen. 
+          Leta 1981 smo zgradili novo vinsko klet. Postala je prostor,
+          kjer se je naše vinogradništvo razvijalo in kjer je vino dobivalo svoj čas.
+          Skozi leta se je spreminjala tudi klet. Okoli leta 2010 smo jo prenovili
+          in ji dali novo podobo, pri tem pa ohranili njen značaj in namen.
           Danes je klet prostor, kjer vino počiva, zori in čaka na svoj trenutek.
+
+          <br><br>
 
           Od grozdja do vina. Od generacije do generacije.
         </p>
@@ -1441,9 +1594,6 @@
       </div>
 
     </div>
-
-
-    <!-- SLIKE KLETI -->
 
     <div class="cellar-gallery reveal">
 
@@ -1454,10 +1604,7 @@
           alt="Vrata vinske kleti"
         >
 
-
-
       </div>
-
 
       <div class="cellar-photo">
 
@@ -1466,10 +1613,7 @@
           alt="Trta in vinska klet"
         >
 
-
-
       </div>
-
 
       <div class="cellar-photo">
 
@@ -1478,14 +1622,11 @@
           alt="Grozdje in glina"
         >
 
-  
-
       </div>
 
     </div>
 
   </section>
-
 
   <!-- =========================
        TRADITION
@@ -1511,7 +1652,6 @@
 
     </div>
 
-
     <div class="tradition-content reveal">
 
       <p data-i18n="traditionText1">
@@ -1524,9 +1664,9 @@
         Od nekdaj so ljudje poznali moč kraške zemlje
         in verjeli, da se ta moč odraža tudi v vinu.
         Teranu so pripisovali različne blagodejne lastnosti
-        in ga povezovali z dobrim počutjem.
-        Med kraškimi pripovedmi se je skozi čas ohranila
-        tudi misel, da je »Teran dober za kri«.
+        in ga povezovali z dobrim počutjem. Med kraškimi
+        pripovedmi se je skozi čas ohranila tudi misel,
+        da je »Teran dober za kri«.
       </p>
 
       <p data-i18n="traditionText3">
@@ -1537,11 +1677,9 @@
       </p>
 
       <p>
-
         <strong data-i18n="traditionTeranTitle">
           Teran
         </strong>
-
       </p>
 
       <p data-i18n="traditionText4">
@@ -1560,11 +1698,9 @@
       </p>
 
       <p>
-
         <strong data-i18n="traditionTodayTitle">
           Od nekdaj do danes
         </strong>
-
       </p>
 
       <p data-i18n="traditionText6">
@@ -1612,7 +1748,6 @@
 
   </section>
 
-
   <!-- =========================
        CONTACT
   ========================= -->
@@ -1637,7 +1772,7 @@
       </h2>
 
       <a
-        href="vinarstvofilipcic@gmail.com"
+        href="mailto:vinarstvofilipcic@gmail.com"
         class="hero-btn"
         data-i18n="contactButton"
       >
@@ -1647,33 +1782,24 @@
       <div class="contact-details">
 
         <div>
-
           <span data-i18n="locationLabel">
             Lokacija
           </span>
-
           Brestovica pri Komnu, 1a
-
         </div>
 
         <div>
-
           <span data-i18n="phoneLabel">
             Telefon
           </span>
-
           +386 31 492 377
-
         </div>
 
         <div>
-
           <span data-i18n="emailLabel">
             E-pošta
           </span>
-
           vinarstvofilipcic@gmail.com
-
         </div>
 
       </div>
@@ -1682,10 +1808,8 @@
 
   </section>
 
-
   <!-- =========================
-       GOOGLE MAPS
-       BREZ POSEBNEGA ZAVIHKA
+       MAP
   ========================= -->
 
   <section class="location-map">
@@ -1700,7 +1824,6 @@
     </iframe>
 
   </section>
-
 
   <!-- =========================
        FOOTER
@@ -1718,14 +1841,13 @@
 
   </footer>
 
-
   <script>
 
-    /* =========================
-       TRANSLATIONS
-    ========================= */
-
     const translations = {
+
+      /* =========================
+         SLOVENŠČINA
+      ========================= */
 
       sl: {
 
@@ -1748,7 +1870,6 @@
         scroll:
           "Scroll",
 
-
         krasLabel:
           "01 · Kras",
 
@@ -1758,7 +1879,6 @@
         krasText:
           "Kras je pokrajina kamna, burje in rdeče zemlje. Trta tu ne raste zlahka — prav zato pa daje grozdju značaj, ki ga drugje ni mogoče poustvariti.<br><br>Med kraškimi gmajnami in suhim kamnitim svetom trta išče svojo pot. Sonce, burja in terra rossa skupaj ustvarjajo pogoje, iz katerih nastajajo vina z izrazitim, pristnim kraškim značajem.<br><br><strong>Naše vino je odsev tega prostora.</strong><br><br>Ni ustvarjeno samo iz grozdja, temveč tudi iz zemlje, podnebja in tradicije, ki se na Krasu prenaša iz roda v rod.<br><br><strong>Kras v kozarcu.</strong>",
 
-
         storyLabel:
           "02 · Naša zgodba",
 
@@ -1767,7 +1887,6 @@
 
         storyText:
           "Naša zgodba se je začela na Krasu, kjer je bilo vinogradništvo skozi generacije del družinskega življenja. Korenine našega vinarstva segajo v 19. stoletje, ko so naši predniki obdelovali vinograde in skrbeli za vino. Znanje o trti in vinu se je prenašalo iz roda v rod. Vsaka generacija je nadaljevala delo prejšnje in mu dodala nekaj svojega. Danes nadaljujemo isto zgodbo – povezani z zemljo, iz katere prihajamo, in s tradicijo, ki nam je bila predana. Generacije se menjajo. Ljubezen do vina ostaja.",
-
 
         wineLabel:
           "03 · Naša vina",
@@ -1799,7 +1918,6 @@
         teranDescriptionText3:
           "Naš Teran želimo predstaviti takšnega, kot ga poznamo mi – kraškega, pristnega in povezanega z domačo zemljo ter tradicijo.",
 
-
         cellarLabel:
           "04 · Naša klet",
 
@@ -1810,8 +1928,7 @@
           "NAŠA ZGODBA",
 
         cellarDraftText:
-          "Leta 1981 smo zgradili navo vinsko klet. Postala je prostor, kjer se je naše vinogradništvo razvijalo in kjer je vino dobivalo svoj čas. Skozi leta se je spreminjala tudi klet. Okoli leta 2010 smo jo prenovili in ji dali novo podobo, pri tem pa ohranili njen značaj in namen. Danes je klet prostor, kjer vino počiva, zori in čaka na svoj trenutek. Od grozdja do vina. Od generacije do generacije.",
-
+          "Leta 1981 smo zgradili novo vinsko klet. Postala je prostor, kjer se je naše vinogradništvo razvijalo in kjer je vino dobivalo svoj čas. Skozi leta se je spreminjala tudi klet. Okoli leta 2010 smo jo prenovili in ji dali novo podobo, pri tem pa ohranili njen značaj in namen. Danes je klet prostor, kjer vino počiva, zori in čaka na svoj trenutek.<br><br>Od grozdja do vina. Od generacije do generacije.",
 
         traditionLabel:
           "05 · Izročilo",
@@ -1855,10 +1972,6 @@
         healthFinal2:
           "<strong>Kras v zemlji.<br>Zgodba v vinu.<br>Iz roda v rod.</strong>",
 
-        healthNote:
-          "OPOMBA: Zdravstvene trditve bomo pred objavo preverili glede na zanesljive znanstvene vire in veljavna pravila za oglaševanje živil in alkoholnih pijač.",
-
-
         contactLabel:
           "06 · Obiščite nas",
 
@@ -1877,12 +1990,14 @@
         emailLabel:
           "E-pošta",
 
-
         footerLocation:
           "KRAS · SLOVENIJA"
 
       },
 
+      /* =========================
+         ENGLISH
+      ========================= */
 
       en: {
 
@@ -1890,14 +2005,14 @@
         navStory: "Story",
         navWine: "Wines",
         navCellar: "Cellar",
-        navTradition: "Tradition",
+        navTradition: "Heritage",
         navContact: "Contact",
 
         eyebrow:
           "Filipčič Winery · Karst · Slovenia",
 
         motto:
-          "“God live the host,<br>who gives a drink without charge.”",
+          "“God bless the host<br>who gives a drink without asking for money.”",
 
         heroButton:
           "Discover our story",
@@ -1905,35 +2020,32 @@
         scroll:
           "Scroll",
 
-
         krasLabel:
           "01 · Karst",
 
         krasTitle:
-          "Where stone<br>gives wine its character.",
+          "Where stone gives wine its character.",
 
         krasText:
-          "The Karst is a landscape of stone, the bora wind and red soil. The vine does not grow easily here — and that is precisely what gives the grapes a character that cannot be recreated elsewhere.<br><br>Among the Karst scrublands and the dry, stony landscape, the vine finds its own path. Sun, bora and terra rossa create the conditions from which wines of distinctive, authentic Karst character emerge.<br><br><strong>Our wine is a reflection of this place.</strong><br><br>It is shaped not only by grapes, but also by the soil, climate and tradition that has been passed down on the Karst from generation to generation.<br><br><strong>The Karst in a glass.</strong>",
-
+          "The Karst is a landscape of stone, bora wind and red soil. The vine does not grow easily here — and that is precisely what gives the grapes a character that cannot be recreated elsewhere.<br><br>Among the Karst scrublands and the dry, stony landscape, the vine finds its own path. Sun, bora and terra rossa create the conditions from which wines with a distinctive and authentic Karst character emerge.<br><br><strong>Our wine is a reflection of this place.</strong><br><br>It is shaped not only by the grapes, but also by the soil, climate and tradition passed down through generations on the Karst.<br><br><strong>The Karst in a glass.</strong>",
 
         storyLabel:
           "02 · Our story",
 
         storyTitle:
-          "Wine is<br>time.",
+          "A story shaped by generations.",
 
         storyText:
-          "At Filipčič Winery, we respect what was created before us and create something that will remain after us.",
-
+          "Our story began on the Karst, where winemaking has been part of family life for generations. The roots of our winery reach back to the 19th century, when our ancestors cultivated vineyards and cared for their wine. Knowledge of the vine and wine was passed from generation to generation. Each generation continued the work of the previous one while adding something of its own. Today, we continue the same story – connected to the land we come from and to the tradition entrusted to us. Generations change. The love of wine remains.",
 
         wineLabel:
           "03 · Our wines",
 
         wineTitle:
-          "From our land.<br>To our cellar.",
+          "From our land. To our cellar.",
 
         wineIntro:
-          "Every wine has its own character. Every year its own story.",
+          "Every wine has its own character. Every vintage its own story.",
 
         teranSmall:
           "A Karst classic",
@@ -1951,48 +2063,46 @@
           "Teran is a wine closely connected to the Karst soil. Its deep ruby-red colour, distinctive freshness and recognizable character are part of its identity.",
 
         teranDescriptionText2:
-          "It reflects the environment in which it is created – red Karst soil, stone, the bora wind and sunlight. Every vintage adds its own story and its own character.",
+          "It reflects the environment in which it is made – red Karst soil, stone, bora wind and sunlight. Every vintage adds its own story and its own character.",
 
         teranDescriptionText3:
           "We want to present our Teran as we know it – authentic, shaped by the Karst and connected to our land and tradition.",
-
 
         cellarLabel:
           "04 · Our cellar",
 
         cellarTitle:
-          "A cellar where<br>the story continues.",
+          "A cellar where the story continues.",
 
         cellarDraftLabel:
           "OUR STORY",
 
         cellarDraftText:
-          "Filipčič Winery is connected to the place where we live and create. Our story reaches far back into the past. The vineyards of our family have been present in the Karst since the 19th century, when winemaking became intertwined with our home, family and way of life.<br><br>Wine has never been merely a product for us. It is part of home, family and the land from which we come. Knowledge and love for winemaking are passed down from generation to generation, with each generation adding something of its own to the story.<br><br>In 1981, we built a new wine cellar, which became the heart of our winery. Over the years, the cellar changed together with us, and around 2010 it was renovated and given a new appearance without losing its original essence.<br><br>Today, we continue the story that began many decades ago. We respect tradition, but we also look ahead. Every new vintage is a new page in the same story.<br><br>The roots remain. The story continues.",
-
+          "In 1981, we built our new wine cellar. It became a place where our winemaking developed and where the wine was given time. Over the years, the cellar changed as well. Around 2010, we renovated it and gave it a new appearance while preserving its character and purpose. Today, the cellar is a place where wine rests, matures and waits for its moment.<br><br>From grape to wine. From generation to generation.",
 
         traditionLabel:
-          "05 · Tradition",
+          "05 · Heritage",
 
         traditionTitle:
-          "From generation<br>to generation.",
+          "From generation to generation",
 
         traditionText1:
           "Teran holds a special place in the Karst. It is not merely a wine, but a part of life that has connected people, the land and the home for generations.",
 
         traditionText2:
-          "For generations, people have recognized the strength of the Karst soil and believed that this strength was also reflected in the wine. Teran has traditionally been associated with various beneficial properties and with well-being. Among the stories of the Karst, the belief that “Teran is good for the blood” has also been passed down through the years.",
+          "For generations, people have recognized the strength of the Karst soil and believed that this strength was also reflected in the wine. Teran has traditionally been associated with various beneficial qualities and with well-being. Among the stories of the Karst, the belief that “Teran is good for the blood” has also been passed down through the years.",
 
         traditionText3:
-          "These stories are part of a tradition passed down from generation to generation – through work in the vineyards, around the family table and in the cellar, where the wine matured year after year.",
+          "These stories are part of a heritage passed down from generation to generation – through work in the vineyards, around the family table and in the cellar, where the wine matured year after year.",
 
         traditionTeranTitle:
           "Teran",
 
         traditionText4:
-          "Teran carries the character of its homeland. Red Karst soil, stone, the bora wind and sunlight create the conditions in which a wine with distinctive character is born.",
+          "Teran carries the character of its homeland. Red Karst soil, stone, bora wind and sunlight create the conditions in which a wine with distinctive character is born.",
 
         traditionText5:
-          "Because of its uniqueness, Teran has become one of the recognizable symbols of the Karst throughout history. It carries countless stories about life on the Karst land, the work of our ancestors and an attitude towards wine that was never simply about a drink, but a part of home and everyday life.",
+          "Because of its uniqueness, Teran has become one of the recognizable symbols of the Karst throughout history. It carries countless stories about life on the Karst land, the work of our ancestors and a relationship with wine that was never simply about a drink, but about home and everyday life.",
 
         traditionTodayTitle:
           "From then to today",
@@ -2001,7 +2111,7 @@
           "Today we look at Teran with new knowledge, while the old stories remain part of its identity.",
 
         traditionText7:
-          "We respect what our ancestors told us, while also seeking to better understand what we know today about Teran and its natural components.",
+          "We respect what our ancestors told us, while also seeking to better understand what we know today about Teran and its natural characteristics.",
 
         healthClosing:
           "Because wine is not only what we pour into a glass.",
@@ -2010,11 +2120,7 @@
           "<strong>It is what previous generations created,<br>what we create today<br>and what we will pass on to future generations.</strong>",
 
         healthFinal2:
-          "<strong>Karst in the soil.<br>A story in the wine.<br>From generation to generation.</strong>",
-
-        healthNote:
-          "NOTE: Health-related claims will be reviewed before publication against reliable scientific sources and applicable rules for the advertising of food and alcoholic beverages.",
-
+          "<strong>The Karst in the soil.<br>A story in the wine.<br>From generation to generation.</strong>",
 
         contactLabel:
           "06 · Visit us",
@@ -2034,12 +2140,14 @@
         emailLabel:
           "Email",
 
-
         footerLocation:
           "KARST · SLOVENIA"
 
       },
 
+      /* =========================
+         ITALIANO
+      ========================= */
 
       it: {
 
@@ -2054,7 +2162,7 @@
           "Cantina Filipčič · Carso · Slovenia",
 
         motto:
-          "«Dio fa vivere il padrone che dà da bere senza denaro.»",
+          "«Dio benedica il padrone<br>che dà da bere senza chiedere denaro.»",
 
         heroButton:
           "Scopri la nostra storia",
@@ -2062,32 +2170,29 @@
         scroll:
           "Scorri",
 
-
         krasLabel:
           "01 · Carso",
 
         krasTitle:
-          "Dove la pietra<br>dà carattere al vino.",
+          "Dove la pietra dà carattere al vino.",
 
         krasText:
           "Il Carso è una terra di pietra, bora e terra rossa. Qui la vite non cresce facilmente — ed è proprio questo a dare all'uva un carattere che altrove non può essere ricreato.<br><br>Tra la macchia carsica e il paesaggio arido e pietroso, la vite trova la propria strada. Sole, bora e terra rossa creano le condizioni da cui nascono vini dal carattere carsico, autentico e distintivo.<br><br><strong>Il nostro vino è il riflesso di questo luogo.</strong><br><br>Non nasce soltanto dall'uva, ma anche dalla terra, dal clima e dalla tradizione che sul Carso si tramanda di generazione in generazione.<br><br><strong>Il Carso nel bicchiere.</strong>",
-
 
         storyLabel:
           "02 · La nostra storia",
 
         storyTitle:
-          "Il vino è<br>tempo.",
+          "Una storia scritta dalle generazioni.",
 
         storyText:
-          "Alla Cantina Filipčič rispettiamo ciò che è stato creato prima di noi e creiamo qualcosa che rimarrà dopo di noi.",
-
+          "La nostra storia è iniziata sul Carso, dove la viticoltura fa parte della vita familiare da generazioni. Le radici della nostra cantina risalgono al XIX secolo, quando i nostri antenati coltivavano i vigneti e si prendevano cura del vino. La conoscenza della vite e del vino è stata trasmessa di generazione in generazione. Ogni generazione ha continuato il lavoro della precedente, aggiungendo qualcosa di proprio. Oggi continuiamo la stessa storia, legati alla terra da cui proveniamo e alla tradizione che ci è stata tramandata. Le generazioni cambiano. L'amore per il vino rimane.",
 
         wineLabel:
           "03 · I nostri vini",
 
         wineTitle:
-          "Dalla nostra terra.<br>Alla nostra cantina.",
+          "Dalla nostra terra. Alla nostra cantina.",
 
         wineIntro:
           "Ogni vino ha il suo carattere. Ogni annata la sua storia.",
@@ -2113,25 +2218,23 @@
         teranDescriptionText3:
           "Vogliamo presentare il nostro Teran come lo conosciamo noi – autentico, carsico e legato alla nostra terra e alla nostra tradizione.",
 
-
         cellarLabel:
           "04 · La nostra cantina",
 
         cellarTitle:
-          "Una cantina dove<br>la storia continua.",
+          "Una cantina dove la storia continua.",
 
         cellarDraftLabel:
           "LA NOSTRA STORIA",
 
         cellarDraftText:
-          "La Cantina Filipčič è legata al luogo in cui viviamo e creiamo. La nostra storia affonda le sue radici nel passato. I vigneti della nostra famiglia sono presenti sul Carso fin dal XIX secolo, quando la viticoltura ha iniziato a intrecciarsi con la nostra casa, la nostra famiglia e il nostro modo di vivere.<br><br>Per noi il vino non è mai stato soltanto un prodotto. È parte della casa, della famiglia e della terra da cui proveniamo. La conoscenza e l'amore per la viticoltura vengono trasmessi di generazione in generazione, e ogni generazione aggiunge qualcosa di proprio alla storia.<br><br>Nel 1981 abbiamo costruito una nuova cantina, che è diventata il cuore della nostra attività. Nel corso degli anni la cantina è cambiata insieme a noi e, intorno al 2010, è stata rinnovata e ha ricevuto un nuovo aspetto, senza perdere la sua essenza originale.<br><br>Oggi continuiamo la storia iniziata molti decenni fa. Rispettiamo la tradizione, ma guardiamo anche avanti. Ogni nuova annata è una nuova pagina della stessa storia.<br><br>Le radici rimangono. La storia continua.",
-
+          "Nel 1981 abbiamo costruito la nostra nuova cantina. È diventata il luogo in cui la nostra attività vinicola si è sviluppata e dove il vino ha ricevuto il suo tempo. Nel corso degli anni anche la cantina è cambiata. Intorno al 2010 l'abbiamo rinnovata e le abbiamo dato un nuovo aspetto, preservandone il carattere e la funzione. Oggi la cantina è il luogo dove il vino riposa, matura e aspetta il suo momento.<br><br>Dall'uva al vino. Di generazione in generazione.",
 
         traditionLabel:
           "05 · Tradizione",
 
         traditionTitle:
-          "Di generazione<br>in generazione.",
+          "Di generazione in generazione",
 
         traditionText1:
           "Sul Carso il Teran occupa un posto speciale. Non è soltanto un vino, ma una parte della vita che per generazioni ha unito l'uomo, la terra e la casa.",
@@ -2158,7 +2261,7 @@
           "Oggi guardiamo al Teran con nuove conoscenze, mentre le antiche storie rimangono parte della sua identità.",
 
         traditionText7:
-          "Rispettiamo ciò che ci hanno raccontato i nostri antenati, cercando allo stesso tempo di comprendere meglio ciò che oggi sappiamo del Teran e dei suoi componenti naturali.",
+          "Rispettiamo ciò che ci hanno raccontato i nostri antenati, cercando allo stesso tempo di comprendere meglio ciò che oggi sappiamo del Teran e delle sue caratteristiche naturali.",
 
         healthClosing:
           "Perché il vino non è soltanto ciò che versiamo nel bicchiere.",
@@ -2168,10 +2271,6 @@
 
         healthFinal2:
           "<strong>Il Carso nella terra.<br>Una storia nel vino.<br>Di generazione in generazione.</strong>",
-
-        healthNote:
-          "NOTA: Le dichiarazioni relative alla salute saranno verificate prima della pubblicazione sulla base di fonti scientifiche affidabili e delle norme applicabili alla pubblicità degli alimenti e delle bevande alcoliche.",
-
 
         contactLabel:
           "06 · Venite a trovarci",
@@ -2191,14 +2290,12 @@
         emailLabel:
           "Email",
 
-
         footerLocation:
           "CARSO · SLOVENIA"
 
       }
 
     };
-
 
     /* =========================
        LANGUAGE
@@ -2228,34 +2325,23 @@
 
         });
 
-
       document.documentElement.lang =
         language;
 
-
       if (language === "sl") {
-
         document.title =
           "Vinarstvo Filipčič — Okus Krasa";
-
       }
-
 
       if (language === "en") {
-
         document.title =
           "Filipčič Winery — Taste of the Karst";
-
       }
-
 
       if (language === "it") {
-
         document.title =
           "Cantina Filipčič — Il gusto del Carso";
-
       }
-
 
       document
         .querySelectorAll(".languages button")
@@ -2268,14 +2354,12 @@
 
         });
 
-
       localStorage.setItem(
         "filipcic-language",
         language
       );
 
     }
-
 
     document
       .querySelectorAll(".languages button")
@@ -2294,15 +2378,12 @@
 
       });
 
-
     const savedLanguage =
       localStorage.getItem(
         "filipcic-language"
       ) || "sl";
 
-
     changeLanguage(savedLanguage);
-
 
     /* =========================
        NAVBAR SCROLL
@@ -2310,7 +2391,6 @@
 
     const navbar =
       document.getElementById("navbar");
-
 
     window.addEventListener(
       "scroll",
@@ -2329,7 +2409,6 @@
       }
     );
 
-
     /* =========================
        MOBILE MENU
     ========================= */
@@ -2339,7 +2418,6 @@
 
     const navLinks =
       document.getElementById("navLinks");
-
 
     menu.addEventListener(
       "click",
@@ -2351,7 +2429,6 @@
 
       }
     );
-
 
     document
       .querySelectorAll(".nav-links a")
@@ -2369,7 +2446,6 @@
         );
 
       });
-
 
     /* =========================
        SCROLL REVEAL
@@ -2400,7 +2476,6 @@
 
       );
 
-
     document
       .querySelectorAll(".reveal")
       .forEach(element => {
@@ -2409,14 +2484,12 @@
 
       });
 
-
     /* =========================
        HERO PARALLAX
     ========================= */
 
     const hero =
       document.querySelector(".hero");
-
 
     window.addEventListener(
       "scroll",
