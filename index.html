@@ -869,6 +869,33 @@
       margin-bottom: 8px;
     }
 
+  
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-top: 12px;
+}
+
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.8;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.social-links a:hover {
+  opacity: 1;
+  transform: translateY(-3px);
+}
+
+.social-links img {
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+
     /* =========================
        MAP
     ========================= */
@@ -1723,25 +1750,26 @@
   <p>Gal: <a href="tel:+38641256886">041 256 886</a></p>
 </div>
 
-  
-<div class="contact-item">
-  <span>Družbena omrežja</span>
+<div class="social-links">
+  <a href="https://www.facebook.com/profile.php?id=61595213308175"
+     target="_blank"
+     rel="noopener noreferrer"
+     aria-label="Facebook Vinarstva Filipčič">
+    <img src="https://cdn.simpleicons.org/facebook/c9a45c"
+         alt=""
+         width="24"
+         height="24">
+  </a>
 
-  <p>
-    <a href="https://www.facebook.com/profile.php?id=61595213308175"
-       target="_blank"
-       rel="noopener noreferrer">
-      Facebook
-    </a>
-  </p>
-
-  <p>
-    <a href="https://www.instagram.com/vinarstvo.filipcic/"
-       target="_blank"
-       rel="noopener noreferrer">
-      Instagram
-    </a>
-  </p>
+  <a href="https://www.instagram.com/vinarstvo.filipcic/"
+     target="_blank"
+     rel="noopener noreferrer"
+     aria-label="Instagram Vinarstva Filipčič">
+    <img src="https://cdn.simpleicons.org/instagram/c9a45c"
+         alt=""
+         width="24"
+         height="24">
+  </a>
 </div>
 
         <div>
