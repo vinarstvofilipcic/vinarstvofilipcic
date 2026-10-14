@@ -179,16 +179,6 @@
         );
     }
 
-    .hero-content {
-      position: relative;
-      z-index: 2;
-
-      max-width: 950px;
-      padding: 30px;
-
-      animation: heroIn 0s ease forwards;
-    }
-
     .eyebrow {
       color: var(--gold-light);
       font-size: 11px;
@@ -257,21 +247,6 @@
       text-transform: uppercase;
 
       color: var(--muted);
-    }
-
-    .scroll::after {
-      content: "";
-
-      display: block;
-
-      width: 1px;
-      height: 45px;
-
-      margin: 12px auto 0;
-
-      background: var(--gold);
-
-      animation: scrollLine 0s infinite;
     }
 
     /* =========================
@@ -2399,44 +2374,6 @@
         );
 
       });
-
-    /* =========================
-       SCROLL REVEAL
-    ========================= */
-
-    const observer =
-      new IntersectionObserver(
-
-        (entries) => {
-
-          entries.forEach(entry => {
-
-            if (entry.isIntersecting) {
-
-              entry.target.classList.add(
-                "visible"
-              );
-
-            }
-
-          });
-
-        },
-
-        {
-          threshold: 0.12
-        }
-
-      );
-
-    document
-      .querySelectorAll(".reveal")
-      .forEach(element => {
-
-        observer.observe(element);
-
-      });
-
   
     /* =========================
        HERO PARALLAX
