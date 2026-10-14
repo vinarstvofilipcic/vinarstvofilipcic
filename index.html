@@ -956,53 +956,17 @@
       font-weight: 400;
     }
 
-    /* =========================
-       ANIMATION
-    ========================= */
+    
+/* =========================
+   ANIMATION
+========================= */
 
-    .reveal {
-      opacity: 0;
-
-      transform: translateY(50px);
-
-      transition:
-        opacity 1s ease,
-        transform 1s ease;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-
-      transform: translateY(0);
-    }
-
-    @keyframes heroIn {
-
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-
-    }
-
-    @keyframes scrollLine {
-
-      0%,100% {
-        opacity: .2;
-        transform: scaleY(.5);
-      }
-
-      50% {
-        opacity: 1;
-        transform: scaleY(1);
-      }
-
-    }
+.reveal,
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+  transition: none;
+}
 
     /* =========================
        MOBILE
@@ -2445,6 +2409,43 @@
 
           }
         );
+
+      });
+
+    /* =========================
+       SCROLL REVEAL
+    ========================= */
+
+    const observer =
+      new IntersectionObserver(
+
+        (entries) => {
+
+          entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+              entry.target.classList.add(
+                "visible"
+              );
+
+            }
+
+          });
+
+        },
+
+        {
+          threshold: 0.12
+        }
+
+      );
+
+    document
+      .querySelectorAll(".reveal")
+      .forEach(element => {
+
+        observer.observe(element);
 
       });
 
