@@ -51,49 +51,6 @@
       font-family: inherit;
     }
 
-
-.hero-socials {
-  position: absolute;
-  top: 28px;
-  right: 35px;
-  z-index: 10;
-  display: flex;
-  align-items: center;
-  gap: 18px;
-}
-
-.hero-socials a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0.8;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.hero-socials a:hover {
-  opacity: 1;
-  transform: translateY(-3px);
-}
-
-.hero-socials img {
-  display: block;
-  width: 23px;
-  height: 23px;
-}
-
-@media (max-width: 600px) {
-  .hero-socials {
-    top: 20px;
-    right: 20px;
-    gap: 14px;
-  }
-
-  .hero-socials img {
-    width: 21px;
-    height: 21px;
-  }
-}
-
     /* =========================
        NAVIGATION
     ========================= */
@@ -1320,20 +1277,24 @@
 
   <header class="hero" id="top">
 
-<div class="hero-socials">
-  <a href="https://www.facebook.com/profile.php?id=61595213308175"
-     target="_blank"
-     rel="noopener noreferrer"
-     aria-label="Facebook">
-    <img src="https://cdn.simpleicons.org/facebook/c9a45c" alt="">
-  </a>
+<div class="contact-item">
+  <span>Družbena omrežja</span>
 
-  <a href="https://www.instagram.com/vinarstvo.filipcic/"
-     target="_blank"
-     rel="noopener noreferrer"
-     aria-label="Instagram">
-    <img src="https://cdn.simpleicons.org/instagram/c9a45c" alt="">
-  </a>
+  <p>
+    <a href="https://www.facebook.com/profile.php?id=61595213308175"
+       target="_blank"
+       rel="noopener noreferrer">
+      Facebook
+    </a>
+  </p>
+
+  <p>
+    <a href="https://www.instagram.com/vinarstvo.filipcic/"
+       target="_blank"
+       rel="noopener noreferrer">
+      Instagram
+    </a>
+  </p>
 </div>
 
     <div class="hero-content">
