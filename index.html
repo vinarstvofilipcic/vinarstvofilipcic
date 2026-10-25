@@ -1166,7 +1166,42 @@
 
     }
 
+  
+    /* Cookie consent popup: independent overlay, does not alter page layout. */
+    .cookie-banner[hidden] { display: none !important; }
+    .cookie-banner {
+      position: fixed; z-index: 99999; left: 50%; bottom: 24px; transform: translateX(-50%);
+      width: min(560px, calc(100vw - 32px)); max-height: calc(100vh - 48px); overflow: auto;
+      box-sizing: border-box; padding: 26px; color: #eee7da; background: #11100e;
+      border: 1px solid #c5a46d; box-shadow: 0 12px 50px rgba(0,0,0,.65); border-radius: 2px;
+      font-family: Inter, sans-serif;
+    }
+    .cookie-banner h2 { color: #e1c994; }
+    .cookie-banner p { line-height: 1.6; font-size: 14px; }
+    .cookie-banner a { color: #e1c994; }
+    .cookie-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+    .cookie-button { flex: 1 1 180px; min-height: 44px; padding: 11px 14px; cursor: pointer; border: 1px solid #c5a46d; font: inherit; }
+    #acceptOptional { color: #080807; background: #c5a46d; }
+    #rejectOptional { color: #eee7da; background: transparent; }
+    @media (max-width: 520px) { .cookie-banner { bottom: 12px; padding: 20px; width: calc(100vw - 24px); } }
+
   </style>
+<style id="site-consistent-layout">
+/* Consistent, spacious content and identical footer across all pages */
+main { width: min(1120px, 100%); max-width: 1120px; margin-left: auto; margin-right: auto; padding-left: clamp(24px, 6vw, 88px); padding-right: clamp(24px, 6vw, 88px); }
+main p, main li { line-height: 1.8; }
+main h1 { line-height: 1.12; }
+.site-footer { box-sizing: border-box; width: 100%; padding: 30px clamp(24px, 6vw, 88px) 34px; border-top: 1px solid rgba(197,164,109,.30); display: flex; flex-direction: column; align-items: stretch; gap: 18px; color: #a7a095; background: #080807; font-size: 11px; letter-spacing: .06em; }
+.site-footer .footer-top { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 24px; }
+.site-footer strong { color: #c5a46d; font-weight: 500; }
+.site-footer .footer-links { display: flex; flex-wrap: wrap; align-items: center; gap: 0; margin: 0; padding: 12px 0; border-top: 1px solid rgba(197,164,109,.16); border-bottom: 1px solid rgba(197,164,109,.16); }
+.site-footer .footer-links a { display: inline-flex; align-items: center; margin: 0; padding: 2px 14px; color: #eee7da; text-decoration: none; letter-spacing: .04em; }
+.site-footer .footer-links a:first-child { padding-left: 0; }
+.site-footer .footer-links a + a::before { content: "·"; color: #c5a46d; margin-right: 28px; font-size: 18px; line-height: 1; }
+.site-footer .footer-links a:hover { color: #e1c994; }
+.site-footer .health-warning { width: 100%; box-sizing: border-box; margin: 0; padding: 15px 18px; border: 1px solid #c5a46d; background: #11100e; color: #eee7da; text-align: center; font-size: 13px; font-weight: 600; line-height: 1.6; letter-spacing: .02em; }
+@media (max-width: 600px) { .site-footer { padding: 24px 22px 28px; } .site-footer .footer-top { flex-direction: column; align-items: flex-start; } .site-footer .footer-links { gap: 10px 0; } .site-footer .footer-links a { padding-right: 10px; padding-left: 0; } .site-footer .footer-links a + a::before { margin-right: 10px; } main { padding-top: 42px; } }
+</style>
 </head>
 
 <body>
@@ -1771,22 +1806,22 @@
        FOOTER
   ========================= -->
 
-  <footer>
-    <div class="footer-main">
-      <div>© 2026 <strong>VINARSTVO FILIPČIČ</strong></div>
-      <div class="footer-legal" aria-label="Pravne informacije">
-        <a href="pravne-informacije.html">Pravne informacije</a>
-        <a href="politika-zasebnosti.html">Politika zasebnosti</a>
-        <a href="piskotki.html">Piškotki</a>
-      </div>
-    </div>
+  <footer class="site-footer">
+  <div class="footer-top">
+    <div>© 2026 <strong>VINARSTVO FILIPČIČ</strong></div>
     <div data-i18n="footerLocation">KRAS · SLOVENIJA</div>
-    <div class="health-warning">Minister za zdravje opozarja: Uživanje alkohola lahko škoduje zdravju!</div>
-  </footer>
+  </div>
+  <nav class="footer-links" aria-label="Footer links">
+    <a href="pravne-informacije.html" data-i18n="legalFooter">Pravne informacije</a>
+    <a href="politika-zasebnosti.html" data-i18n="privacyFooter">Politika zasebnosti</a>
+    <a href="piskotki.html" data-i18n="cookiesFooter">Piškotki</a>
+  </nav>
+  <div class="health-warning" data-i18n="warning">Ministrstvo za zdravje opozarja: Uživanje alkohola lahko škoduje zdravju!</div>
+</footer>
 
   <div class="cookie-banner" id="cookieBanner" role="dialog" aria-modal="true" aria-labelledby="cookieTitle" hidden>
     <h2 id="cookieTitle" data-i18n="cookieTitle" style="font-size:22px; font-weight:400; margin-bottom:10px;">Nastavitve zasebnosti</h2>
-    <p id="cookieDescription" data-i18n="cookieDescription">Google Analytics in Google Zemljevidi se naložijo samo, če sprejmete neobvezne piškotke. Če jih zavrnete, analitika in zemljevid ostaneta izklopljena. Izbira se shrani v brskalniku. Več informacij: <a href="politika-zasebnosti.html">politika zasebnosti</a> in <a href="piskotki.html">piškotki</a>.</p>
+    <p id="cookieDescription" data-i18n="cookieDescription">Google Maps se naloži šele, ko izberete »Sprejmi«. Če zavrnete, zemljevid ostane izklopljen. Izbiro lahko kadarkoli spremenite v nogi strani. Jezikovna nastavitev se shrani lokalno v brskalniku. Več informacij: <a href="politika-zasebnosti.html">politika zasebnosti</a> in <a href="piskotki.html">piškotki</a>.</p>
     <div class="cookie-actions">
       <button type="button" class="cookie-button" id="acceptOptional" data-i18n="cookieAccept">Sprejmi neobvezno vsebino</button>
       <button type="button" class="cookie-button" id="rejectOptional" data-i18n="cookieReject">Zavrni neobvezno vsebino</button>
@@ -1804,7 +1839,7 @@
 
       sl: {
 
-        cookieTitle: "Nastavitve zasebnosti", cookieDescription: 'Google Analytics in Google Zemljevidi se naložijo samo, če sprejmete neobvezne piškotke. Če jih zavrnete, analitika in zemljevid ostaneta izklopljena. Izbira se shrani v brskalniku. Več informacij: <a href="politika-zasebnosti.html">politika zasebnosti</a> in <a href="piskotki.html">piškotki</a>.', cookieAccept: "Sprejmi vse", cookieReject: "Zavrni nenujne",
+        cookieTitle: "Nastavitve zasebnosti", cookieDescription: 'Google Maps se naloži šele, ko izberete »Sprejmi«. Če zavrnete, zemljevid ostane izklopljen. Izbiro lahko kadarkoli spremenite v nogi strani. Jezikovna nastavitev se shrani lokalno v brskalniku. Več informacij: <a href="politika-zasebnosti.html">politika zasebnosti</a> in <a href="piskotki.html">piškotki</a>.', cookieAccept: "Sprejmi vse", cookieReject: "Zavrni nenujne",
 
         navKras: "Kras",
         navStory: "Zgodba",
@@ -1940,7 +1975,8 @@
           "E-pošta",
 
         footerLocation:
-          "KRAS · SLOVENIJA"
+          "KRAS · SLOVENIJA",
+        legalFooter: "Pravne informacije", privacyFooter: "Politika zasebnosti", cookiesFooter: "Piškotki", warning: "Ministrstvo za zdravje opozarja: Uživanje alkohola lahko škoduje zdravju!"
 
       },
 
@@ -1950,7 +1986,7 @@
 
       en: {
 
-        cookieTitle: "Privacy settings", cookieDescription: 'Google Analytics and Google Maps load only if you accept optional cookies. If you decline, analytics and the map remain disabled. Your choice is saved in your browser. More information: <a href="politika-zasebnosti.html">privacy policy</a> and <a href="piskotki.html">cookies</a>.', cookieAccept: "Accept all", cookieReject: "Reject non-essential",
+        cookieTitle: "Privacy settings", cookieDescription: 'Google Maps loads only when you select “Accept”. If you decline, the map remains disabled. You can change your choice at any time using the link in the footer. Your language choice is stored locally in your browser. More information: <a href="politika-zasebnosti.html">privacy policy</a> and <a href="piskotki.html">cookies</a>.', cookieAccept: "Accept all", cookieReject: "Reject non-essential",
 
         navKras: "Karst",
         navStory: "Story",
@@ -2086,7 +2122,8 @@
           "Email",
 
         footerLocation:
-          "KARST · SLOVENIA"
+          "KARST · SLOVENIA",
+        legalFooter: "Legal information", privacyFooter: "Privacy policy", cookiesFooter: "Cookies", warning: "The Ministry of Health warns: Alcohol consumption can be harmful to your health!"
 
       },
 
@@ -2096,7 +2133,7 @@
 
       it: {
 
-        cookieTitle: "Impostazioni privacy", cookieDescription: 'Google Analytics e Google Maps vengono caricati solo se accetti i cookie facoltativi. Se rifiuti, le statistiche e la mappa rimangono disattivate. La scelta viene salvata nel browser. Maggiori informazioni: <a href="politika-zasebnosti.html">informativa sulla privacy</a> e <a href="piskotki.html">cookie</a>.', cookieAccept: "Accetta tutto", cookieReject: "Rifiuta i non necessari",
+        cookieTitle: "Impostazioni privacy", cookieDescription: 'Google Maps viene caricato solo se selezioni “Accetta”. Se rifiuti, la mappa rimane disattivata. Puoi modificare la scelta in qualsiasi momento dal piè di pagina. La lingua scelta viene salvata localmente nel browser. Maggiori informazioni: <a href="politika-zasebnosti.html">informativa sulla privacy</a> e <a href="piskotki.html">cookie</a>.', cookieAccept: "Accetta tutto", cookieReject: "Rifiuta i non necessari",
 
         navKras: "Carso",
         navStory: "Storia",
@@ -2232,7 +2269,8 @@
           "Email",
 
         footerLocation:
-          "CARSO · SLOVENIA"
+          "CARSO · SLOVENIA",
+        legalFooter: "Informazioni legali", privacyFooter: "Informativa sulla privacy", cookiesFooter: "Cookie", warning: "Il Ministero della Salute avverte: il consumo di alcol può nuocere alla salute!"
 
       }
 
@@ -2334,7 +2372,7 @@
     const mapFrame = document.getElementById("locationMapFrame");
     const mapPlaceholder = document.getElementById("mapPlaceholder");
     const loadMapButton = document.getElementById("loadMapButton");
-    const cookieChoiceKey = "filipcic-optional-content-consent";
+    const cookieChoiceKey = "filipcic-cookie-consent-v2";
 
     function showCookieBanner() {
       cookieBanner.hidden = false;
@@ -2344,6 +2382,18 @@
       cookieBanner.hidden = true;
       cookieBanner.style.display = "none";
     }
+    function loadGoogleAnalyticsAfterConsent() {
+      if (window.__filipcicAnalyticsLoaded) return;
+      window.__filipcicAnalyticsLoaded = true;
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = window.gtag || function(){ window.dataLayer.push(arguments); };
+      window.gtag('js', new Date());
+      window.gtag('config', 'G-TGTFYVMPD9');
+      const analyticsScript = document.createElement('script');
+      analyticsScript.async = true;
+      analyticsScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-TGTFYVMPD9';
+      document.head.appendChild(analyticsScript);
+    }
     function loadOptionalMap() {
       if (!mapFrame) return;
       if (!mapFrame.src || mapFrame.src === window.location.href || mapFrame.getAttribute("src") !== mapFrame.dataset.src) {
@@ -2352,24 +2402,12 @@
       mapFrame.hidden = false;
       if (mapPlaceholder) mapPlaceholder.hidden = true;
     }
-    function loadGoogleAnalytics() {
-      if (window.__filipcicGoogleAnalyticsLoaded) return;
-      window.__filipcicGoogleAnalyticsLoaded = true;
-      window.dataLayer = window.dataLayer || [];
-      window.gtag = function(){ window.dataLayer.push(arguments); };
-      window.gtag('js', new Date());
-      window.gtag('config', 'G-TGTFYVMPD9');
-      const analyticsScript = document.createElement('script');
-      analyticsScript.async = true;
-      analyticsScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-TGTFYVMPD9';
-      document.head.appendChild(analyticsScript);
-    }
     function setOptionalConsent(choice) {
       try { localStorage.setItem(cookieChoiceKey, choice); } catch (e) {}
       hideCookieBanner();
       if (choice === "accepted") {
+        loadGoogleAnalyticsAfterConsent();
         loadOptionalMap();
-        loadGoogleAnalytics();
       } else {
         if (mapFrame) {
           mapFrame.removeAttribute("src");
@@ -2378,13 +2416,19 @@
         if (mapPlaceholder) mapPlaceholder.hidden = false;
       }
     }
-    document.getElementById("acceptOptional").addEventListener("click", () => setOptionalConsent("accepted"));
-    document.getElementById("rejectOptional").addEventListener("click", () => setOptionalConsent("rejected"));
+    const acceptOptionalButton = document.getElementById("acceptOptional");
+    const rejectOptionalButton = document.getElementById("rejectOptional");
+    if (acceptOptionalButton) acceptOptionalButton.addEventListener("click", () => setOptionalConsent("accepted"));
+    if (rejectOptionalButton) rejectOptionalButton.addEventListener("click", () => setOptionalConsent("rejected"));
     if (loadMapButton) loadMapButton.addEventListener("click", showCookieBanner);
     let cookieChoice = null;
     try { cookieChoice = localStorage.getItem(cookieChoiceKey); } catch (e) {}
-    if (cookieChoice === "accepted") { loadOptionalMap(); loadGoogleAnalytics(); }
-    else if (cookieChoice !== "rejected") showCookieBanner();
+    if (cookieChoice === "accepted") {
+      loadGoogleAnalyticsAfterConsent();
+      loadOptionalMap();
+    } else if (cookieChoice !== "rejected") {
+      showCookieBanner();
+    }
 
     /* =========================
        NAVBAR SCROLL

@@ -36,9 +36,33 @@ body{padding-top:82px}
 }
 
 </style>
-
-<style id="filipcic-consent-style">
-#filipcicConsent{position:fixed;z-index:99999;left:50%;bottom:22px;transform:translateX(-50%);width:min(620px,calc(100% - 28px));padding:24px;background:#11100e;color:#eee7da;border:1px solid #c5a46d;box-shadow:0 18px 60px #000b;font:14px/1.6 Inter,Arial,sans-serif}#filipcicConsent[hidden]{display:none}#filipcicConsent h2{margin:0 0 8px;color:#c5a46d;font:normal 26px/1.2 Georgia,serif}#filipcicConsent p{margin:0 0 18px;color:#d5cec2}#filipcicConsent a{color:#c5a46d}#filipcicConsent .consent-actions{display:flex;gap:10px;flex-wrap:wrap}#filipcicConsent button{flex:1;min-width:155px;padding:12px 14px;border:1px solid #c5a46d;background:#c5a46d;color:#080807;font-weight:700;cursor:pointer}#filipcicConsent button:last-child{background:transparent;color:#eee7da}@media(max-width:480px){#filipcicConsent{bottom:10px;padding:18px}#filipcicConsent .consent-actions{flex-direction:column}}
+<style id="filipcic-cookie-style">
+#filipcic-cookie-banner[hidden]{display:none!important}
+#filipcic-cookie-banner{position:fixed;z-index:99999;left:50%;bottom:24px;transform:translateX(-50%);width:min(560px,calc(100vw - 32px));max-height:calc(100vh - 48px);overflow:auto;box-sizing:border-box;padding:26px;color:#eee7da;background:#11100e;border:1px solid #c5a46d;box-shadow:0 12px 50px rgba(0,0,0,.65);font-family:Inter,Arial,sans-serif}
+#filipcic-cookie-banner h2{margin:0 0 10px;color:#e1c994;font-size:22px;font-weight:400}
+#filipcic-cookie-banner p{line-height:1.6;font-size:14px}
+#filipcic-cookie-banner a{color:#e1c994}
+#filipcic-cookie-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+#filipcic-cookie-actions button{flex:1 1 180px;min-height:44px;padding:11px 14px;cursor:pointer;border:1px solid #c5a46d;font:inherit}
+#filipcic-cookie-accept{color:#080807;background:#c5a46d}
+#filipcic-cookie-reject{color:#eee7da;background:transparent}
+@media(max-width:520px){#filipcic-cookie-banner{bottom:12px;padding:20px;width:calc(100vw - 24px)}}
+</style>
+<style id="site-consistent-layout">
+/* Consistent, spacious content and identical footer across all pages */
+main { width: min(1120px, 100%); max-width: 1120px; margin-left: auto; margin-right: auto; padding-left: clamp(24px, 6vw, 88px); padding-right: clamp(24px, 6vw, 88px); }
+main p, main li { line-height: 1.8; }
+main h1 { line-height: 1.12; }
+.site-footer { box-sizing: border-box; width: 100%; padding: 30px clamp(24px, 6vw, 88px) 34px; border-top: 1px solid rgba(197,164,109,.30); display: flex; flex-direction: column; align-items: stretch; gap: 18px; color: #a7a095; background: #080807; font-size: 11px; letter-spacing: .06em; }
+.site-footer .footer-top { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 24px; }
+.site-footer strong { color: #c5a46d; font-weight: 500; }
+.site-footer .footer-links { display: flex; flex-wrap: wrap; align-items: center; gap: 0; margin: 0; padding: 12px 0; border-top: 1px solid rgba(197,164,109,.16); border-bottom: 1px solid rgba(197,164,109,.16); }
+.site-footer .footer-links a { display: inline-flex; align-items: center; margin: 0; padding: 2px 14px; color: #eee7da; text-decoration: none; letter-spacing: .04em; }
+.site-footer .footer-links a:first-child { padding-left: 0; }
+.site-footer .footer-links a + a::before { content: "·"; color: #c5a46d; margin-right: 28px; font-size: 18px; line-height: 1; }
+.site-footer .footer-links a:hover { color: #e1c994; }
+.site-footer .health-warning { width: 100%; box-sizing: border-box; margin: 0; padding: 15px 18px; border: 1px solid #c5a46d; background: #11100e; color: #eee7da; text-align: center; font-size: 13px; font-weight: 600; line-height: 1.6; letter-spacing: .02em; }
+@media (max-width: 600px) { .site-footer { padding: 24px 22px 28px; } .site-footer .footer-top { flex-direction: column; align-items: flex-start; } .site-footer .footer-links { gap: 10px 0; } .site-footer .footer-links a { padding-right: 10px; padding-left: 0; } .site-footer .footer-links a + a::before { margin-right: 10px; } main { padding-top: 42px; } }
 </style>
 </head>
 <body>
@@ -88,7 +112,18 @@ body{padding-top:82px}
 <p data-i18n="privacyChanges">Politika se lahko posodobi, če se spremenijo funkcionalnosti spletne strani ali veljavne zahteve. Datum zadnje posodobitve: 25. oktober 2026.</p>
 </main>
 
-<footer><a href="pravne-informacije.html" data-i18n="legalFooter">Pravne informacije</a><a href="politika-zasebnosti.html" data-i18n="privacyFooter">Politika zasebnosti</a><a href="piskotki.html" data-i18n="cookiesFooter">Piškotki</a><div class="health-warning" data-i18n="warning">Minister za zdravje opozarja: Uživanje alkohola lahko škoduje zdravju!</div></footer>
+<footer class="site-footer">
+  <div class="footer-top">
+    <div>© 2026 <strong>VINARSTVO FILIPČIČ</strong></div>
+    <div data-i18n="footerLocation">KRAS · SLOVENIJA</div>
+  </div>
+  <nav class="footer-links" aria-label="Footer links">
+    <a href="pravne-informacije.html" data-i18n="legalFooter">Pravne informacije</a>
+    <a href="politika-zasebnosti.html" data-i18n="privacyFooter">Politika zasebnosti</a>
+    <a href="piskotki.html" data-i18n="cookiesFooter">Piškotki</a>
+  </nav>
+  <div class="health-warning" data-i18n="warning">Ministrstvo za zdravje opozarja: Uživanje alkohola lahko škoduje zdravju!</div>
+</footer>
 
 <script>
 (function(){
@@ -100,14 +135,14 @@ body{padding-top:82px}
    teranP1:"Teran je vino, tesno povezano s kraško zemljo. Njegova globoka rubinasto rdeča barva, izrazita svežina in prepoznaven karakter so del njegove identitete. V njem se prepletajo značilnosti okolja, v katerem nastaja – rdeča kraška zemlja, kamen, burja in sonce.",
    teranP2:"Naš Teran želimo predstaviti takšnega, kot ga poznamo mi – kraškega, pristnega in povezanega z domačo zemljo ter tradicijo.",
    contactTitle:"Podrobnosti in povpraševanja",contactP:"Za informacije o trenutnem letniku, razpoložljivosti, pakiranju in pogojih ponudbe nas kontaktirajte neposredno. Podatki se potrdijo ob povpraševanju.",
-   location:"Lokacija",warning:"Minister za zdravje opozarja: Uživanje alkohola lahko škoduje zdravju!",
+   location:"Lokacija",warning:"Ministrstvo za zdravje opozarja: Uživanje alkohola lahko škoduje zdravju!",
    legalTitle:"Pravne informacije",legalIntro:"Ta spletna stran predstavlja Vinarstvo Filipčič — Okus Krasa in omogoča informiranje ter stik po telefonu ali elektronski pošti. Na tej strani ni spletnega nakupnega postopka ali neposrednega plačila.",
    officialData:"Uradni podatki nosilca dejavnosti",holder:"Uradno ime oziroma firma nosilca dejavnosti",registeredAddress:"Sedež oziroma uradni naslov nosilca dejavnosti",registration:"Matična številka, če je za nosilca dejavnosti relevantna",tax:"Davčna številka in podatek o identifikaciji za DDV, če je relevantno",supervision:"Podatki o dovoljenju oziroma pristojnem nadzornem organu, če se za konkretno dejavnost zahtevajo",
    contact:"Kontakt",contactPerson:"Kontaktna oseba",contentTitle:"Vsebina in odgovornost",contentP:"Vsebina je pripravljena z namenom predstavitve vinarstva, kraja in vina. Podatki o razpoložljivosti, letniku in morebitnih pogojih ponudbe se potrdijo neposredno ob povpraševanju. Fotografije in besedila so zaščiteni v skladu z veljavno zakonodajo, razen če je izrecno navedeno drugače.",
    alcoholTitle:"Alkoholne pijače",alcoholP:"Alkohol je namenjen samo polnoletnim osebam. Uživanje alkohola lahko škoduje zdravju. Vse informacije na spletni strani je treba razumeti v okviru veljavnih pravil o oglaševanju alkoholnih pijač.",
-   privacyTitle:"Politika zasebnosti",privacyIntro:"Ta politika pojasnjuje, kako ta spletna stran obravnava osebne podatke in zunanje vsebine.",privacyContactTitle:"Kontaktiranje po telefonu ali e-pošti",privacyContactP:"Če nas kontaktirate, uporabimo podatke, ki nam jih posredujete, za odgovor na vaše sporočilo in obravnavo povpraševanja. Podatkov ne uporabljamo za neposredno trženje brez ustrezne pravne podlage.",privacyHostTitle:"Gostovanje in dnevniki strežnika",privacyHostP:"Spletna stran je lahko gostovana prek storitve GitHub Pages. Ponudnik gostovanja lahko ob obisku obdeluje tehnične podatke, kot so naslov IP, čas zahteve in podatki brskalnika, v skladu s svojimi pravili zasebnosti.",privacyMapsTitle:"Google Zemljevidi",privacyMapsP:"Google Zemljevid se naloži šele, ko izberete, da želite naložiti zunanjo vsebino. Google Analytics se naloži samo po izbiri »Sprejmi vse«; ob tem lahko Google obdeluje podatke o uporabi spletnega mesta. Če izberete »Zavrni nenujne«, se Analytics ne naloži. Veljajo Googlovi pogoji in pravila zasebnosti.",privacyRightsTitle:"Vaše pravice",privacyRightsP:"Glede na okoliščine imate lahko pravico do dostopa, popravka, izbrisa, omejitve obdelave ali ugovora. Za vprašanja o zasebnosti nas kontaktirajte po e-pošti. Če menite, da obdelava krši zakonodajo, se lahko obrnete na Informacijskega pooblaščenca Republike Slovenije.",
+   privacyTitle:"Politika zasebnosti",privacyIntro:"Ta politika pojasnjuje, kako ta spletna stran obravnava osebne podatke in zunanje vsebine.",privacyContactTitle:"Kontaktiranje po telefonu ali e-pošti",privacyContactP:"Če nas kontaktirate, uporabimo podatke, ki nam jih posredujete, za odgovor na vaše sporočilo in obravnavo povpraševanja. Podatkov ne uporabljamo za neposredno trženje brez ustrezne pravne podlage.",privacyHostTitle:"Gostovanje in dnevniki strežnika",privacyHostP:"Spletna stran je lahko gostovana prek storitve GitHub Pages. Ponudnik gostovanja lahko ob obisku obdeluje tehnične podatke, kot so naslov IP, čas zahteve in podatki brskalnika, v skladu s svojimi pravili zasebnosti.",privacyMapsTitle:"Google Zemljevidi",privacyMapsP:"Google Zemljevid se naloži šele, ko izberete, da želite naložiti zunanjo vsebino. Ob nalaganju se lahko podatki posredujejo Googlu, za kar veljajo Googlovi pogoji in pravila zasebnosti.",privacyRightsTitle:"Vaše pravice",privacyRightsP:"Glede na okoliščine imate lahko pravico do dostopa, popravka, izbrisa, omejitve obdelave ali ugovora. Za vprašanja o zasebnosti nas kontaktirajte po e-pošti. Če menite, da obdelava krši zakonodajo, se lahko obrnete na Informacijskega pooblaščenca Republike Slovenije.",
    cookiesTitle:"Piškotki in lokalna shramba",cookiesIntro:"Ta spletna stran uporablja lokalno shrambo brskalnika za shranjevanje izbranega jezika in vaše odločitve glede nalaganja neobvezne zunanje vsebine.",cookiesNecessaryTitle:"Nujne tehnične funkcije",cookiesNecessaryP:"Nastavitev jezika in shranitev vaše izbire glede zemljevida se hranita v lokalni shrambi brskalnika, da si stran zapomni vaše nastavitve.",cookiesMapsTitle:"Zunanja vsebina — Google Zemljevidi",cookiesMapsP:"Zemljevid ni naložen, dokler ne izberete gumba za nalaganje zemljevida. Ko ga naložite, lahko Google prejme tehnične podatke, vključno z vašim naslovom IP. Za podrobnosti glejte Googlovo politiko zasebnosti.",cookiesManageTitle:"Upravljanje nastavitev",cookiesManageP:"Shranjene nastavitve lahko izbrišete v nastavitvah brskalnika, tako da odstranite podatke spletnega mesta. Če izbrišete lokalno shrambo, si stran ne bo več zapomnila izbranega jezika ali prejšnje izbire glede zemljevida.",
-   legalFooter:"Pravne informacije",privacyFooter:"Politika zasebnosti",cookiesFooter:"Piškotki",warning:"Minister za zdravje opozarja: Uživanje alkohola lahko škoduje zdravju!"
+   legalFooter:"Pravne informacije",privacyFooter:"Politika zasebnosti",cookiesFooter:"Piškotki",warning:"Ministrstvo za zdravje opozarja: Uživanje alkohola lahko škoduje zdravju!"
   ,
    privacyEyebrow:'Varstvo osebnih podatkov',
    privacyController:'Upravljavec: dejanski nosilec dejavnosti, ki upravlja Vinarstvo Filipčič, mora biti pred objavo naveden s polnim uradnim imenom in uradnim naslovom.',
@@ -139,7 +174,7 @@ body{padding-top:82px}
    cookiesFontsTitle:'Google Fonts',
    cookiesFonts:'Spletno mesto uporablja pisave, ki se nalagajo s strežnikov Google Fonts. Ta zahteva je potrebna za prikaz trenutnega oblikovanja; ob njej lahko ponudnik prejme tehnične podatke, kot je IP-naslov. Ta povezava ni uporabljena za shranjevanje piškotkov s strani našega spletnega mesta, vendar gre za zunanjo storitev, opisano tudi v politiki zasebnosti.',
    cookiesManage:'Izbiro za zemljevid spremenite prek povezave »Nastavitve piškotkov« na glavni strani. Lokalno shranjene podatke lahko izbrišete tudi v nastavitvah brskalnika. Če izbrišete izbiro jezika, se lahko ob naslednjem obisku uporabi privzeti jezik strani.',
-   cookiesFuture:'Google Analytics se uporablja samo po izbiri »Sprejmi vse«. Če izberete »Zavrni nenujne«, se Google Analytics ne naloži. Merilni ID: G-TGTFYVMPD9.',
+   cookiesFuture:'Če bodo v prihodnje dodani analitični, oglaševalski ali drugi neobvezni piškotki oziroma sledilne tehnologije, jih je treba pred uporabo ustrezno opisati in po potrebi pridobiti predhodno veljavno privolitev.',
    cookiesDate:'Datum zadnje posodobitve: 25. oktober 2026.'},
   en: {
    navKras:"Karst",navStory:"Our story",navWine:"Wines",navCellar:"Cellar",navTradition:"Heritage",navContact:"Contact",
@@ -148,14 +183,14 @@ body{padding-top:82px}
    teranP1:"Teran is a wine closely connected to the Karst soil. Its deep ruby-red colour, pronounced freshness and distinctive character are part of its identity. It reflects the environment in which it is made — red Karst soil, stone, the bora wind and sunshine.",
    teranP2:"We present our Teran as we know it: rooted in the Karst, authentic, and connected to our land and tradition.",
    contactTitle:"Details and enquiries",contactP:"For information about the current vintage, availability, packaging and offer terms, please contact us directly. Details are confirmed when you enquire.",
-   location:"Location",warning:"The Minister of Health warns: Alcohol consumption can be harmful to your health!",
+   location:"Location",warning:"The Ministry of Health warns: Alcohol consumption can be harmful to your health!",
    legalTitle:"Legal information",legalIntro:"This website presents Filipčič Winery — Taste of the Karst and provides information and contact by telephone or email. It does not provide online checkout or direct payment.",
    officialData:"Official operator details",holder:"Official name or business name of the operator",registeredAddress:"Registered or official address of the operator",registration:"Registration number, where applicable",tax:"Tax number and VAT identification status, where applicable",supervision:"Permit or competent supervisory authority details, where required for the activity",
    contact:"Contact",contactPerson:"Contact person",contentTitle:"Content and responsibility",contentP:"The content is intended to present the winery, the area and the wine. Availability, vintage and any offer terms are confirmed directly upon enquiry. Photos and texts are protected under applicable law unless stated otherwise.",
    alcoholTitle:"Alcoholic beverages",alcoholP:"Alcohol is intended for adults of legal drinking age only. Alcohol consumption can be harmful to health. Website information must be understood in accordance with applicable rules on advertising alcoholic beverages.",
    privacyTitle:"Privacy policy",privacyIntro:"This policy explains how this website handles personal data and third-party content.",privacyContactTitle:"Contact by telephone or email",privacyContactP:"If you contact us, we use the information you provide to respond to your message and handle your enquiry. We do not use it for direct marketing without an appropriate legal basis.",privacyHostTitle:"Hosting and server logs",privacyHostP:"The website may be hosted through GitHub Pages. The hosting provider may process technical data when you visit, such as your IP address, request time and browser information, in accordance with its privacy terms.",privacyMapsTitle:"Google Maps",privacyMapsP:"Google Maps loads only after you choose to load external content. When it loads, data may be shared with Google and Google's terms and privacy policy apply.",privacyRightsTitle:"Your rights",privacyRightsP:"Depending on the circumstances, you may have rights to access, correct, erase or restrict processing of your data, or to object. For privacy questions, contact us by email. If you believe processing breaches the law, you may contact the Information Commissioner of the Republic of Slovenia.",
    cookiesTitle:"Cookies and local storage",cookiesIntro:"This website uses browser local storage to remember your selected language and your choice about loading optional external content.",cookiesNecessaryTitle:"Essential technical functions",cookiesNecessaryP:"The language setting and your choice about the map are stored in browser local storage so the website can remember your preferences.",cookiesMapsTitle:"External content — Google Maps",cookiesMapsP:"The map is not loaded until you choose the map-loading button. Once loaded, Google may receive technical data, including your IP address. See Google's privacy policy for details.",cookiesManageTitle:"Managing settings",cookiesManageP:"You can clear saved settings in your browser by removing this website's data. If you clear local storage, the website will no longer remember your language or previous map choice.",
-   legalFooter:"Legal information",privacyFooter:"Privacy policy",cookiesFooter:"Cookies",warning:"The Minister of Health warns: Alcohol consumption can be harmful to your health!"
+   legalFooter:"Legal information",privacyFooter:"Privacy policy",cookiesFooter:"Cookies",warning:"The Ministry of Health warns: Alcohol consumption can be harmful to your health!"
   ,
    privacyEyebrow:'Personal data protection',
    privacyController:'Controller: before publication, the actual person or entity operating Filipčič Winery must be identified by full official name and official address.',
@@ -187,7 +222,7 @@ body{padding-top:82px}
    cookiesFontsTitle:'Google Fonts',
    cookiesFonts:'The website uses fonts loaded from Google Fonts servers. This request supports the current design; the provider may receive technical data such as your IP address. This connection is not used by our website to store cookies, but it is an external service also described in the privacy policy.',
    cookiesManage:'You can change the map choice using the “Cookie settings” link on the homepage. You can also delete locally stored data in your browser settings. If you delete the language setting, the site may use its default language on your next visit.',
-   cookiesFuture:'Google Analytics is used only after you select “Accept all”. If you select “Reject non-essential”, Google Analytics is not loaded. Measurement ID: G-TGTFYVMPD9.',
+   cookiesFuture:'If analytics, advertising or other optional cookies or tracking technologies are added in the future, they must be properly described before use and valid prior consent must be obtained where required.',
    cookiesDate:'Last updated: 25 October 2026.'},
   it: {
    navKras:"Carso",navStory:"La nostra storia",navWine:"Vini",navCellar:"Cantina",navTradition:"Tradizione",navContact:"Contatti",
@@ -196,14 +231,14 @@ body{padding-top:82px}
    teranP1:"Il Terrano è un vino strettamente legato al terreno carsico. Il suo colore rosso rubino intenso, la spiccata freschezza e il carattere riconoscibile fanno parte della sua identità. Riflette l'ambiente in cui nasce: la terra rossa del Carso, la pietra, la bora e il sole.",
    teranP2:"Presentiamo il nostro Terrano così come lo conosciamo: legato al Carso, autentico e connesso alla nostra terra e alla nostra tradizione.",
    contactTitle:"Dettagli e richieste",contactP:"Per informazioni sull'annata corrente, disponibilità, confezionamento e condizioni dell'offerta, contattateci direttamente. I dettagli saranno confermati al momento della richiesta.",
-   location:"Luogo",warning:"Il Ministro della Salute avverte: il consumo di alcol può nuocere alla salute!",
+   location:"Luogo",warning:"Il Ministero della Salute avverte: il consumo di alcol può nuocere alla salute!",
    legalTitle:"Informazioni legali",legalIntro:"Questo sito presenta la Cantina Filipčič — Il gusto del Carso e offre informazioni e contatti telefonici o via e-mail. Non consente acquisti online né pagamenti diretti.",
    officialData:"Dati ufficiali del titolare",holder:"Nome ufficiale o ragione sociale del titolare",registeredAddress:"Sede o indirizzo ufficiale del titolare",registration:"Numero di registrazione, se applicabile",tax:"Codice fiscale e stato di identificazione IVA, se applicabili",supervision:"Dati relativi ad autorizzazioni o autorità di vigilanza, ove richiesti",
    contact:"Contatti",contactPerson:"Persona di contatto",contentTitle:"Contenuti e responsabilità",contentP:"I contenuti presentano la cantina, il territorio e il vino. Disponibilità, annata ed eventuali condizioni dell'offerta vengono confermate direttamente in risposta alle richieste. Foto e testi sono protetti dalla legge applicabile, salvo diversa indicazione.",
    alcoholTitle:"Bevande alcoliche",alcoholP:"L'alcol è destinato esclusivamente a persone maggiorenni. Il consumo di alcol può nuocere alla salute. Le informazioni del sito devono essere interpretate nel rispetto delle norme applicabili alla pubblicità delle bevande alcoliche.",
    privacyTitle:"Informativa sulla privacy",privacyIntro:"Questa informativa spiega come il sito tratta i dati personali e i contenuti di terze parti.",privacyContactTitle:"Contatti telefonici o via e-mail",privacyContactP:"Se ci contattate, utilizziamo le informazioni fornite per rispondere al messaggio e gestire la richiesta. Non le utilizziamo per marketing diretto senza un'adeguata base giuridica.",privacyHostTitle:"Hosting e registri del server",privacyHostP:"Il sito può essere ospitato tramite GitHub Pages. Il fornitore di hosting può trattare dati tecnici durante la visita, come indirizzo IP, orario della richiesta e informazioni sul browser, secondo la propria informativa privacy.",privacyMapsTitle:"Google Maps",privacyMapsP:"Google Maps viene caricato solo dopo che scegliete di caricare contenuti esterni. Al caricamento, i dati possono essere trasmessi a Google e si applicano i termini e l'informativa sulla privacy di Google.",privacyRightsTitle:"I vostri diritti",privacyRightsP:"A seconda delle circostanze, potete avere diritto di accesso, rettifica, cancellazione, limitazione del trattamento o opposizione. Per domande sulla privacy, contattateci via e-mail. Se ritenete che il trattamento violi la legge, potete rivolgervi al Garante della protezione dei dati personali della Repubblica di Slovenia.",
    cookiesTitle:"Cookie e memoria locale",cookiesIntro:"Questo sito utilizza la memoria locale del browser per ricordare la lingua selezionata e la scelta relativa al caricamento di contenuti esterni facoltativi.",cookiesNecessaryTitle:"Funzioni tecniche essenziali",cookiesNecessaryP:"La lingua selezionata e la scelta relativa alla mappa vengono salvate nella memoria locale del browser per ricordare le vostre preferenze.",cookiesMapsTitle:"Contenuti esterni — Google Maps",cookiesMapsP:"La mappa non viene caricata finché non scegliete l'apposito pulsante. Dopo il caricamento, Google può ricevere dati tecnici, incluso l'indirizzo IP. Per i dettagli consultate l'informativa privacy di Google.",cookiesManageTitle:"Gestione delle impostazioni",cookiesManageP:"Potete cancellare le impostazioni salvate rimuovendo i dati del sito dalle impostazioni del browser. Se cancellate la memoria locale, il sito non ricorderà più la lingua selezionata o la scelta precedente relativa alla mappa.",
-   legalFooter:"Informazioni legali",privacyFooter:"Informativa sulla privacy",cookiesFooter:"Cookie",warning:"Il Ministro della Salute avverte: il consumo di alcol può nuocere alla salute!"
+   legalFooter:"Informazioni legali",privacyFooter:"Informativa sulla privacy",cookiesFooter:"Cookie",warning:"Il Ministero della Salute avverte: il consumo di alcol può nuocere alla salute!"
   ,
    privacyEyebrow:'Protezione dei dati personali',
    privacyController:"Titolare: prima della pubblicazione, la persona o l'entità che gestisce la Cantina Filipčič deve essere indicata con nome ufficiale completo e indirizzo ufficiale.",
@@ -235,7 +270,7 @@ body{padding-top:82px}
    cookiesFontsTitle:'Google Fonts',
    cookiesFonts:"Il sito utilizza caratteri caricati dai server di Google Fonts. Questa richiesta serve a visualizzare il design attuale; il fornitore può ricevere dati tecnici come l'indirizzo IP. Il collegamento non viene usato dal nostro sito per memorizzare cookie, ma si tratta di un servizio esterno descritto anche nell'informativa privacy.",
    cookiesManage:'Potete cambiare la scelta relativa alla mappa tramite il link “Impostazioni cookie” nella homepage. Potete anche eliminare i dati salvati localmente dalle impostazioni del browser. Se cancellate la lingua salvata, alla visita successiva il sito potrebbe utilizzare la lingua predefinita.',
-   cookiesFuture:"Google Analytics viene utilizzato solo dopo aver selezionato “Accetta tutto”. Se selezioni “Rifiuta i non necessari”, Google Analytics non viene caricato. ID di misurazione: G-TGTFYVMPD9.",
+   cookiesFuture:"Se in futuro verranno aggiunti cookie analitici, pubblicitari o altre tecnologie di tracciamento facoltative, dovranno essere descritti prima dell'uso e, ove richiesto, sarà necessario ottenere un consenso preventivo valido.",
    cookiesDate:'Ultimo aggiornamento: 25 ottobre 2026.'}
  };
  const languageKey="filipcic-language";
@@ -266,21 +301,40 @@ body{padding-top:82px}
 </script>
 
 
-<div id="filipcicConsent" role="dialog" aria-modal="true" aria-labelledby="filipcicConsentTitle" hidden>
- <h2 id="filipcicConsentTitle">Nastavitve piškotkov</h2>
- <p id="filipcicConsentText">Google Analytics in Google Zemljevidi se naložijo samo, če sprejmete neobvezne piškotke. Če jih zavrnete, analitika in zemljevid ostaneta izklopljena. Več informacij: <a href="politika-zasebnosti.html">politika zasebnosti</a> in <a href="piskotki.html">piškotki</a>.</p>
- <div class="consent-actions"><button type="button" id="filipcicAccept">Sprejmi vse</button><button type="button" id="filipcicReject">Zavrni nenujne</button></div>
+<div id="filipcic-cookie-banner" role="dialog" aria-modal="true" aria-labelledby="filipcic-cookie-title" hidden>
+  <h2 id="filipcic-cookie-title">Nastavitve piškotkov</h2>
+  <p id="filipcic-cookie-description">Google Analytics se naloži samo, če sprejmete vse piškotke. Če zavrnete nenujne piškotke, Analytics ostane izklopljen.</p>
+  <div id="filipcic-cookie-actions">
+    <button type="button" id="filipcic-cookie-accept">Sprejmi vse</button>
+    <button type="button" id="filipcic-cookie-reject">Zavrni nenujne</button>
+  </div>
 </div>
-<script id="filipcicConsentScript">
+<script id="filipcic-cookie-script">
 (function(){
- const key='filipcic-optional-content-consent', id='G-TGTFYVMPD9';
- const box=document.getElementById('filipcicConsent'), title=document.getElementById('filipcicConsentTitle'), copy=document.getElementById('filipcicConsentText'), accept=document.getElementById('filipcicAccept'), reject=document.getElementById('filipcicReject');
- const words={sl:{title:'Nastavitve piškotkov',text:'Google Analytics in Google Zemljevidi se naložijo samo, če sprejmete neobvezne piškotke. Če jih zavrnete, analitika in zemljevid ostaneta izklopljena. Več informacij: ',accept:'Sprejmi vse',reject:'Zavrni nenujne',privacy:'politika zasebnosti',cookies:'piškotki'},en:{title:'Cookie preferences',text:'Google Analytics and Google Maps load only if you accept optional cookies. If you decline, analytics and the map remain disabled. More information: ',accept:'Accept all',reject:'Reject non-essential',privacy:'privacy policy',cookies:'cookies'},it:{title:'Preferenze cookie',text:'Google Analytics e Google Maps vengono caricati solo se accetti i cookie facoltativi. Se rifiuti, le statistiche e la mappa rimangono disattivate. Maggiori informazioni: ',accept:'Accetta tutto',reject:'Rifiuta i non necessari',privacy:'informativa sulla privacy',cookies:'cookie'}};
- function lang(){try{return localStorage.getItem('filipcic-language')||'sl'}catch(e){return 'sl'}}
- function render(){const w=words[lang()]||words.sl;title.textContent=w.title;copy.replaceChildren(document.createTextNode(w.text));const a=document.createElement('a');a.href='politika-zasebnosti.html';a.textContent=w.privacy;copy.appendChild(a);copy.appendChild(document.createTextNode(' · '));const b=document.createElement('a');b.href='piskotki.html';b.textContent=w.cookies;copy.appendChild(b);accept.textContent=w.accept;reject.textContent=w.reject;}
- function loadAnalytics(){if(window.__filipcicGoogleAnalyticsLoaded)return;window.__filipcicGoogleAnalyticsLoaded=true;window.dataLayer=window.dataLayer||[];window.gtag=function(){window.dataLayer.push(arguments)};window.gtag('js',new Date());window.gtag('config',id);const s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id='+id;document.head.appendChild(s)}
- function choose(value){try{localStorage.setItem(key,value)}catch(e){}box.hidden=true;if(value==='accepted')loadAnalytics()}
- accept.addEventListener('click',()=>choose('accepted'));reject.addEventListener('click',()=>choose('rejected'));document.querySelectorAll('[data-lang]').forEach(btn=>btn.addEventListener('click',render));render();let choice=null;try{choice=localStorage.getItem(key)}catch(e){}if(choice==='accepted')loadAnalytics();else if(choice!=='rejected')box.hidden=false;
+  const KEY='filipcic-cookie-consent-v2';
+  let lang='sl';try{lang=(localStorage.getItem('filipcic-language')||document.documentElement.lang||'sl').slice(0,2).toLowerCase()}catch(e){}
+  const dict={
+    sl:{title:'Piškotki in zasebnost',desc:'Google Analytics se naloži samo, če sprejmete vse piškotke. Če zavrnete nenujne piškotke, Analytics ostane izklopljen.',yes:'Sprejmi vse',no:'Zavrni nenujne'},
+    en:{title:'Cookies and privacy',desc:'Google Analytics loads only if you accept all cookies. If you reject non-essential cookies, Analytics stays disabled.',yes:'Accept all',no:'Reject non-essential'},
+    it:{title:'Cookie e privacy',desc:'Google Analytics viene caricato solo se accetti tutti i cookie. Se rifiuti i cookie non necessari, Analytics rimane disattivato.',yes:'Accetta tutto',no:'Rifiuta i non necessari'}
+  };
+  const t=dict[lang]||dict.sl;
+  const banner=document.getElementById('filipcic-cookie-banner');if(!banner)return;
+  document.getElementById('filipcic-cookie-title').textContent=t.title;
+  document.getElementById('filipcic-cookie-description').textContent=t.desc;
+  document.getElementById('filipcic-cookie-accept').textContent=t.yes;
+  document.getElementById('filipcic-cookie-reject').textContent=t.no;
+  function loadAnalytics(){
+    if(window.__filipcicAnalyticsLoaded)return;window.__filipcicAnalyticsLoaded=true;
+    window.dataLayer=window.dataLayer||[];window.gtag=window.gtag||function(){window.dataLayer.push(arguments)};
+    window.gtag('js',new Date());window.gtag('config','G-TGTFYVMPD9');
+    const script=document.createElement('script');script.async=true;script.src='https://www.googletagmanager.com/gtag/js?id=G-TGTFYVMPD9';document.head.appendChild(script);
+  }
+  function choose(value){try{localStorage.setItem(KEY,value)}catch(e){}banner.hidden=true;if(value==='accepted')loadAnalytics()}
+  document.getElementById('filipcic-cookie-accept').addEventListener('click',()=>choose('accepted'));
+  document.getElementById('filipcic-cookie-reject').addEventListener('click',()=>choose('rejected'));
+  let choice=null;try{choice=localStorage.getItem(KEY)}catch(e){}
+  if(choice==='accepted')loadAnalytics();else if(choice!=='rejected')banner.hidden=false;
 })();
 </script>
 
